@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://awaae001.top/about/index.html</loc>
+    
+    <lastmod>2023-09-24</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>http://awaae001.top/posts/19948.html</loc>
     
     <lastmod>2023-09-24</lastmod>
@@ -127,15 +136,6 @@
     <priority>0.6</priority>
   </url>
   
-  <url>
-    <loc>http://awaae001.top/about/index.html</loc>
-    
-    <lastmod>2023-09-15</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
 
   <url>
     <loc>http://awaae001.top/</loc>
@@ -147,13 +147,6 @@
   
   <url>
     <loc>http://awaae001.top/tags/SB/</loc>
-    <lastmod>2023-09-24</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://awaae001.top/tags/GC/</loc>
     <lastmod>2023-09-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -175,6 +168,13 @@
   
   <url>
     <loc>http://awaae001.top/tags/%E7%AC%AC%E9%9B%B6%E7%AB%A0/</loc>
+    <lastmod>2023-09-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://awaae001.top/tags/GC/</loc>
     <lastmod>2023-09-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
