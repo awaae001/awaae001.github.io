@@ -15,8 +15,8 @@ links:
   custom:
     - name: Tree
       URL: https://github.com/wujun234/hexo-theme-tree
-    - name: UidGenerator
-      URL: https://github.com/wujun234/uid-generator-spring-boot-starter
+    - name: creycloud-可爱的网路加速
+      URL: https://dash2.cerycloud.com/index.php/#/register?code=RjEQAMRe
 
 
 # 可选, giscus 评论系统
@@ -43,7 +43,7 @@ valine:
   appID: gwzbYHtVJuctkE62UMG7AjVI-gzGzoHsz
   # valine appKey
   appKey: gmlZ2lQjkeocUPKluPIikbj0
-  placeholder: 在此发表你的网络圣旨，我们不会记录你的IP，你可以畅所欲言。
+  placeholder: 在此发表你的网络圣旨-处理朝政，我们可以会使用cookie来记录用户，但我们不会记录你的IP，你可以畅所欲言。
   avatar: retro
 
 # 是否开启“不蒜子”统计访问量，可选

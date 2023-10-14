@@ -44,3 +44,8 @@ HEXO还以其出色的构建速度和自动部署功能脱颖而出，使得发�
 
 ## 博客github地址
 快捷链接————[awaae001.github.io_github](https://github.com/awaae001/awaae001.github.io)<br>
+
+## 鸣谢
+github page 引擎提供的强力支持<br>
+cloudflare 提供的CDN解析服务<br>
+hexo 为我的博客框架支持<br>

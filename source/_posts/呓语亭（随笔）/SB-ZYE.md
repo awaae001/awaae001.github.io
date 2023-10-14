@@ -16,7 +16,6 @@ date: 2023-09-22 23:04:22
 <!DOCTYPE html>
 <html>
 <head>
-    <title>施工中</title>
     <style>
         .card {
             width: 300px;
@@ -31,7 +30,7 @@ date: 2023-09-22 23:04:22
 </head>
 <body>
     <div class="card">
-        <h2>很抱歉，此页面内容正在准备中</h2>
+        <h2>很抱歉，此页面内容已被废弃</h2>
     </div>
 </body>
 </html>
