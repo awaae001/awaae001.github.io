@@ -38,7 +38,7 @@ valine:
   # 评论
   enableComment: ture
   # 阅读量
-  enableCounter: false
+  enableCounter: ture
   # valine appID
   appID: gwzbYHtVJuctkE62UMG7AjVI-gzGzoHsz
   # valine appKey
