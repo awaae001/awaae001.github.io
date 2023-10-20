@@ -3,15 +3,16 @@
 
 <%- partial('_partial/head') %>
 
-<body>
-	<%- partial('_partial/header.ejs') %>
-	<%- partial('_partial/sidebar.ejs') %>
+	<body>
+		<%- partial('_partial/header.ejs') %>
+			<%- partial('_partial/sidebar.ejs') %>
 
-	<!-- 引入正文 -->
-	<div id="content" class="content">
-		<%- body %>
-	</div>
-	<%- partial('_partial/footer.ejs') %>
-	<%- partial('_partial/totop') %>
-</body>
+				<!-- 引入正文 -->
+				<div id="content" class="content">
+					<%- body %>
+				</div>
+				<%- partial('_partial/footer.ejs') %>
+				<%- partial('_partial/totop') %>
+	</body>
+
 </html>
