@@ -73,4 +73,8 @@ sidebar:
 #页面底部的网站运行时长,技术力有限
 custom:
   enableRuntimeCard: ture
-  siteStartDate: "2023-06-12"
+  siteStartDate: "2023-06-04"
+
+#全局灰色滤镜，用于默哀等重要场景，就看你有没有时间了。
+#有严重问题，别用！
+grayscale: false

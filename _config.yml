@@ -101,6 +101,7 @@ abbrlink:
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
+#theme: Landscape
 theme: tree
 
 # Deployment
@@ -113,3 +114,4 @@ deploy:
    #gitee: git@gitee.com:awaae001/awaae001.github.io.git
    #startcode: root@156.224.22.105:/var/repo/awaae.git
    
+

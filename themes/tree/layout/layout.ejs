@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<% if (theme.grayscale) { %>
+	<style>
+		body {
+			filter: grayscale(100%);
+		}
+	</style>
+	<% } %>
+	
+
 <%- partial('_partial/head') %>
 
 	<body>
