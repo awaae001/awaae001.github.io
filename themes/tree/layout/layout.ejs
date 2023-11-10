@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- partial('_partial/head') %>
+<body>
+    <%- partial('_partial/header.ejs') %>
+    <%- partial('_partial/sidebar.ejs') %>
+
+    <!-- 引入正文 -->
+    <div id="content" class="content">
+        <%- body %>
+    </div>
+
+    <!-- 顶部缓冲区域 -->
+	<div id="top-buffer" style="height: 100px; background-color: #f0f0f0;">
+
+    <%- partial('_partial/footer.ejs') %>
+    <%- partial('_partial/totop') %>
+</body>
+</html>
