@@ -10,7 +10,7 @@
         body {
             margin: 0;
             padding: 0;
-            position: relative; /* 让 ::before 伪元素相对于 body 定位 */
+            position: relative;
         }
 
         body::before {
@@ -20,14 +20,10 @@
             left: 0;
             width: 100%;
             height: 100%;
-            z-index: -1; /* 使伪元素在内容之后，避免遮挡 */
+            z-index: -1;
             background-image: url('<%- theme.blogBackgroundImage %>');
             background-size: <%- theme.blogBackgroundSize %>;
-            filter: blur(5px); /* 添加简单的模糊效果 */
-            /* 这里可以添加其他样式属性，例如透明度 background-color: rgba(255, 255, 255, 0.5); */
-        }
-
-        /* 其他样式... */
+            filter: blur(<%- theme.blurAmount %>);
     </style>
 </head>
 

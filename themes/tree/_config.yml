@@ -78,7 +78,7 @@ sidebar:
 # 其他配置项...
 blogBackgroundImage: 'https://tuchuang-awaae001.oss-cn-hongkong.aliyuncs.com/IMG_068.jpg'
 blogBackgroundSize: 'cover'  # 你可以根据需要选择 'cover', 'contain' 或其他值
-
+blurAmount: 10px  # 可以在这里设置模糊值
 
 #页面底部的网站运行时长,注意：时间格式为 年-月-日，单数必须要要加零
 custom:
