@@ -27,7 +27,7 @@ links:
 # 这里配置 https://giscus.app/zh-CN，将生成好的填在下面
 # enable 为 true 时， 填自己的 repo、repo_id、category_id
 giscus:
-  enable: ture
+  enable: false
   repo: "awaae001/awaae001.github.io"
   repo_id: "R_kgDOJrn4SA"
   category_id: "DIC_kwDOJrn4SM4CZL0n"
@@ -42,11 +42,11 @@ valine:
   # 评论
   enableComment: false
   # 阅读量
-  enableCounter: ture
+  enableCounter: false
   # valine appID
-  appID: gwzbYHtVJuctkE62UMG7AjVI-gzGzoHsz
+  appID: HLL0twzTQliUf6VA2pJLr7PF-MdYXbMMI
   # valine appKey
-  appKey: gmlZ2lQjkeocUPKluPIikbj0
+  appKey: ncEqAdUCrIeowlmVsW4zrA4V
   placeholder: 来吧！
   avatar: retro
 
