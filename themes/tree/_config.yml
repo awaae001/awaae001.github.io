@@ -23,6 +23,9 @@ links:
     - name: Tree
       URL: https://github.com/awaae001/hexo-theme-BTtree
 
+    - name: 评论系统
+      URL: https://tack.api.awaae001.top/
+
 
 
 # 可选, giscus 评论系统
@@ -97,4 +100,7 @@ custom:
 #  button: ture 
 #  time: 1000
 
-test: https://afdian.net/a/awaae001
+like:
+  buttonOne: 赞助链接！
+  buttonTwo: 分享本文！
+  link: https://afdian.net/a/awaae001
