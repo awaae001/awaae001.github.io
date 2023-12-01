@@ -24,7 +24,7 @@ links:
       URL: https://github.com/awaae001/hexo-theme-BTtree
 
     - name: 评论系统
-      URL: https://tack.api.awaae001.top/
+      URL: https://api.m-c.top/
 
 
 
@@ -60,7 +60,7 @@ valine:
 busuanzi: false
 
 # 底部版权开始年份，不配置默认为今年
-siteStartYear: 2023
+siteStartYear: 2022
 
 ####### 站外搜索配置 #####
 # 站点如果【被搜索引擎收录】，可以配置通过搜索引擎全站搜索
@@ -86,7 +86,7 @@ sidebar:
 # 其他配置项...
 
 #页面背景图片
-blogBackgroundImage: 'https://tuchuang-awaae001.oss-cn-hongkong.aliyuncs.com/IMG_068.jpg'
+blogBackgroundImage: 'https://pic.awaae001.top/IMG_068.jpg'
 blogBackgroundSize: 'cover'  # 你可以根据需要选择 'cover', 'contain' 或其他值
 blurAmount: 10px  # 可以在这里设置模糊值
 
