@@ -86,7 +86,7 @@ sidebar:
 # 其他配置项...
 
 #页面背景图片
-blogBackgroundImage: 'https://pic.awaae001.top/IMG_068.jpg'
+blogBackgroundImage: 'https://pic.awaae001.top/bg.jpg?x-oss-process=style/awaae001'
 blogBackgroundSize: 'cover'  # 你可以根据需要选择 'cover', 'contain' 或其他值
 blurAmount: 10px  # 可以在这里设置模糊值
 

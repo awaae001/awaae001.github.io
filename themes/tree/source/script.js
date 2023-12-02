@@ -53,7 +53,7 @@ function updateQuote(index) {
 // 函数：更新格言总数显示
 function updateQuoteCount() {
   const quoteCountElement = document.getElementById('quote-count');
-  quoteCountElement.textContent = '总格言数：' + quotes.length;
+  quoteCountElement.textContent = '回声指数：' + quotes.length;
 }
 
 // 函数：显示加载中动画

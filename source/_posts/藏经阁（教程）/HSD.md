@@ -9,6 +9,7 @@ tags:
 ```html
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -22,6 +23,7 @@ tags:
       margin: 0;
     }
     #container {
+      position: relative;
       border: 2px solid #dee2e6;
       padding: 20px;
       border-radius: 10px;
@@ -33,6 +35,7 @@ tags:
       border-radius: 8px;
       margin-bottom: 20px;
       background-color: #f8f9fa;
+      position: relative;
     }
     #quote {
       font-size: 1.5em;
@@ -55,30 +58,55 @@ tags:
     }
     #loading {
       display: none;
-      margin-top: 10px;
-      font-size: 1em;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(255, 255, 255, 0.8); /* 半透明白色背景 */
+      justify-content: center;
+      align-items: center;
+      z-index: 1; /* 确保遮罩在最上层 */
+      text-align: center; /* 将文本居中 */
+    }
+    .loader {
+      border: 4px solid #f3f3f3;
+      border-radius: 50%;
+      border-top: 4px solid #3498db;
+      width: 20px;
+      height: 20px;
+      animation: spin 1s linear infinite;
+    }
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
     }
   </style>
 </head>
+
 <body>
 
-<div id="container">
-  <div id="quote-container">
-    <div id="quote">这里是回声显示的地方</div>
+  <div id="container">
+    <div id="quote-container">
+      <div id="loading">
+        <div class="loader"></div>
+        <div>加载中...</div>
+      </div>
+      <div id="quote">这里是回声显示的地方</div>
+    </div>
+    <div id="button-container">
+      <button onclick="changeQuote()">再仔细听一下</button>
+      <div id="quote-count">回声总数：0</div>
+    </div>
   </div>
 
-  <div id="button-container">
-    <button onclick="changeQuote()">再仔细听一下</button>
-    <div id="quote-count">回声总数：0</div>
-    <div id="loading">加载中...</div>
-  </div>
-</div>
-
-<!-- 引入独立的JavaScript文件 -->
-<script src="https://example.com/script.js"></script>
+  <!-- 引入独立的JavaScript文件 -->
+  <script src="https://awaae001.top/script.js"></script>
 
 </body>
+
 </html>
+
 ```
 这是主代码
 
