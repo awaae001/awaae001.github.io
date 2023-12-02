@@ -1,111 +1,105 @@
 <head>
 	<meta http-equiv="content-type" content="text/html; charset=utf-8">
 	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
-	
+
 	<script type="text/javascript">
-		(function(c,l,a,r,i,t,y){
-			c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-			t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-			y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+		(function (c, l, a, r, i, t, y) {
+			c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+			t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+			y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
 		})(window, document, "clarity", "script", "j67354s1x5");
 	</script>
 
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3679967805287330"
-     crossorigin="anonymous">
-	</script>
+	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3679967805287330"
+		crossorigin="anonymous">
+		</script>
 
 
 	<!-- title -->
-	<% 
-		var title = page.title; 
-		if ( title == '' ) {
-			var title = page.slug.split("/")[page.slug.split("/").length-1]
-		}else {
-			var title = page.title; 
-		};
-	%>
-	<title>
-	<% if (title){ %>
-		<%= title %> | 
-	<% } %> 
-	<%= config.title %>
-	</title>
-	
-	<!-- keywords,description -->
-	<% if (page.keywords){ %>
-		<meta name="keywords" content="<%= page.keywords %>,<%= config.keywords %>" />
-	<% } else if (config.keywords){ %>
-		<meta name="keywords" content="<%= config.keywords %>" />
-	<% } %>
-	<% if (page.description){ %>
-		<meta name="description" content="<%= page.description %>" />
-	<% } else if (config.description){ %>
-		<meta name="description" content="<%= config.description %>" />
-	<% } %>
+	<% var title=page.title; if ( title=='' ) { var title=page.slug.split("/")[page.slug.split("/").length-1] }else {
+		var title=page.title; }; %>
+		<title>
+			<% if (title){ %>
+				<%= title %> |
+					<% } %>
+						<%= config.title %>
+		</title>
 
-	<!-- favicon -->
-	<% if (theme.favicon){ %>
-	<%- favicon_tag(theme.favicon) %>
-	<% } %>
+		<!-- keywords,description -->
+		<% if (page.keywords){ %>
+			<meta name="keywords" content="<%= page.keywords %>,<%= config.keywords %>" />
+			<% } else if (config.keywords){ %>
+				<meta name="keywords" content="<%= config.keywords %>" />
+				<% } %>
+					<% if (page.description){ %>
+						<meta name="description" content="<%= page.description %>" />
+						<% } else if (config.description){ %>
+							<meta name="description" content="<%= config.description %>" />
+							<% } %>
+
+								<!-- favicon -->
+								<% if (theme.favicon){ %>
+									<%- favicon_tag(theme.favicon) %>
+										<% } %>
 
 
-	<!-- search -->
-	<script>
-		var searchEngine = "<%- theme.searchEngine %>";
-		if(typeof searchEngine == "undefined" || searchEngine == null || searchEngine == ""){
-			searchEngine = "https://www.google.com/search?q=";
-		}
-		var homeHost = "<%- theme.homeHost %>";
-		if(typeof homeHost == "undefined" || homeHost == null || homeHost == ""){
-			homeHost = window.location.host;
-		}
-	</script>
+											<!-- search -->
+											<script>
+												var searchEngine = "<%- theme.searchEngine %>";
+												if (typeof searchEngine == "undefined" || searchEngine == null || searchEngine == "") {
+													searchEngine = "https://www.google.com/search?q=";
+												}
+												var homeHost = "<%- theme.homeHost %>";
+												if (typeof homeHost == "undefined" || homeHost == null || homeHost == "") {
+													homeHost = window.location.host;
+												}
+											</script>
+<%- css('css/main.css') %>
+<%- css('css/font-awesome.min.css') %>
+<%- css('css/darcula.min.css') %>
+<%- css('css/jquery.fancybox.min.css') %>
 
-    <%- css('css/main.css') %>
-    <%- css('css/font-awesome.min.css') %>
-    <%- css('css/darcula.min.css') %>
-    <%- css('css/jquery.fancybox.min.css') %>
+<script src="/js/jquery.min.js" async></script>
+<script src="/js/jquery.fancybox.min.js" async></script>
+<script src="/js/highlight.min.js" async></script>
+<script src="/js/jquery.pjax.min.js" async></script>
+<script src="/js/main.js" defer></script>
 
-    <%- js('js/jquery.min.js') %>
-    <%- js('js/jquery.fancybox.min.js') %>
-    <%- js('js/highlight.min.js') %>
-    <%- js('js/jquery.pjax.min.js') %>
-    <%- js('js/main.js') %>
+<% if (theme.valine){ %>
+    <script src="https://cdn.jsdelivr.net/npm/leancloud-storage/dist/av-min.js" async></script>
+    <script src="https://cdn.jsdelivr.net/npm/valine@v1.5.1/dist/Valine.min.js" async></script>
+<% } %>
 
-
-	<% if (theme.valine){ %>
-		<%- js('https://cdn.jsdelivr.net/npm/leancloud-storage/dist/av-min.js') %>
-		<%- js('https://cdn.jsdelivr.net/npm/valine@v1.5.1/dist/Valine.min.js') %>
-	<% } %>
-	<% if (theme.busuanzi){ %>
-		<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-	<% } %>
+													<% if (theme.busuanzi){ %>
+														<script async
+															src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+														<% } %>
 
 
-	
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Your Blog Title</title>
-	  
-		<style>
-		  body {
-			margin: 0;
-			padding: 0;
-			position: relative;
-		  }
-	  
-		  body::before {
-			content: "";
-			position: fixed;
-			top: 0;
-			left: 0;
-			width: 100%;
-			height: 100%;
-			z-index: -1;
-			background-image: url('<%- theme.blogBackgroundImage %>');
-			background-size: <%- theme.blogBackgroundSize %>;
-			filter: blur(<%- theme.blurAmount %>);
-		</style>
-	
+															<meta charset="UTF-8">
+															<meta name="viewport"
+																content="width=device-width, initial-scale=1.0">
+															<title>Your Blog Title</title>
+
+															<style>
+																body {
+																	margin: 0;
+																	padding: 0;
+																	position: relative;
+																}
+
+																body::before {
+																	content: "";
+																	position: fixed;
+																	top: 0;
+																	left: 0;
+																	width: 100%;
+																	height: 100%;
+																	z-index: -1;
+																	background-image: url('<%- theme.blogBackgroundImage %>');
+																	background-size: <%- theme.blogBackgroundSize %>;
+																	filter: blur(<%- theme.blurAmount %>);
+															</style>
+
 
 </head>

@@ -5,6 +5,7 @@ abbrlink: 45649
 date: 2023-12-02 03:08:39
 tags:
 ---
+这是回声洞的代码
 ```html
 <!DOCTYPE html>
 <html lang="en">
@@ -182,3 +183,4 @@ function hideLoading() {
 ```
 
 大概的效果长这样
+![](https://pic.awaae001.top/hexo/hsd.jpg?x-oss-process=style/awaae001)
