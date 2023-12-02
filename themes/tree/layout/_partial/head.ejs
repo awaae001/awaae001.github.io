@@ -54,52 +54,57 @@
 													homeHost = window.location.host;
 												}
 											</script>
-<%- css('css/main.css') %>
-<%- css('css/font-awesome.min.css') %>
-<%- css('css/darcula.min.css') %>
-<%- css('css/jquery.fancybox.min.css') %>
+											
+											<%- css('css/main.css') %>
+											<%- css('css/font-awesome.min.css') %>
+											<%- css('css/darcula.min.css') %>
+											<%- css('css/jquery.fancybox.min.css') %>
 
-<script src="/js/jquery.min.js" async></script>
-<script src="/js/jquery.fancybox.min.js" async></script>
-<script src="/js/highlight.min.js" async></script>
-<script src="/js/jquery.pjax.min.js" async></script>
-<script src="/js/main.js" defer></script>
+											<script src="/js/jquery.min.js" defer></script>
+											<script src="/js/jquery.fancybox.min.js" defer></script>
+											<script src="/js/highlight.min.js" defer></script>
+											<script src="/js/jquery.pjax.min.js" defer></script>
+											<script src="/js/main.js" defer></script>
 
-<% if (theme.valine){ %>
-    <script src="https://cdn.jsdelivr.net/npm/leancloud-storage/dist/av-min.js" async></script>
-    <script src="https://cdn.jsdelivr.net/npm/valine@v1.5.1/dist/Valine.min.js" async></script>
-<% } %>
+															<% if (theme.valine){ %>
+																<script
+																	src="https://fastly.jsdelivr.net/npm/leancloud-storage/dist/av-min.js"
+																	defer></script>
+																<script
+																	src="https://fastly.jsdelivr.net/npm/valine@v1.5.1/dist/Valine.min.js"
+																	defer></script>
+																<% } %>
 
-													<% if (theme.busuanzi){ %>
-														<script async
-															src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-														<% } %>
+																	<% if (theme.busuanzi){ %>
+																		<script defer
+																			src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+																		<% } %>
 
 
-															<meta charset="UTF-8">
-															<meta name="viewport"
-																content="width=device-width, initial-scale=1.0">
-															<title>Your Blog Title</title>
+																			<meta charset="UTF-8">
+																			<meta name="viewport"
+																				content="width=device-width, initial-scale=1.0">
+																			<title>Your Blog Title</title>
 
-															<style>
-																body {
-																	margin: 0;
-																	padding: 0;
-																	position: relative;
-																}
+																			<style>
+																				body {
+																					margin: 0;
+																					padding: 0;
+																					position: relative;
+																				}
 
-																body::before {
-																	content: "";
-																	position: fixed;
-																	top: 0;
-																	left: 0;
-																	width: 100%;
-																	height: 100%;
-																	z-index: -1;
-																	background-image: url('<%- theme.blogBackgroundImage %>');
-																	background-size: <%- theme.blogBackgroundSize %>;
-																	filter: blur(<%- theme.blurAmount %>);
-															</style>
+																				body::before {
+																					content: "";
+																					position: fixed;
+																					top: 0;
+																					left: 0;
+																					width: 100%;
+																					height: 100%;
+																					z-index: -1;
+																					background-image: url('<%- theme.blogBackgroundImage %>');
+																					background-size: <%- theme.blogBackgroundSize %>;
+																					filter: blur(<%- theme.blurAmount %>);
+																			</style>
 
 
 </head>
