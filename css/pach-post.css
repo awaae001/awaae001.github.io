@@ -1,0 +1,112 @@
+ /* 公共样式 */
+ .share-button-container {
+   display: flex;
+   /* 使用 flex 布局，使按钮水平排列 */
+   gap: 20px;
+   /* 设置按钮之间的间距，可以根据需要调整 */
+ }
+
+ div#share-give {
+   animation: both;
+   margin: 16px 8px;
+ }
+
+ .share-button-container button {
+   font-size: 16px;
+   padding: 10px 20px;
+   cursor: pointer;
+   border: none;
+   border-radius: 5px;
+ }
+
+ .share-button {
+   background-color: #2b6963;
+   color: #b0decf;
+ }
+
+
+ .support-button {
+   cursor: pointer;
+   background-color: #2b6963;
+   color: #b0decf;
+   padding: 10px 20px;
+   border: none;
+   border-radius: 5px;
+   font-size: 16px;
+ }
+
+ p.info {
+   background-color: #2b6963;
+   margin: -21px -21px 21px -21px;
+   padding: 16px 4px 16px 4px;
+   text-align: center;
+   color: white;
+ }
+
+ #support-dialog {
+   display: none;
+   position: fixed;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   background-color: rgb(210, 210, 210);
+   padding: 20px;
+   border-radius: 8px;
+   border: 4px solid rgb(43, 105, 100);
+   box-shadow: 0 4px 8px rgba(24, 28, 39);
+   z-index: 1;
+ }
+
+ @media(prefers-color-scheme: dark) {
+   #support-dialog {
+     display: none;
+     position: fixed;
+     top: 50%;
+     left: 50%;
+     transform: translate(-50%, -50%);
+     background-color: rgb(47, 51, 65);
+     border: 4px solid rgb(43, 105, 100);
+     padding: 20px;
+     border-radius: 8px;
+     box-shadow: 0 4px 8px rgba(24, 28, 39);
+     z-index: 1;
+   }
+ }
+
+ #image-container {
+   display: flex;
+   justify-content: space-evenly;
+   margin-bottom: 15px;
+ }
+
+ #image-container img {
+   max-width: 45%;
+   height: auto;
+   border-radius: 15px;
+ }
+
+ 
+
+ .close-button {
+   cursor: pointer;
+   background-color: #f44336;
+   color: white;
+   padding: 10px 15px;
+   border: none;
+   border-radius: 5px;
+   font-size: 14px;
+   margin: top 2rm;
+ }
+
+ .like-p {
+   text-align: center;
+   color: black;
+ }
+
+ @media(prefers-color-scheme: dark) {
+   .like-p {
+     color: rgb(231, 231, 232);
+     text-align: center
+   }
+ }
+

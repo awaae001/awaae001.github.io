@@ -1,0 +1,211 @@
+/**
+变态树额外CSS位置
+**/
+a.travellings {
+    color: #b0ddce;
+    font-size: 12px;
+}
+
+button.randomLinks {
+    border-radius: 2px;
+    width: 32px;
+    background-color: #60281e;
+    color: #dfb7b7;
+}
+
+/**
+前往评论区按钮
+**/
+/* 默认样式 */
+.toggle {
+    border: none;
+    height: 45px;
+    width: 45px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    transition: all 0.3s ease-in-out;
+    opacity: 0.5;
+}
+
+div#toggle-bord {
+    position: fixed;
+    bottom: 80px;
+    right: 75px;
+    display: flex;
+}
+
+.toggle-tocommet {
+    border: none;
+    height: 45px;
+    border-radius: 4em;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    transition: all 0.3s ease-in-out;
+    opacity: 0.5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 10px;
+    margin-left: 8px;
+}
+
+#sidebar-toggle {
+    top: 60px;
+    left: 260px;
+    position: absolute;
+}
+
+.toggle:hover {
+    opacity: 1;
+}
+
+.toggle-tocommet:hover {
+    opacity: 1;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(56, 56, 56, 0.532);
+}
+
+.modal-content {
+    background-color: var(--theme-color);
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    color: rgb(176, 221, 206);
+    width: 50%;
+    border-radius: 15px;
+    text-align: center;
+}
+
+
+/**
+博客园塔-css
+**/
+button.blog-links {
+    background-color: #60281e;
+    color: #fff;
+    font-size: 20px;
+    font-family: 'Source Han Serif CN Medium';
+}
+
+button.blog-links:hover {
+    cursor: pointer;
+}
+
+#blogLinks {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease;
+}
+
+#blogLinks.show {
+    max-height: 1000px;
+}
+
+figure {
+    overflow: auto
+}
+
+.tips {
+    padding: 10px;
+    background-color: rgba(52, 152, 219, .3);
+    border-left: 4px solid rgb(52, 152, 219);
+    color: darken(rgb(52, 152, 219), 20%);
+}
+
+.success {
+    padding: 10px;
+    background-color: rgba(46, 204, 113, .3);
+    border-left: 4px solid rgb(46, 204, 113);
+    color: darken(rgb(46, 204, 113), 20%);
+}
+
+.warning {
+    padding: 10px;
+    background-color: rgba(241, 196, 15, .3);
+    border-left: 4px solid rgb(241, 196, 15);
+    color: darken(rgb(241, 196, 15), 20%);
+}
+
+.danger {
+    padding: 10px;
+    background-color: rgba(231, 76, 60, .3);
+    border-left: 4px solid rgb(231, 76, 60);
+    color: darken(rgb(231, 76, 60), 20%);
+}
+
+/*
+弹出式提示框-css
+*/
+
+.mess-popup {
+    border: 2px solid #fff;
+    border-radius: 6px;
+    padding: 10px;
+    max-width: 300px; /* Maximum width to ensure it doesn't grow too large */
+    position: fixed;
+    margin-top: 75px;
+    top: 10px;
+    right: -100%; /* Start position off-screen */
+    color: rgb(44, 44, 44);
+    transition: right 0.5s ease-in-out; /* Animation for sliding in and out */
+    background-color: rgba(236, 236, 236, 0.8); /* Background color to make it stand out */
+}
+
+@media (prefers-color-scheme: dark) {
+    .mess-popup {
+        border: 2px solid;
+        border-radius: 6px;
+        padding: 10px;
+        max-width: 300px; /* Maximum width to ensure it doesn't grow too large */
+        position: fixed;
+        margin-top: 75px;
+        top: 10px;
+        right: -100%; /* Start position off-screen */
+        color: white;
+        transition: right 0.5s ease-in-out; /* Animation for sliding in and out */
+        background-color: rgba(0, 0, 0, 0.8); /* Background color to make it stand out */
+    }
+}
+
+#popup-box{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+#popup-info{
+    display: flex;
+}
+
+.mess-hidden {
+    display: none;
+}
+
+.mess-warning #popup-title {
+    color: yellow;
+}
+
+.mess-error #popup-title {
+    color: red;
+}
+
+.mess-prompt #popup-title {
+    color: green;
+}
+
+#popup-timer {
+    margin-left: 10px;
+    font-size: 0.9em;
+    color: var(--theme-font);
+}
