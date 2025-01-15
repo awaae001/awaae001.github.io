@@ -1,0 +1,1757 @@
+<!--
+               * _oo0oo_
+              * o8888888o * 
+              88"  .  "88 
+              * (| -_- |) * 
+                 0\ = /0 
+            * ___/`---'\___ *
+              .' \\| |// '. 
+          * / \\||| : |||// \ *
+          / _||||| -:- |||||- \ 
+          * | | \\\ - /// | | * 
+          | \_| ''\---/'' |_/ |
+         * \ .-\__ '-' ___/-. / *
+        ___'. .' /--.--\ `. .'___ 
+   * ."" '< `.___\_<|>_/___.' >' "". * 
+    | | : `- \`.;`\ _ /`;.`/ - ` : | |
+    * \ \ `_. \_ __\ /__ _/ .-` / / * =====`
+     -.____`.___ \_____/___.-`___.-
+             '===== * `=---=' 
+                  * * * 
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+       佛祖保佑 永不宕机 永无BUG  
+	   服务器不卡，图床不崩，CDN正常
+
+       大慈大悲
+-->
+
+<!DOCTYPE html>
+<html lang="zh">
+
+<!-- 欢迎使用hexo_BT-banyun[榕树] 
+
+ █████╗ ██╗    ██╗ █████╗  █████╗ ███████╗    ██████╗  █████╗ ███╗   ██╗██╗   ██╗██╗   ██╗███╗   ██╗
+██╔══██╗██║    ██║██╔══██╗██╔══██╗██╔════╝    ██╔══██╗██╔══██╗████╗  ██║╚██╗ ██╔╝██║   ██║████╗  ██║
+███████║██║ █╗ ██║███████║███████║█████╗█████╗██████╔╝███████║██╔██╗ ██║ ╚████╔╝ ██║   ██║██╔██╗ ██║
+██╔══██║██║███╗██║██╔══██║██╔══██║██╔══╝╚════╝██╔══██╗██╔══██║██║╚██╗██║  ╚██╔╝  ██║   ██║██║╚██╗██║
+██║  ██║╚███╔███╔╝██║  ██║██║  ██║███████╗    ██████╔╝██║  ██║██║ ╚████║   ██║   ╚██████╔╝██║ ╚████║
+╚═╝  ╚═╝ ╚══╝╚══╝ ╚═╝  ╚═╝╚═╝  ╚═╝╚══════╝    ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═══╝   ╚═╝    ╚═════╝ ╚═╝  ╚═══╝
+                                                                                                    
+-->
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+
+  <script>
+    window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };
+  </script>
+
+  <!-- title -->
+  
+    <title>
+      
+        回声洞-开源html组件 |
+          
+            呓语梦轩
+    </title>
+    
+    <meta name="description" content="feedId:66423920692680713+userId:75549670478944256" />
+
+    <!-- keywords,description -->
+    
+        <meta name="keywords" content="小说,游戏,hexo,教程" />
+        
+          
+              <meta name="description" content="一个小站点,很小，很破，很温馨-awaae" />
+              
+               
+               
+                <!-- favicon -->
+                
+                  <link rel="shortcut icon" href="/ico.jpg">
+                    
+
+
+                      <!-- search -->
+                      <script>
+                        var searchEngine = "https://www.google.com/search?q=";
+                        if (typeof searchEngine == "undefined" || searchEngine == null || searchEngine == "") {
+                          searchEngine = "https://www.google.com/search?q=";
+                        }
+                        var homeHost = "blog.awaae001.top";
+                        if (typeof homeHost == "undefined" || homeHost == null || homeHost == "") {
+                          homeHost = window.location.host;
+                        }
+                      </script>
+
+                      <script type="text/javascript">
+                        (function (c, l, a, r, i, t, y) {
+                          c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+                          t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+                          y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+                        })(window, document, "clarity", "script", "j67354s1x5");
+                      </script>
+
+                              
+<link rel="stylesheet" href="/css/main.css">
+
+                              
+<link rel="stylesheet" href="/css/top-botton/site-info.css">
+
+                              
+<link rel="stylesheet" href="/css/top-botton/postgo.css">
+
+                              
+<link rel="stylesheet" href="/css/top-botton/siteinfo-page.css">
+
+                              
+<link rel="stylesheet" href="/css/font-awesome.min.css">
+
+                              
+<link rel="stylesheet" href="/css/darcula.min.css">
+
+                              
+<link rel="stylesheet" href="/css/code.css">
+
+
+                              <!-- 
+<link rel="stylesheet" href="https://cdn.smartcis.cn/npm/@mdit/plugin-alert@0.14.0/alert.css">
+ -->
+                              
+                              <link rel="stylesheet" type="text/css" href="https://blog.awaae001.top/css/card.css">
+                              <link rel="preconnect" href="https://fonts.font.im">
+                              <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+                              <link href="https://fonts.font.im/css2?family=Noto+Serif+SC:wght@200..900&display=swap"
+                                rel="stylesheet">
+
+                              <script src="/js/jquery.min.js" defer></script>
+
+                              <script src="/js/share.js" defer></script>
+                              <script src="/js/highlight.min.js" defer></script>
+                              <script src="/js/jquery.pjax.min.js" defer></script>
+                              <script src="/js/main.js" defer></script>
+                              <script async src="https://pv.m-c.top/js"></script>
+                              <script src="/js/other.js" defer></script>
+                              <script src="/js/top-space-js/bulletin-info.js" defer></script>
+                              <script src="/js/top-space-js/go-post.js" defer></script>
+                              <script src="/js/top-space-js/site-info/site-info-main.js" defer></script>
+                              <script src="/js/top-space-js/site-info/info-blogs.js" defer></script>
+                              <script src="/js/page-js/wordCount.js" defer></script>
+                              <script defer src="https://umami.awaae001.top/random-string.js"
+                              data-website-id="80042ffa-7287-4577-960c-1027ad40408c"></script>
+
+                              <!--
+               禁用SW注册器
+               <script src="/sw-start.js"></script>
+              -->
+
+                              
+<link rel="stylesheet" href="/css/artalk.css">
+
+                                <script src="https://cdnjs.snrat.com/npm/artalk@2.9.1/dist/Artalk.js"></script>
+
+                                
+
+
+                                    <!-- 
+                                      
+                                        <script src="https://fastly.jsdelivr.net/npm/leancloud-storage/dist/av-min.js"
+                                          defer></script>
+                                        <script src="https://fastly.jsdelivr.net/npm/valine@v1.5.1/dist/Valine.min.js"
+                                          defer></script>
+                                         -->
+
+                                          
+
+
+                                              <meta charset="UTF-8">
+                                              <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                                              <title>Your Blog Title</title>
+
+                                              <style>
+                                                body {
+                                                  margin: 0;
+                                                  padding: 0;
+                                                  position: relative;
+                                                }
+
+                                                body::before {
+                                                  content: "";
+                                                  position: fixed;
+                                                  top: 0;
+                                                  left: 0;
+                                                  width: 100%;
+                                                  height: 100%;
+                                                  z-index: -1;
+                                                  background-image: url('https://pic.awaae001.top/ai1_178504_e25aaeb4.webp');
+                                                  background-size: cover;
+                                                  filter: blur(10px);
+                                                }
+                                              </style>
+
+<!-- <script src="https://instant.page/5.2.0" type="module" integrity="sha384-jnZyxPjiipYXnSU0ygqeac2q7CVYMbh84q0uHVRRxEtvFPiQYbXWUorga2aqZJ0z"></script>   -->
+<meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="呓语梦轩" type="application/atom+xml">
+</head>
+
+    <body>
+        <header id="header">
+  <a id="title" href="/" class="logo">呓语梦轩</a>
+
+<ul id="menu">
+  
+
+  
+
+  
+
+  
+    
+    
+      <li class="menu-item">
+        <a href='/link/' class="menu-item-link" target="_blank">
+          友人帐
+        </a>
+      </li>
+    
+      <li class="menu-item">
+        <a href='/daily/' class="menu-item-link" target="_blank">
+          说说
+        </a>
+      </li>
+    
+      <li class="menu-item">
+        <a href='/link/commit/' class="menu-item-link" target="_blank">
+          留言板
+        </a>
+      </li>
+    
+  
+
+  <li class="menu-item">
+    <a class="travellings" href="https://www.travellings.cn/go.html" target="_blank" rel="noopener external nofollow noreferrer" title="开往-友链接力">
+        🚇 开往
+    </a>
+    
+<link rel="stylesheet" href="/css/other.css">
+
+</li>
+
+  
+    <li class="menu-item">
+      <a href='https://github.com/awaae001' rel="external nofollow noreferrer" class="menu-item-link" target="_blank">
+        <i class="fa fa-github fa-2x"></i>
+      </a>
+    </li>
+  
+</ul>
+</header>
+
+        
+<div id="sidebar">
+	<button id="sidebar-toggle" class="toggle" ><i class="fa fa-arrow-right " aria-hidden="true"></i></button>
+	
+	<div id="site-toc">
+		<input id="search-input" class="search-input" type="search" placeholder="Press Enter to search">
+		<div id="tree">
+			
+
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/12578.html">
+                     
+										    回声洞
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/5401.html">
+                     
+										    about-各大分区内容介绍
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/16107.html">
+                     
+										    Hello World
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										人言堂（感想）
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/posts/50701.html">
+                     
+										    06-《你想活出怎样的人生》-高塔、苍鹭、少年、人生
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										游戏
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/posts/23435.html">
+                     
+										    彼方的她：一场跨越时空的对话，一段孤寂宇宙的回响
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/6884.html">
+                     
+										    飞跃13号房-对网瘾治疗披露与反抗
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/23024.html">
+                     
+										    饿殍：明末千里行-岁大饥，人相食
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										呓语亭（随笔）
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/posts/39440.html">
+                     
+										    【破事水】-对于未来的前瞻于回望
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										热点
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/posts/52376.html">
+                     
+										    AI时代-汹涌而来
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/13860.html">
+                     
+										    贵州消防栓事件的思考
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/25133.html">
+                     
+										    霸凌行为-地狱空荡荡，恶魔在人间！
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										言论
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/posts/1579.html">
+                     
+										    00-少年：江湖走马，陪剑长行
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/20519.html">
+                     
+										    01-我发现一件事
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/10312.html">
+                     
+										    02-成绩可以代表一切吗?
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/27079.html">
+                     
+										    03-早晚都得死，那我们为什么要活着？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/63283.html">
+                     
+										    04-写文章是为了什么?
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/22861.html">
+                     
+										    05-过程与结果
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/908575.html">
+                     
+										    06-时代造青年，还是青年造时代？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/11645.html">
+                     
+										    07-剧终：故事的开端与终末
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										布告板（公告）
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/posts/48274.html">
+                     
+										    更新发布和问题提出
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/46576.html">
+                     
+										    本站转移到云服务器了
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/786782.html">
+                     
+										    十年之约-我与十年后的自己有一个约定
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/57663.html">
+                     
+										    隐私政策
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										幽篁里（其他）
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/posts/57024.html">
+                     
+										    再见2024 · 共赴一场烟火绚烂
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/56520.html">
+                     
+										    一周年-忽而回望，不知光阴几何
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/52584.html">
+                     
+										    2023年度总结
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										忘忧台（记事）
+									</a>
+									
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										2024井冈山
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/posts/65197.html">
+                     
+										    【总结】井冈山研学-了解历史，明见未来
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/17937.html">
+                     
+										    【多图警告】井冈山研学D1
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/18257.html">
+                     
+										    【多图警告】井冈山研学D2
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/38016.html">
+                     
+										    【多图警告】井冈山研学D3
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/27646.html">
+                     
+										    砥砺奋进，勿忘国殇
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										文轩斋（小说）
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/posts/54465.html">
+                     
+										    about-(原创小说)解殃生
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										第一章
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/posts/12593.html">
+                     
+										    第01幕 引子
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/10177.html">
+                     
+										    第02幕 好盆油！
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/52320.html">
+                     
+										    第03幕 军训 天地异动
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/4242.html">
+                     
+										    第04幕 军训 突发情况
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/54466.html">
+                     
+										    第05幕 军训 全员撤离
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/47925.html">
+                     
+										    第06幕 但到远古去
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/5037.html">
+                     
+										    第07幕 有间客栈
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/9309.html">
+                     
+										    第08幕 有间客栈_那个夜晚
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/18297.html">
+                     
+										    第09幕 回景阳城！
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/57307.html">
+                     
+										    第10幕 鹿鼎公府
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										第零章
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/posts/15397.html">
+                     
+										    H1 P0 S1 质子自衰变
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/65294.html">
+                     
+										    H1 P0 S2 降熵实验与质能转换方程的逆应用 壹
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/18316.html">
+                     
+										    H1 P0 S3 降熵实验与质能转换方程的逆应用 贰
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/60691.html">
+                     
+										    H1 P0 S4 降熵实验与质能转换方程的逆应用 叁
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/7638.html">
+                     
+										    H1 P0 S5 降熵实验与质能转换方程的逆应用 肆
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/47362.html">
+                     
+										    H1 P0 S6 几份资料片
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/5047.html">
+                     
+										    H1 P0 S7 万事之由-那个午后
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										记叙文
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/posts/32398.html">
+                     
+										    迟到了!迟到了！
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/2042429.html">
+                     
+										    【短文】-彼时故城皆繁华
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										缘缘堂（转载）
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/posts/52608.html">
+                     
+										    原神-李猛干语录MD版-世界树
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/59025.html">
+                     
+										    原神-米忽悠玩家预防针（厂商离谱行为）-世界树
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/47513.html">
+                     
+										    幻兽帕鲁-学习版-资源分享
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/38498.html">
+                     
+										    一枝红信出墙来-steam假激活入库
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/51132.html">
+                     
+										    不要再带XXX回去了
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										藏经阁（教程）
+									</a>
+									
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										hexo
+									</a>
+									
+							<ul>
+								<li class="file active">
+									<a href="/posts/45649.html">
+                     
+										    回声洞-开源html组件
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/26785.html">
+                     
+										    hexo + github-action持续集成
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/52004.html">
+                     
+										    友链区JavaScript组件-重做版
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/63154.html">
+                     
+										    自建busuanzi统计API
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/30593.html">
+                     
+										    image+onedrive 公益图床
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										软件推荐
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/posts/44173.html">
+                     
+										    Windows工具-让你的Windows锦上添花，添了又添
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/859850.html">
+                     
+										    EasyPub-轻量Kindle电子书格式转换工具
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+		</div>
+	</div>
+</div>
+
+                <!-- 引入正文 -->
+                <div id="content" class="content">
+                    <div id="top-obn-space">
+    <div style="flex-grow: 1;">
+        <div class="bulletin-space">
+            <span class="bulletin-span">
+                <i class="fa fa-bullhorn" style="margin: 3px;"></i>
+                公告
+            </span>
+            <p class="bulletin-info">
+                暂无数据-可能是正在加载中或者加载遇到问题
+            </p>
+        </div>
+    </div>
+    <div class="button-space">
+        <div>
+            <button class="top-button" onclick="opensiteinfo()" title="查看站点信息"><i class="fa fa-info-circle"
+                aria-hidden="true" style="margin-right: 4px;"></i>信息</button>
+            <div class="overlay" id="overlay"></div>
+            <div id="siteinfo-page">
+                <p class="text-websiteName">呓语梦轩-站点信息</p>
+                <div id="site-info-div">
+                    <div id="siteinfo-line1">
+                        <div class="meta-info">
+                            <span>
+                                <i class="fa fa-bar-chart" aria-hidden="true"></i> 
+                                总字数：
+                            </span>
+                            <hr>
+                            <span id="all-words" class="number-info">处理中</span>
+                        </div>
+                        <div class="meta-info">
+                            <span>
+                                <i class="fa fa-file-text-o"></i>
+                                总文章数：
+                            </span>
+                            <hr>
+                            <span id="all-posts" class="number-info">处理中</span>
+                        </div>
+                        <div class="meta-info">
+                            <span>
+                                <i class="fa fa-comments" aria-hidden="true"></i>
+                                总评论数：
+                            </span>
+                            <hr>
+                            <span id="all-commets" class="number-info">处理中</span>
+                        </div>
+                    </div>
+                    <button onclick="closesiteinfo()" id="siteinfo-close">关闭</button>
+                </div>
+            </div>
+        </div>
+        <div>
+            <button class="top-button" onclick="showConfirmation()" style="margin-left: 6px;" title="随机跳转一篇文章">
+                <i class="fa fa-random" aria-hidden="true" style="margin-right: 4px;"></i>随机文章
+            </button>
+
+            <div id="goto-post">
+                <div>
+                    <p class="text-websiteName">
+                        呓语梦轩-随机跳转
+                    </p>
+                </div>
+                <div class="post-info">
+                    <div style="display: flex;">
+                        <p id="text-info">你即将前往：</p>
+                    </div>
+                    <div id="post-info"></div>
+                    <div id="btn-space-postinfo">
+                        <div>
+                            <button id="goto-post-yes" class="onfirm-btn gopost-btn">确定</button>
+                            <button id="goto-post-no" class="cancel-btn gopost-btn">取消</button>
+                        </div>
+                        <div>
+                            <button id="refresh" class="refresh-btn gopost-btn"> <i class="fa fa-refresh"
+                                    aria-hidden="true" style="margin-right: 4px;"></i>换一换</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<h1 id="article-title">
+  回声洞-开源html组件
+</h1>
+
+<!-- meta -->
+<div class="article-meta">
+
+  
+
+      
+      
+        <span>
+          阅读量
+          <span id="busuanzi_page_pv">ERROR</span>
+          次
+        </span>
+        <span class="article_information">
+          · 共计
+          <span id="word_count">ERROR</span>
+          字
+        </span>
+        <span class="article_information">
+          · 大致要花
+          <span id="read_time">ERROR</span>
+          分钟读完
+        </span>
+        <br>
+          <span>awaae(player8635)</span>
+          <span>2023-12-02 03:08:39</span>
+
+          <div id="article-categories">
+            
+              <span>Categories：</span>
+              
+                      
+
+                        
+                          <span>Tags：</span>
+                          
+                                  
+
+
+                                    
+
+                                        </br>
+
+          </div>
+
+</div>
+
+
+
+  <!-- content -->
+  <div id="article-content">
+    <p>这是回声洞的代码</p>
+<p>准确来说，灵感是是来自PLC2的回声洞,也可以说是我抄了他们的创意,在可不可以叫剽窃?</p>
+<p>但是它们的回声洞是真的好玩,所以才有了这一个突发奇想的也不能被称之为作品的东西.</p>
+<p>诶嘿！</p>
+<p>下面是html主代码，注意，js不可以跨域。</p>
+<p>所以：</p>
+<blockquote>
+<p>请将js文件和.json文件放在博客的托管服务器上。<br>确保你的markdown编译器支持html代码内嵌。</p>
+</blockquote>
+<p>一切正常的话</p>
+<p><strong>让我们开始吧</strong></p>
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><br><span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-keyword">html</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">&quot;en&quot;</span>&gt;</span><br><br><span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">&quot;UTF-8&quot;</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;viewport&quot;</span> <span class="hljs-attr">content</span>=<span class="hljs-string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>格言显示<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="language-css"></span><br><span class="language-css">    <span class="hljs-selector-tag">body</span> &#123;</span><br><span class="language-css">      <span class="hljs-attribute">font-family</span>: Arial, sans-serif;</span><br><span class="language-css">      <span class="hljs-attribute">align-items</span>: center;</span><br><span class="language-css">      <span class="hljs-attribute">justify-content</span>: center;</span><br><span class="language-css">      <span class="hljs-attribute">min-height</span>: <span class="hljs-number">100vh</span>;</span><br><span class="language-css">      <span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span>;</span><br><span class="language-css">    &#125;</span><br><span class="language-css">    <span class="hljs-selector-id">#container</span> &#123;</span><br><span class="language-css">      <span class="hljs-attribute">position</span>: relative;</span><br><span class="language-css">      <span class="hljs-attribute">border</span>: <span class="hljs-number">2px</span> solid <span class="hljs-number">#dee2e6</span>;</span><br><span class="language-css">      <span class="hljs-attribute">padding</span>: <span class="hljs-number">20px</span>;</span><br><span class="language-css">      <span class="hljs-attribute">border-radius</span>: <span class="hljs-number">10px</span>;</span><br><span class="language-css">      <span class="hljs-attribute">box-shadow</span>: <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">10px</span> <span class="hljs-built_in">rgba</span>(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0.1</span>);</span><br><span class="language-css">    &#125;</span><br><span class="language-css">    <span class="hljs-selector-id">#quote-container</span> &#123;</span><br><span class="language-css">      <span class="hljs-attribute">border</span>: <span class="hljs-number">2px</span> solid <span class="hljs-number">#3498db</span>;</span><br><span class="language-css">      <span class="hljs-attribute">padding</span>: <span class="hljs-number">10px</span>;</span><br><span class="language-css">      <span class="hljs-attribute">border-radius</span>: <span class="hljs-number">8px</span>;</span><br><span class="language-css">      <span class="hljs-attribute">margin-bottom</span>: <span class="hljs-number">20px</span>;</span><br><span class="language-css">      <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#f8f9fa</span>;</span><br><span class="language-css">      <span class="hljs-attribute">position</span>: relative;</span><br><span class="language-css">    &#125;</span><br><span class="language-css">    <span class="hljs-selector-id">#quote</span> &#123;</span><br><span class="language-css">      <span class="hljs-attribute">font-size</span>: <span class="hljs-number">1.5em</span>;</span><br><span class="language-css">    &#125;</span><br><span class="language-css">    <span class="hljs-selector-id">#button-container</span> &#123;</span><br><span class="language-css">      <span class="hljs-attribute">margin-top</span>: <span class="hljs-number">20px</span>;</span><br><span class="language-css">    &#125;</span><br><span class="language-css">    <span class="hljs-selector-tag">button</span> &#123;</span><br><span class="language-css">      <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#28a745</span>;</span><br><span class="language-css">      <span class="hljs-attribute">color</span>: <span class="hljs-number">#fff</span>;</span><br><span class="language-css">      <span class="hljs-attribute">padding</span>: <span class="hljs-number">10px</span> <span class="hljs-number">20px</span>;</span><br><span class="language-css">      <span class="hljs-attribute">font-size</span>: <span class="hljs-number">1em</span>;</span><br><span class="language-css">      <span class="hljs-attribute">border</span>: none;</span><br><span class="language-css">      <span class="hljs-attribute">border-radius</span>: <span class="hljs-number">4px</span>;</span><br><span class="language-css">      <span class="hljs-attribute">cursor</span>: pointer;</span><br><span class="language-css">    &#125;</span><br><span class="language-css">    <span class="hljs-selector-id">#quote-count</span> &#123;</span><br><span class="language-css">      <span class="hljs-attribute">margin-top</span>: <span class="hljs-number">10px</span>;</span><br><span class="language-css">      <span class="hljs-attribute">color</span>: <span class="hljs-number">#6c757d</span>;</span><br><span class="language-css">    &#125;</span><br><span class="language-css">    <span class="hljs-selector-id">#loading</span> &#123;</span><br><span class="language-css">      <span class="hljs-attribute">display</span>: none;</span><br><span class="language-css">      <span class="hljs-attribute">position</span>: absolute;</span><br><span class="language-css">      <span class="hljs-attribute">top</span>: <span class="hljs-number">0</span>;</span><br><span class="language-css">      <span class="hljs-attribute">left</span>: <span class="hljs-number">0</span>;</span><br><span class="language-css">      <span class="hljs-attribute">width</span>: <span class="hljs-number">100%</span>;</span><br><span class="language-css">      <span class="hljs-attribute">height</span>: <span class="hljs-number">100%</span>;</span><br><span class="language-css">      <span class="hljs-attribute">background-color</span>: <span class="hljs-built_in">rgba</span>(<span class="hljs-number">255</span>, <span class="hljs-number">255</span>, <span class="hljs-number">255</span>, <span class="hljs-number">0.8</span>); <span class="hljs-comment">/* 半透明白色背景 */</span></span><br><span class="language-css">      <span class="hljs-attribute">justify-content</span>: center;</span><br><span class="language-css">      <span class="hljs-attribute">align-items</span>: center;</span><br><span class="language-css">      <span class="hljs-attribute">z-index</span>: <span class="hljs-number">1</span>; <span class="hljs-comment">/* 确保遮罩在最上层 */</span></span><br><span class="language-css">      <span class="hljs-attribute">text-align</span>: center; <span class="hljs-comment">/* 将文本居中 */</span></span><br><span class="language-css">    &#125;</span><br><span class="language-css">    <span class="hljs-selector-class">.loader</span> &#123;</span><br><span class="language-css">      <span class="hljs-attribute">border</span>: <span class="hljs-number">4px</span> solid <span class="hljs-number">#f3f3f3</span>;</span><br><span class="language-css">      <span class="hljs-attribute">border-radius</span>: <span class="hljs-number">50%</span>;</span><br><span class="language-css">      <span class="hljs-attribute">border-top</span>: <span class="hljs-number">4px</span> solid <span class="hljs-number">#3498db</span>;</span><br><span class="language-css">      <span class="hljs-attribute">width</span>: <span class="hljs-number">20px</span>;</span><br><span class="language-css">      <span class="hljs-attribute">height</span>: <span class="hljs-number">20px</span>;</span><br><span class="language-css">      <span class="hljs-attribute">animation</span>: spin <span class="hljs-number">1s</span> linear infinite;</span><br><span class="language-css">    &#125;</span><br><span class="language-css">    <span class="hljs-keyword">@keyframes</span> spin &#123;</span><br><span class="language-css">      <span class="hljs-number">0%</span> &#123; <span class="hljs-attribute">transform</span>: <span class="hljs-built_in">rotate</span>(<span class="hljs-number">0deg</span>); &#125;</span><br><span class="language-css">      <span class="hljs-number">100%</span> &#123; <span class="hljs-attribute">transform</span>: <span class="hljs-built_in">rotate</span>(<span class="hljs-number">360deg</span>); &#125;</span><br><span class="language-css">    &#125;</span><br><span class="language-css">  </span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span><br><br><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br><br>  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;container&quot;</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;quote-container&quot;</span>&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;loading&quot;</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;loader&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>加载中...<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>      <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;quote&quot;</span>&gt;</span>这里是回声显示的地方<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;button-container&quot;</span>&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">onclick</span>=<span class="hljs-string">&quot;changeQuote()&quot;</span>&gt;</span>再仔细听一下<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;quote-count&quot;</span>&gt;</span>回声总数：0<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><br>  <span class="hljs-comment">&lt;!-- 引入独立的JavaScript文件 --&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;https://blog.awaae001.top/script.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><br><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br><br><span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span><br><br></code></pre></td></tr></table></figure>
+<p>这是主代码</p>
+<p>html部分，下面是js部分</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// script.js</span><br><br><span class="hljs-keyword">async</span> <span class="hljs-keyword">function</span> <span class="hljs-title function_">loadQuotes</span>(<span class="hljs-params"></span>) &#123;<br>  <span class="hljs-keyword">try</span> &#123;<br>    <span class="hljs-keyword">const</span> response = <span class="hljs-keyword">await</span> <span class="hljs-title function_">fetch</span>(<span class="hljs-string">&#x27;https://example.com/mian.json&#x27;</span>, &#123;<br>      <span class="hljs-attr">method</span>: <span class="hljs-string">&#x27;GET&#x27;</span>,<br>      <span class="hljs-attr">mode</span>: <span class="hljs-string">&#x27;cors&#x27;</span>,<br>    &#125;);<br><br>    <span class="hljs-keyword">if</span> (!response.<span class="hljs-property">ok</span>) &#123;<br>      <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Error</span>(<span class="hljs-string">`HTTP error! Status: <span class="hljs-subst">$&#123;response.status&#125;</span>`</span>);<br>    &#125;<br><br>    <span class="hljs-keyword">const</span> data = <span class="hljs-keyword">await</span> response.<span class="hljs-title function_">json</span>();<br>    <span class="hljs-keyword">return</span> data.<span class="hljs-property">quotes</span>;<br>  &#125; <span class="hljs-keyword">catch</span> (error) &#123;<br>    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">error</span>(<span class="hljs-string">&#x27;获取格言时出错:&#x27;</span>, error.<span class="hljs-property">message</span>);<br>    <span class="hljs-keyword">return</span> [];<br>  &#125;<br>&#125;<br><br><span class="hljs-keyword">let</span> quotes;  <span class="hljs-comment">// 存储加载的格言数组</span><br><span class="hljs-keyword">let</span> currentQuoteIndex;  <span class="hljs-comment">// 当前显示的格言索引</span><br><br><span class="hljs-comment">// 初始化加载格言数据</span><br><span class="hljs-title function_">loadQuotes</span>().<span class="hljs-title function_">then</span>(<span class="hljs-function"><span class="hljs-params">data</span> =&gt;</span> &#123;<br>  quotes = data;<br>  <span class="hljs-title function_">updateQuoteCount</span>(); <span class="hljs-comment">// 初始化显示格言总数</span><br>  <span class="hljs-title function_">changeQuote</span>();  <span class="hljs-comment">// 初始显示格言</span><br>&#125;);<br><br><span class="hljs-comment">// 函数：切换显示随机格言</span><br><span class="hljs-keyword">function</span> <span class="hljs-title function_">changeQuote</span>(<span class="hljs-params"></span>) &#123;<br>  <span class="hljs-title function_">showLoading</span>(); <span class="hljs-comment">// 显示加载中动画</span><br><br>  <span class="hljs-comment">// 模拟异步操作（例如加载新格言），这里使用setTimeout模拟1秒后的完成</span><br>  <span class="hljs-built_in">setTimeout</span>(<span class="hljs-function">() =&gt;</span> &#123;<br>    <span class="hljs-comment">// 生成一个随机索引</span><br>    <span class="hljs-keyword">const</span> randomIndex = <span class="hljs-title class_">Math</span>.<span class="hljs-title function_">floor</span>(<span class="hljs-title class_">Math</span>.<span class="hljs-title function_">random</span>() * quotes.<span class="hljs-property">length</span>);<br>    <span class="hljs-title function_">updateQuote</span>(randomIndex);<br>    <span class="hljs-title function_">updateQuoteCount</span>(); <span class="hljs-comment">// 更新格言总数显示</span><br><br>    <span class="hljs-title function_">hideLoading</span>(); <span class="hljs-comment">// 隐藏加载中动画</span><br>  &#125;, <span class="hljs-number">640</span>);<br>&#125;<br><br><span class="hljs-comment">// 函数：更新显示的格言</span><br><span class="hljs-keyword">function</span> <span class="hljs-title function_">updateQuote</span>(<span class="hljs-params">index</span>) &#123;<br>  <span class="hljs-keyword">const</span> quoteElement = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">&#x27;quote&#x27;</span>);<br>  quoteElement.<span class="hljs-property">textContent</span> = quotes[index];<br>&#125;<br><br><span class="hljs-comment">// 函数：更新格言总数显示</span><br><span class="hljs-keyword">function</span> <span class="hljs-title function_">updateQuoteCount</span>(<span class="hljs-params"></span>) &#123;<br>  <span class="hljs-keyword">const</span> quoteCountElement = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">&#x27;quote-count&#x27;</span>);<br>  quoteCountElement.<span class="hljs-property">textContent</span> = <span class="hljs-string">&#x27;总格言数：&#x27;</span> + quotes.<span class="hljs-property">length</span>;<br>&#125;<br><br><span class="hljs-comment">// 函数：显示加载中动画</span><br><span class="hljs-keyword">function</span> <span class="hljs-title function_">showLoading</span>(<span class="hljs-params"></span>) &#123;<br>  <span class="hljs-keyword">const</span> loadingElement = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">&#x27;loading&#x27;</span>);<br>  loadingElement.<span class="hljs-property">style</span>.<span class="hljs-property">display</span> = <span class="hljs-string">&#x27;block&#x27;</span>;<br>&#125;<br><br><span class="hljs-comment">// 函数：隐藏加载中动画</span><br><span class="hljs-keyword">function</span> <span class="hljs-title function_">hideLoading</span>(<span class="hljs-params"></span>) &#123;<br>  <span class="hljs-keyword">const</span> loadingElement = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">&#x27;loading&#x27;</span>);<br>  loadingElement.<span class="hljs-property">style</span>.<span class="hljs-property">display</span> = <span class="hljs-string">&#x27;none&#x27;</span>;<br>&#125;<br><br></code></pre></td></tr></table></figure>
+<p>其中，你需要将<code>example.com</code>的内容替换为你自己的域名</p>
+<p>你还可以建立一个<code>.json</code>文件来存储格言</p>
+<figure class="highlight json"><table><tr><td class="code"><pre><code class="hljs json"><span class="hljs-punctuation">&#123;</span><br>  <span class="hljs-attr">&quot;quotes&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><br>    <span class="hljs-string">&quot;只要是石头，到哪里都不会发光的。&quot;</span><span class="hljs-punctuation">,</span><br>    <span class="hljs-string">&quot;没有，过不去的坎，只有过不完的坎。&quot;</span><span class="hljs-punctuation">,</span><br>    <span class="hljs-string">&quot;现在苦点没关系，人只要活着就一定会有好事，发生在别人身上。&quot;</span><span class="hljs-punctuation">,</span><br>    <span class="hljs-string">&quot;黑夜从来不会亏待晚睡的人，它会赐予你黑眼圈，和即将猝死的身体。&quot;</span><span class="hljs-punctuation">,</span><br>    <span class="hljs-string">&quot;看时间不是为了起床，而是看还能睡多久。&quot;</span><span class="hljs-punctuation">,</span><br>    <span class="hljs-string">&quot;你必须敢爱敢恨，才会发现你的爱恨，别人真的不在乎。&quot;</span><span class="hljs-punctuation">,</span><br>    <span class="hljs-string">&quot;春节假期，从跳过早午餐开始。&quot;</span><span class="hljs-punctuation">,</span><br>    <span class="hljs-string">&quot;又到了一切矛盾，都能用「大过年的」四个字，解决的时候了。&quot;</span><span class="hljs-punctuation">,</span><br>    <span class="hljs-string">&quot;遇到喜欢的人就勇敢追求，这样你才能知道，拒绝你的人远不止一个。&quot;</span><span class="hljs-punctuation">,</span><br>    <span class="hljs-string">&quot;秀恩爱的最好在中午秀，因为，早晚都会有报应。&quot;</span><span class="hljs-punctuation">,</span><br>    <span class="hljs-string">&quot;梦想还是要有的，万一见鬼了呢？&quot;</span><span class="hljs-punctuation">,</span><br>    <span class="hljs-string">&quot;好看的皮囊千篇一律，有趣的灵魂两百多斤。&quot;</span><span class="hljs-punctuation">,</span><br>    <span class="hljs-string">&quot;别看我挣的少，但是我省的多，昨天法拉利又省下两百多万。&quot;</span><span class="hljs-punctuation">,</span><br>    <span class="hljs-string">&quot;如果人生是一部电影，那你就是，中间弹出来的广告。&quot;</span><span class="hljs-punctuation">,</span><br>    <span class="hljs-string">&quot;出卖灵魂并不丢人，丢人的是，没能卖一个好价钱。&quot;</span><span class="hljs-punctuation">,</span><br>    <span class="hljs-string">&quot;不是我长大变傻了，而是傻子长大了&quot;</span><br>  <span class="hljs-punctuation">]</span><br><span class="hljs-punctuation">&#125;</span><br></code></pre></td></tr></table></figure>
+<p>大概的效果长这样<br />
+<img src="https://pic.awaae001.top/%E8%97%8F%E7%BB%8F%E9%98%81/hsd.jpg?x-oss-process=style/awaae001" alt="" /></p>
+
+
+    <div class="page-cover">
+      
+    </div>
+  </div>
+
+  
+    <div id="share-give">
+      <div class="share-button-container">
+        <link rel="stylesheet" type="text/css" href="/css/pach-post.css">
+        <div>
+          <button class="support-button" onclick="openSupportDialog()"><i class="fa fa-qrcode" aria-hidden="true" style="margin-right: 4px;"></i>赞助</button>
+
+          <div id="support-dialog">
+            <p class="info">
+              呓语梦轩-赞助
+            </p>
+            <div id="image-container">
+              <img class="give-img" src="/file/微信.webp" alt="Support Image">
+              <img class="give-img" src="/file/支付宝.webp" alt="Support Image">
+            </div>
+            <p class="like-p">啊，没钱了，谁来帮帮我啊</p>
+            <button class="close-button" onclick="closeSupportDialog()">好的</button>
+          </div>
+        </div>
+        <button class="share-button" onclick="generateAndCopyLink()"><i class="	fa fa-share-square"aria-hidden="true" style="margin-right: 4px;"></i>分享</button>
+      </div>
+    </div>
+    
+
+      <div id="article-categories">
+        <span class="span-info">
+          本站评论因服务器问题，请要发图片的各位自行至
+          <a target="_blank" rel="noopener" href="//image.m-c.top">博主自建图床</a>
+          上传再分享
+        </span>
+        </br>
+        <span class="span-info">
+          欢迎阅读本站评论区
+          <a href="/">指南</a>
+          再进行评论
+        </span>
+      </div>
+
+      <div id="comment" style="margin-top: 16px;">
+        
+          
+            
+            
+              
+    <!-- Artalk -->
+    <div id="Comments"></div>
+    <script>
+        Artalk.init({
+            el: '#Comments',                // 绑定元素的 Selector
+            pageKey: '',                  // 固定链接 (留空自动获取)
+            pageTitle: '',  // 页面标题 (留空自动获取)
+            server: 'https://talk.m-c.top',  // 后端地址
+            site: '呓语梦轩',             // 你的站点名
+        })
+    </script>
+    
+
+              
+                <div class="post-guide">
+                  <div class="item left">
+                    
+                      <a href="/posts/27646.html">
+                        <i class="fa fa-angle-left" aria-hidden="true"></i>
+                        砥砺奋进，勿忘国殇
+                      </a>
+                      
+                  </div>
+                  <div class="item right">
+                    
+                      <a href="/posts/47925.html">
+                        第06幕 但到远古去
+                          <i class="fa fa-angle-right" aria-hidden="true"></i>
+                      </a>
+                      
+                  </div>
+                </div>
+                
+      </div>
+
+                </div>
+                <div id="footer">
+	<div class="footer-links">
+		<div>
+			<span>
+				友情链接
+				-
+				<button id="regenerateButton" class="randomLinks">刷新</button>
+			</span>
+			<div id="randomLinks"></div>
+			<script src="/js/randomlinks.js"></script>
+		</div>
+		<div>
+			<span class="a-links">
+				<span>
+					其他链接
+				</span>
+				<a href="//blog.awaae001.top/about" target="_blank">关于我</a>
+				---
+				<a href="//blog.awaae001.top/atom.xml" target="_blank">Rss订阅</a>
+				---
+				<a href="https://blog.awaae001.top/posts/57663.html" target="_blank">隐私协议</a>
+			</span>
+		</div>
+	</div>
+	<p>
+		©&nbsp;<span id="footerYear-start">2022</span>-<span id="footerYear-end"></span>
+		
+				<a href="/">awaae(player8635)</a>
+				
+					<br>
+					Theme <a href="//github.com/awaae001/hexo-theme-banyan" target="_blank">banyan（榕）</a>
+					by <a href="//awaae001.top" target="_blank">awaae001</a>
+					Powered by <a href="//hexo.io" target="_blank">Hexo</a>
+
+					<!-- 新添加的链接 -->
+					<br>
+					<a href="https://icp.gov.moe/?keyword=20234005" rel="external nofollow noreferrer" target="_blank">萌ICP备20234005号</a>
+					&nbsp;|&nbsp;
+					<a target="_blank" rel="noopener" href="https://beian.miit.cn.com/gov/search.php?domain=blog.awaae001.top"
+						title="MIIT备00008635号">MIIT-00008635号</a>
+					<br>
+
+					<span>
+						本站由
+						<a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.lightxi.com/">
+							晞云
+						</a>
+						提供全局加速服务
+					</span>
+					<br>
+
+					<span>
+						总访问量 :<span id="busuanzi_site_pv"></span>
+						总访客数 :<span id="busuanzi_site_uv"></span>
+					</span>
+
+					<br>
+					<a title="呓语梦轩" target="_blank" rel="noopener external nofollow noreferrer" href="https://boringbay.com"><img height="18px"
+							src="https://boringbay.com/api/badge/blog.awaae001.top"></img></a>
+
+					<br>
+					<img src="https://img.shields.io/badge/Frame-Hexo-blue?logo=Hexo&label=框架">
+					<img
+						src="https://img.shields.io/badge/CDN%E5%8A%A0%E9%80%9F-%E6%99%9E%E4%BA%91-%2392daff?logo=icloud&logoColor=%2392daff">
+					<a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/awaae001">
+						<img
+						src="https://img.shields.io/badge/Github-awaae001-%238db90b?style=flat&logo=github&logoColor=%23181717&link=https%3A%2F%2Fgithub.com%2Fawaae001"> </a>
+					<img
+						src="https://img.shields.io/badge/%E7%BC%96%E8%BE%91%E5%99%A8-VScode-%23007ACC?style=flat&logo=visualstudiocode&logoColor=%23007ACC&color=%23007ACC">
+					<img
+						src="https://img.shields.io/badge/%E4%B8%BB%E9%A2%98-banyan-rgb(172%2C%2071%2C%2053)?logo=hexo&logoColor=rgb(172%2C%2071%2C%2053)">
+					<img
+						src="https://img.shields.io/badge/%E5%89%8D%E7%AB%AF%E6%A1%86%E6%9E%B6-VanillaJS-%23f3d890?logo=javascript&logoColor=%23f3d890g">
+
+					<br>
+
+					<div>
+						<button class="blog-links" onclick="Showlinks()">
+							展示\关闭-博客园塔
+						</button>
+						<div id="blogLinks">
+							<!-- 博客园塔 -->
+							<a href="https://blogverse.cn" target="_blank" rel="noopener noreferrer"
+								title="中文博客圈列表">博客圈列表</a>
+							<br /># -> 随机跳转页面
+							<div class="bokequan">
+								<a href="https://firewood.news" target="_blank" rel="noopener noreferrer"
+									title="积薪-致敬那些还在写博客的人">积薪</a>
+								|
+								<a href="https://chuanliu.org" target="_blank" rel="noopener noreferrer"
+									title="川流，取川之意，流水之情">川流</a>
+								|
+								<a href="https://www.boyouquan.com/planet-shuttle" target="_blank"
+									rel="noopener noreferrer" title="博友圈-博客人的朋友圈">博友圈</a>
+								<a href="https://www.boyouquan.com/planet-shuttle" target="_blank"
+									rel="noopener noreferrer" title="星球穿梭-博友圈">#</a>
+								<br />
+								<a href="http://www.jetli.com.cn" target="_blank" rel="noopener noreferrer"
+									title="博客志-优秀个人独立博客导航">博客志</a>
+								|
+								<a href="https://bokequan.cn" target="_blank" rel="noopener noreferrer"
+									title="致力于个人独立博客，按地区分类，由段先森维护">博客圈</a>
+								<a href="https://bokequan.cn/?suiji" target="_blank" rel="noopener noreferrer"
+									title="穿梭-致力于个人独立博客博客园">#</a>
+								|
+								<a href="https://www.travellings.cn" target="_blank" rel="noopener noreferrer"
+									title="让传统友链“活跃”，让网页相互接力，让流量相互流动，让网络开放起来">开往</a>
+								<a href="https://www.travellings.cn/go.html" target="_blank" rel="noopener noreferrer"
+									title="开往-友链接力">#</a>
+								<br />
+								<a href="https://blogwe.com" target="_blank" rel="noopener noreferrer"
+									title="致敬还在写博客的我们！">BlogWe</a>
+								|
+								<a href="https://zhblogs.ohyee.cc" target="_blank" rel="noopener noreferrer"
+									title="尝试链接几乎所有的中文博客">中文博客列表导航</a>
+								<a href="https://zhblogs.ohyee.cc/go" target="_blank" rel="noopener noreferrer"
+									title="随机跳转-尝试链接几乎所有的中文博客">#</a>
+								<br />
+								<a href="https://blogscn.fun" target="_blank" rel="noopener noreferrer"
+									title="致敬还在写博客的我们">笔墨迹</a>
+								<a href="https://blogscn.fun/random.html" target="_blank" rel="noopener noreferrer"
+									title="笔墨迹-虫洞">#</a>
+								|
+								<a href="https://storeweb.cn" target="_blank" rel="noopener noreferrer"
+									title="一个精致的，带社交元素的个人网站发布平台，博客收录网站">个站商店</a>
+								<a href="https://storeweb.cn/s/2070" target="_blank" rel="noopener noreferrer"
+									title="个站商店-虫洞">#</a>
+								|
+								<a href="https://www.wlxxq.com" target="_blank" rel="noopener noreferrer"
+									title="未来信息-希望在未来还能遇见你博客的信息">未来信息</a>
+								<br />
+								<a href="https://boke.lu" target="_blank" rel="noopener noreferrer"
+									title="boke.lu · 博客收录展示平台~">博客录</a>
+								<a href="https://bokelu.suijiboke.gs" target="_blank" rel="noopener noreferrer"
+									title="随机浏览博客录收录的所有博客">#</a>
+								|
+								<a href="https://travel.moe" target="_blank" rel="noopener noreferrer"
+									title="我们一起去萌站成员de星球旅行吧 ！">异次元之旅</a>
+								<a href="https://travel.moe/go.html?travel=on" target="_blank" rel="noopener noreferrer"
+									title="跃迁-我们一起去萌站成员de星球旅行吧 ！">#</a>
+								|
+								<a href="https://www.foreverblog.cn" target="_blank" rel="noopener noreferrer"
+									title="一个人的寂寞，一群人的狂欢。">十年之约</a>
+								<a href="https://www.foreverblog.cn/go.html" target="_blank" rel="noopener noreferrer"
+									title="穿梭虫洞-随机访问十年之约友链博客">#</a>
+								<br />
+								<a href="https://ourblo.gs" target="_blank" rel="noopener noreferrer"
+									title="在茫茫比特流之中，能遇见你，真是幸运！">OurBlogs</a>
+								|
+								<a href="https://github.com/timqian/chinese-independent-blogs" target="_blank"
+									rel="noopener noreferrer" title="中文独立博客列表">中文独立博客列表</a>
+								|
+								<a href="https://bf.zzxworld.com" target="_blank" rel="noopener noreferrer"
+									title="BlogFinder-发现优秀的个人博客">BlogFinder</a>
+								<br />
+							</div>
+						</div>
+
+					</div>
+	</p>
+
+	<!-- 一段用于在页底显示运行时间的代码 by:awaae001 -->
+	
+		<div id="runtime-card" style="background-color: #60281e; color: #fff; text-align: center; padding: 10px;">
+			本站已运行：
+				</br>
+				<span id="uptime">加载中...</span>
+		</div>
+		
+
+			<script type="text/javascript">
+				const TIME_CONST = 365 * 24 * 60 * 60 * 1000;
+				const TIME_START = new Date("5/28/2023 14:13:45");
+
+				function update_website_uptime_banner() {
+					var website_uptime_banner = document.getElementById("uptime");
+					var timestamp_now = new Date(); // 当前时间
+					var time = timestamp_now.getTime() - TIME_START.getTime();
+					var years = time / TIME_CONST;
+					var int_years = parseInt(years);
+					var days = time / (24 * 60 * 60 * 1000); // 计算有多少天
+					var int_days = parseInt(days); // 计算有多少完整的天
+					var hours = (days - int_days) * 24; // 计算除去完整的天 剩下不完整的天有多少 ×24得到有多少个小时
+					var int_hours = parseInt(hours); // 计算完整的小时
+					var mins = (hours - int_hours) * 60; // 计算除去完整的天,小时 剩下不完整的小时 x60得到有多少分钟
+					var int_mins = parseInt(mins); // 计算完整的分钟
+					var sec = (mins - int_mins) * 60; // 计算除去完整的天,小时,分钟 剩下不完整的分钟 x60得到有多少秒
+					var int_sec = parseInt(sec); // 计算完整的秒
+					//var msec = (sec - int_sec) * 1000; 计算除去完整的天,小时,分钟,秒 剩下不完整的秒 x1000得到有多少毫秒
+					//var int_msec = parseInt(msec); 计算完整的毫秒
+
+					website_uptime_banner.innerHTML =
+						int_days +
+						" 日 " +
+						String(int_hours) +
+						" 小时 " +
+						String(int_mins) +
+						" 分 " +
+						String(int_sec) +
+						" 秒 " +
+						"(共：" +
+						int_years +
+						" 年)";
+				}
+
+				update_website_uptime_banner();
+				setInterval(update_website_uptime_banner, 1000);
+			</script>
+
+
+			
+					<script type="text/javascript">
+						document.getElementById('footerYear-end').innerHTML = new Date().getFullYear() + '';
+					</script>
+
+					
+                    <div id="toggle">
+    <div id="toggle-bord">
+        <button id="totop-toggle-totop" class="toggle" title="返回顶部">
+            <i class="fa fa-angle-double-up" aria-hidden="true"></i>
+        </button>
+        <button id="footer-toggle-tocommet" class="toggle-tocommet"
+            title="前往评论区">
+            <span class="button-text">前往评论区</span>
+            <i class="fa fa-commenting-o" aria-hidden="true"></i>
+        </button>
+    </div>
+</div>
+
+<div id="myModal" class="modal">
+    <div class="modal-content">
+        <p>未找到评论区！,我们会在3秒后为你跳转到留言板</p>
+    </div>
+</div>
+
+<div id="myModal" class="modal">
+    <div class="modal-content">
+        <p>未找到评论区！,我们会在3秒后为你跳转到留言板</p>
+    </div>
+</div>
+
+<div>
+    <link rel="stylesheet" type="text/css" href="/css/lnterception.css">
+    <script src="/js/lnterception.js"></script>
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <div id="website-name"></div>
+            <p style="color: black;">你即将前往：</p>
+            <div id="website-url" style="color:rgb(43, 105, 100);"></div>
+            <p style="color: black;">请注意你的账号财产安全！</p>
+            <button id="cancel-btn" class="popup-btn">取消</button>
+            <button id="confirm-btn" class="popup-btn">确定</button>
+        </div>
+    </div>
+</div>
+
+<div id="popup-box" class="mess-popup mess-hidden">
+    <div id="popup-info">
+        <span id="popup-title"></span>
+        <span id="popup-timer"></span>
+    </div>
+    <span id="popup-content"></span>
+</div>
+
+<script>
+const Popup = (() => {
+    let countdownInterval;
+    let popupQueue = [];
+    let isPopupVisible = false;
+
+    function processQueue() {
+        if (popupQueue.length > 0 && !isPopupVisible) {
+            const nextPopup = popupQueue.shift(); // 取出队列中的下一个弹窗
+            showPopup(nextPopup.title, nextPopup.message, nextPopup.type);
+        }
+    }
+
+    function showPopup(title, message, type) {
+        const popupBox = document.getElementById('popup-box');
+        const popupTitle = document.getElementById('popup-title');
+        const popupTimer = document.getElementById('popup-timer');
+        const popupContent = document.getElementById('popup-content');
+
+        popupTitle.textContent = title;
+        popupContent.textContent = message;
+
+        popupBox.classList.remove('mess-warning', 'mess-error', 'mess-prompt', 'mess-hidden');
+
+        if (type === 'warning') {
+            popupBox.classList.add('mess-warning');
+        } else if (type === 'error') {
+            popupBox.classList.add('mess-error');
+        } else if (type === 'prompt') {
+            popupBox.classList.add('mess-prompt');
+        }
+
+        // 防止倒计时冲突
+        if (countdownInterval) {
+            clearInterval(countdownInterval);
+        }
+
+        // 设置倒计时为 5 秒
+        let countdown = 5;
+        popupTimer.textContent = `(${countdown}s)`;
+
+        // 标记弹窗为显示状态
+        isPopupVisible = true;
+
+        countdownInterval = setInterval(() => {
+            countdown -= 1;
+            popupTimer.textContent = `(${countdown}s)`;
+            if (countdown <= 0) {
+                clearInterval(countdownInterval);
+            }
+        }, 1000);
+
+        // 显示弹窗动画
+        setTimeout(() => {
+            popupBox.style.right = '10px';
+        }, 100); // 确保动画生效的小延迟
+
+        // 5 秒后隐藏弹窗，并在隐藏后检查队列
+        setTimeout(() => {
+            popupBox.style.right = '-100%';
+            setTimeout(() => {
+                popupBox.classList.add('mess-hidden');
+                isPopupVisible = false; // 标记弹窗已隐藏
+                processQueue(); // 检查并显示队列中的下一个弹窗
+            }, 500); // 等待隐藏动画结束后再处理队列
+        }, 5000);
+    }
+
+    function queuePopup(title, message, type) {
+        // 将新的弹窗请求加入队列
+        popupQueue.push({ title, message, type });
+        processQueue(); // 处理队列中的弹窗
+    }
+
+    return {
+        show: queuePopup // 使用队列的方式调用弹窗
+    };
+})();
+
+// 示例用法：
+// Popup.show('Warning Title', 'This is a warning message', 'warning');
+// Popup.show('Error Title', 'This is an error message', 'error');
+// Popup.show('Prompt Title', 'This is a prompt message', 'prompt');
+
+
+</script>
+                    <script src="/js/footer/img-reback.js" async></script>
+                    <script src="/js/instant.js" ></script>
+    </body>
+
+</html>
+<!-- 
+       　  　▃▆█▇▄▖
+　 　 　 ▟◤▖　　　◥█▎
+   　 ◢◤　 ▐　　　 　▐▉
+　 ▗◤　　　▂　▗▖　　▕█▎
+　◤　▗▅▖◥▄　▀◣　　█▊
+▐　▕▎◥▖◣◤　　　　◢██
+█◣　◥▅█▀　　　　▐██◤
+▐█▙▂　　     　◢██◤
+◥██◣　　　　◢▄◤
+ 　　▀██▅▇▀
+
+
+哲学♂ 114514 
+ -->
