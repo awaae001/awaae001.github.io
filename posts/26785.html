@@ -1,0 +1,1910 @@
+<!--
+               * _oo0oo_
+              * o8888888o * 
+              88"  .  "88 
+              * (| -_- |) * 
+                 0\ = /0 
+            * ___/`---'\___ *
+              .' \\| |// '. 
+          * / \\||| : |||// \ *
+          / _||||| -:- |||||- \ 
+          * | | \\\ - /// | | * 
+          | \_| ''\---/'' |_/ |
+         * \ .-\__ '-' ___/-. / *
+        ___'. .' /--.--\ `. .'___ 
+   * ."" '< `.___\_<|>_/___.' >' "". * 
+    | | : `- \`.;`\ _ /`;.`/ - ` : | |
+    * \ \ `_. \_ __\ /__ _/ .-` / / * =====`
+     -.____`.___ \_____/___.-`___.-
+             '===== * `=---=' 
+                  * * * 
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+       佛祖保佑 永不宕机 永无BUG  
+	   服务器不卡，图床不崩，CDN正常
+
+       大慈大悲
+-->
+
+<!DOCTYPE html>
+<html lang="zh">
+
+<!-- 欢迎使用hexo_BT-banyun[榕树] 
+
+ █████╗ ██╗    ██╗ █████╗  █████╗ ███████╗    ██████╗  █████╗ ███╗   ██╗██╗   ██╗██╗   ██╗███╗   ██╗
+██╔══██╗██║    ██║██╔══██╗██╔══██╗██╔════╝    ██╔══██╗██╔══██╗████╗  ██║╚██╗ ██╔╝██║   ██║████╗  ██║
+███████║██║ █╗ ██║███████║███████║█████╗█████╗██████╔╝███████║██╔██╗ ██║ ╚████╔╝ ██║   ██║██╔██╗ ██║
+██╔══██║██║███╗██║██╔══██║██╔══██║██╔══╝╚════╝██╔══██╗██╔══██║██║╚██╗██║  ╚██╔╝  ██║   ██║██║╚██╗██║
+██║  ██║╚███╔███╔╝██║  ██║██║  ██║███████╗    ██████╔╝██║  ██║██║ ╚████║   ██║   ╚██████╔╝██║ ╚████║
+╚═╝  ╚═╝ ╚══╝╚══╝ ╚═╝  ╚═╝╚═╝  ╚═╝╚══════╝    ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═══╝   ╚═╝    ╚═════╝ ╚═╝  ╚═══╝
+                                                                                                    
+-->
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+
+  <script>
+    window.si = window.si || function () {
+      (window.siq = window.siq || []).push(arguments);
+    };
+  </script>
+
+  <!-- Title -->
+  
+  <title>
+    
+      hexo + github-action持续集成 |
+    
+    呓语梦轩
+  </title>
+
+  <!-- Metadata -->
+  <meta name="description" content="feedId:66423920692680713+userId:75549670478944256" />
+
+  
+    <meta name="keywords" content="hexo+action,github-action,action,hexo,CI/CD,小说,游戏,hexo,教程" />
+  
+
+  
+    <meta name="description" content="介绍了如何创建一个基于ssh-key的github-action工作流来进行持续集成，可以让hexo变得领包即走，非常方便，它也解放了我们的双手，让我们可以在本地编写完毕后直接上传到github，让github为我们分发和部署我们的项目" />
+  
+
+  <!-- Favicon -->
+  
+    <link rel="shortcut icon" href="/ico.jpg">
+  
+
+  <!-- Search -->
+  <script>
+    var searchEngine = "https://www.google.com/search?q=";
+    if (!searchEngine) {
+      searchEngine = "https://www.google.com/search?q=";
+    }
+
+    var homeHost = "blog.awaae001.top";
+    if (!homeHost) {
+      homeHost = window.location.host;
+    }
+  </script>
+
+  <!-- Clarity -->
+  <script type="text/javascript">
+    (function (c, l, a, r, i, t, y) {
+      c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+      t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+      y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+    })(window, document, "clarity", "script", "j67354s1x5");
+  </script>
+
+  <!-- CSS -->
+  
+<link rel="stylesheet" href="/css/main.css">
+
+  
+<link rel="stylesheet" href="/css/top-botton/site-info.css">
+
+  
+<link rel="stylesheet" href="/css/top-botton/postgo.css">
+
+  
+<link rel="stylesheet" href="/css/top-botton/siteinfo-page.css">
+
+  
+<link rel="stylesheet" href="/css/font-awesome.min.css">
+
+  
+<link rel="stylesheet" href="/css/darcula.min.css">
+
+  
+<link rel="stylesheet" href="/css/code.css">
+
+  
+<link rel="stylesheet" href="/css/artalk.css">
+
+
+  <link rel="stylesheet" type="text/css" href="https://blog.awaae001.top/css/card.css">
+  <link rel="preconnect" href="https://fonts.font.im">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.font.im/css2?family=Noto+Serif+SC:wght@200..900&display=swap" rel="stylesheet">
+
+  <!-- JS -->
+  <script src="/js/jquery.min.js" defer></script>
+  <script src="/js/share.js" defer></script>
+  <script src="/js/highlight.min.js" defer></script>
+  <script src="/js/jquery.pjax.min.js" defer></script>
+  <script src="/js/main.js" defer></script>
+  <script async src="https://pv.m-c.top/js"></script>
+  <script src="/js/other.js" defer></script>
+  <script src="/js/top-space-js/bulletin-info.js" defer></script>
+  <script src="/js/top-space-js/go-post.js" defer></script>
+  <script src="/js/top-space-js/site-info/site-info-main.js" defer></script>
+  <script src="/js/top-space-js/site-info/info-blogs.js" defer></script>
+  <script src="/js/page-js/wordCount.js" defer></script>
+  <script defer src="https://umami.awaae001.top/script.js" data-website-id="614c425b-3d03-443b-9bc0-36503a1edbdd"></script>
+  <script src="https://cdnjs.snrat.com/npm/artalk@2.9.1/dist/Artalk.js"></script>
+
+  
+    <script src="/js/jquery.fancybox.min.js" defer></script>
+    <script src="/js/fancybox.js" defer></script>
+    
+<link rel="stylesheet" href="/css/jquery.fancybox.min.css">
+
+  
+
+  
+
+  <!-- Background -->
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      position: relative;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      background-image: url('https://pic.awaae001.top/ai1_178504_e25aaeb4.webp');
+      background-size: cover;
+      filter: blur(10px);
+    }
+  </style>
+
+  <!-- Optional SW -->
+  <!-- <script src="/sw-start.js"></script> -->
+<meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="呓语梦轩" type="application/atom+xml">
+</head>
+
+
+    <body>
+        <header id="header">
+  <a id="title" href="/" class="logo">呓语梦轩</a>
+
+<ul id="menu">
+  
+
+  
+
+  
+
+  
+    
+    
+      <li class="menu-item">
+        <a href='/link/' class="menu-item-link" target="_blank">
+          友人帐
+        </a>
+      </li>
+    
+      <li class="menu-item">
+        <a href='/daily/' class="menu-item-link" target="_blank">
+          说说
+        </a>
+      </li>
+    
+      <li class="menu-item">
+        <a href='/link/commit/' class="menu-item-link" target="_blank">
+          留言板
+        </a>
+      </li>
+    
+  
+
+  <li class="menu-item">
+    <a class="travellings" href="https://www.travellings.cn/go.html" target="_blank" rel="noopener external nofollow noreferrer" title="开往-友链接力">
+        🚇 开往
+    </a>
+    
+<link rel="stylesheet" href="/css/other.css">
+
+</li>
+
+  
+    <li class="menu-item">
+      <a href='https://github.com/awaae001' rel="external nofollow noreferrer" class="menu-item-link" target="_blank">
+        <i class="fa fa-github fa-2x"></i>
+      </a>
+    </li>
+  
+</ul>
+</header>
+
+        
+<div id="sidebar">
+	<button id="sidebar-toggle" class="toggle" ><i class="fa fa-arrow-right " aria-hidden="true"></i></button>
+	
+	<div id="site-toc">
+		<input id="search-input" class="search-input" type="search" placeholder="Press Enter to search">
+		<div id="tree">
+			
+
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/12578.html">
+                     
+										    回声洞
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/5401.html">
+                     
+										    about-各大分区内容介绍
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/16107.html">
+                     
+										    Hello World
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										人言堂（感想）
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/posts/50701.html">
+                     
+										    06-《你想活出怎样的人生》-高塔、苍鹭、少年、人生
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										游戏
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/posts/23435.html">
+                     
+										    彼方的她：一场跨越时空的对话，一段孤寂宇宙的回响
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/26598.html">
+                     
+										    逐光 · 启航：愿领航员畅行无阻
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/6884.html">
+                     
+										    飞跃13号房-对网瘾治疗披露与反抗
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/23024.html">
+                     
+										    饿殍：明末千里行-岁大饥，人相食
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										呓语亭（随笔）
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/posts/39440.html">
+                     
+										    【破事水】-对于未来的前瞻于回望
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										热点
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/posts/52376.html">
+                     
+										    AI时代-汹涌而来
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/13860.html">
+                     
+										    贵州消防栓事件的思考
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/25133.html">
+                     
+										    霸凌行为-地狱空荡荡，恶魔在人间！
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										言论
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/posts/1579.html">
+                     
+										    00-少年：江湖走马，陪剑长行
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/20519.html">
+                     
+										    01-我发现一件事
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/10312.html">
+                     
+										    02-成绩可以代表一切吗?
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/27079.html">
+                     
+										    03-早晚都得死，那我们为什么要活着？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/63283.html">
+                     
+										    04-写文章是为了什么?
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/22861.html">
+                     
+										    05-过程与结果
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/908575.html">
+                     
+										    06-时代造青年，还是青年造时代？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/11645.html">
+                     
+										    07-剧终：故事的开端与终末
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/63703.html">
+                     
+										    08-AGI：算力洪流与未坍缩的星光
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										布告板（公告）
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/posts/48274.html">
+                     
+										    更新发布和问题提出
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/46576.html">
+                     
+										    本站转移到云服务器了
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/786782.html">
+                     
+										    十年之约-我与十年后的自己有一个约定
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/57663.html">
+                     
+										    隐私政策
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										幽篁里（其他）
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/posts/57024.html">
+                     
+										    再见2024 · 共赴一场烟火绚烂
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/56520.html">
+                     
+										    一周年-忽而回望，不知光阴几何
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/52584.html">
+                     
+										    2023年度总结
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										忘忧台（记事）
+									</a>
+									
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										2024井冈山
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/posts/65197.html">
+                     
+										    【总结】井冈山研学-了解历史，明见未来
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/17937.html">
+                     
+										    【多图警告】井冈山研学D1
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/18257.html">
+                     
+										    【多图警告】井冈山研学D2
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/38016.html">
+                     
+										    【多图警告】井冈山研学D3
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/27646.html">
+                     
+										    砥砺奋进，勿忘国殇
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										文轩斋（小说）
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/posts/54465.html">
+                     
+										    about-(原创小说)解殃生
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										第一章
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/posts/12593.html">
+                     
+										    第01幕 引子
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/10177.html">
+                     
+										    第02幕 好盆油！
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/52320.html">
+                     
+										    第03幕 军训 天地异动
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/4242.html">
+                     
+										    第04幕 军训 突发情况
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/54466.html">
+                     
+										    第05幕 军训 全员撤离
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/47925.html">
+                     
+										    第06幕 但到远古去
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/5037.html">
+                     
+										    第07幕 有间客栈
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/9309.html">
+                     
+										    第08幕 有间客栈_那个夜晚
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/18297.html">
+                     
+										    第09幕 回景阳城！
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/57307.html">
+                     
+										    第10幕 鹿鼎公府
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										第零章
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/posts/15397.html">
+                     
+										    H1 P0 S1 质子自衰变
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/65294.html">
+                     
+										    H1 P0 S2 降熵实验与质能转换方程的逆应用 壹
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/18316.html">
+                     
+										    H1 P0 S3 降熵实验与质能转换方程的逆应用 贰
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/60691.html">
+                     
+										    H1 P0 S4 降熵实验与质能转换方程的逆应用 叁
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/7638.html">
+                     
+										    H1 P0 S5 降熵实验与质能转换方程的逆应用 肆
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/47362.html">
+                     
+										    H1 P0 S6 几份资料片
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/5047.html">
+                     
+										    H1 P0 S7 万事之由-那个午后
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										记叙文
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/posts/32398.html">
+                     
+										    迟到了!迟到了！
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/2042429.html">
+                     
+										    【短文】-彼时故城皆繁华
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										缘缘堂（转载）
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/posts/52608.html">
+                     
+										    原神-李猛干语录MD版-世界树
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/59025.html">
+                     
+										    原神-米忽悠玩家预防针（厂商离谱行为）-世界树
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/47513.html">
+                     
+										    幻兽帕鲁-学习版-资源分享
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/38498.html">
+                     
+										    一枝红信出墙来-steam假激活入库
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/51132.html">
+                     
+										    不要再带XXX回去了
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										藏经阁（教程）
+									</a>
+									
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										hexo
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/posts/45649.html">
+                     
+										    回声洞-开源html组件
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file active">
+									<a href="/posts/26785.html">
+                     
+										    hexo + github-action持续集成
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/52004.html">
+                     
+										    友链区JavaScript组件-重做版
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/25937.html">
+                     
+										    ChatRoom.js-在文章流中分享你的聊天记录
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/63154.html">
+                     
+										    自建busuanzi统计API
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/30593.html">
+                     
+										    image+onedrive 公益图床
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										软件推荐
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/posts/44173.html">
+                     
+										    Windows工具-让你的Windows锦上添花，添了又添
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/859850.html">
+                     
+										    EasyPub-轻量Kindle电子书格式转换工具
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+		</div>
+	</div>
+</div>
+
+                <!-- 引入正文 -->
+                <div id="content" class="content">
+                    <div id="top-obn-space">
+    <div style="flex-grow: 1;">
+        <div class="bulletin-space">
+            <span class="bulletin-span">
+                <i class="fa fa-bullhorn" style="margin: 3px;"></i>
+                公告
+            </span>
+            <p class="bulletin-info">
+                暂无数据-可能是正在加载中或者加载遇到问题
+            </p>
+        </div>
+    </div>
+    <div class="button-space">
+        <div>
+            <button class="top-button" onclick="opensiteinfo()" title="查看站点信息"><i class="fa fa-info-circle"
+                aria-hidden="true" style="margin-right: 4px;"></i>信息</button>
+            <div class="overlay" id="overlay"></div>
+            <div id="siteinfo-page">
+                <p class="text-websiteName">呓语梦轩-站点信息</p>
+                <div id="site-info-div">
+                    <div id="siteinfo-line1">
+                        <div class="meta-info">
+                            <span>
+                                <i class="fa fa-bar-chart" aria-hidden="true"></i> 
+                                总字数：
+                            </span>
+                            <hr>
+                            <span id="all-words" class="number-info">处理中</span>
+                        </div>
+                        <div class="meta-info">
+                            <span>
+                                <i class="fa fa-file-text-o"></i>
+                                总文章数：
+                            </span>
+                            <hr>
+                            <span id="all-posts" class="number-info">处理中</span>
+                        </div>
+                        <div class="meta-info">
+                            <span>
+                                <i class="fa fa-comments" aria-hidden="true"></i>
+                                总评论数：
+                            </span>
+                            <hr>
+                            <span id="all-commets" class="number-info">处理中</span>
+                        </div>
+                    </div>
+                    <button onclick="closesiteinfo()" id="siteinfo-close">关闭</button>
+                </div>
+            </div>
+        </div>
+        <div>
+            <button class="top-button" onclick="showConfirmation()" style="margin-left: 6px;" title="随机跳转一篇文章">
+                <i class="fa fa-random" aria-hidden="true" style="margin-right: 4px;"></i>随机文章
+            </button>
+
+            <div id="goto-post">
+                <div>
+                    <p class="text-websiteName">
+                        呓语梦轩-随机跳转
+                    </p>
+                </div>
+                <div class="post-info">
+                    <div style="display: flex;">
+                        <p id="text-info">你即将前往：</p>
+                    </div>
+                    <div id="post-info"></div>
+                    <div id="btn-space-postinfo">
+                        <div>
+                            <button id="goto-post-yes" class="onfirm-btn gopost-btn">确定</button>
+                            <button id="goto-post-no" class="cancel-btn gopost-btn">取消</button>
+                        </div>
+                        <div>
+                            <button id="refresh" class="refresh-btn gopost-btn"> <i class="fa fa-refresh"
+                                    aria-hidden="true" style="margin-right: 4px;"></i>换一换</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<h1 id="article-title">
+  hexo + github-action持续集成
+</h1>
+
+<!-- meta -->
+<div class="article-meta">
+
+  
+    <div class="meta-cc">
+      <p class="meta-p">
+        温馨提示：本文适用于
+      </p>
+      <p class="meta-p">
+        <a href="https://creativecommons.org/licenses/by-nc/4.0/legalcode.zh-hans" rel="external nofollow noreferrer" target="_blank">署名-非商业性使用(BY-NC)</a>
+      </p>
+      <p class="meta-p2">
+        禁止商用-转载请标注出处
+      </p>
+    </div>
+
+    <div style="margin-top: 10px;"></div>
+    
+
+    
+
+      
+      
+        <span>
+          阅读量
+          <span id="busuanzi_page_pv">ERROR</span>
+          次
+        </span>
+        <span class="article_information">
+          · 共计
+          <span id="word_count">ERROR</span>
+          字
+        </span>
+        <span class="article_information">
+          · 大致要花
+          <span id="read_time">ERROR</span>
+          分钟读完
+        </span>
+        <br>
+          <span>awaae(player8635)</span>
+          <span>2024-06-07 17:18:30</span>
+
+          <div id="article-categories">
+            
+              <span>Categories：</span>
+              
+                
+                  <span>
+                    <i class="fa fa-folder" aria-hidden="true">
+                      <a href="/categories/hexo/">hexo</a>
+                    </i>
+                    
+                  </span>
+                  
+                    
+                      
+
+                        
+                          <span>Tags：</span>
+                          
+                                  
+
+
+                                    
+                                      <span>
+                                        本文已启用fancybox灯箱
+                                      </span>
+                                      
+
+                                        </br>
+
+          </div>
+
+</div>
+
+
+    
+        <link rel="stylesheet" href="/css/tianli_gpt.css">
+        <script>
+            let tianliGPT_postSelector = '#article-content';
+            let tianliGPT_key = 'vgJgWKgS0Va';
+            let tianliGPT_postURL = "*/posts/*.html";
+            let tianliGPT_wordLimit = 1000;
+        </script>
+        <script src="/js/tianli_gpt.js"></script>
+        
+            
+
+  <!-- content -->
+  <div id="article-content">
+    <p>Github action从发布到现在有一段时间了，它可以以一个文件为基础，操作用户的存储库进行修正、检查、持续集成的操作，它不仅仅是一种持续集成和持续交付 (CI/CD) 平台，可用于自动执行生成、测试和部署管道。开发者更可以使用Github action创建<strong>工作流</strong>来构建和测试存储库的每个拉取请求，或将合并的拉取请求<strong>部署到生产环境</strong>。</p>
+<p>同样，它也解放了我们的双手，让我们可以在本地编写完毕后直接上传到github，让github为我们分发和部署我们的项目</p>
+<p>而对于我这个玩<strong>破博客</strong>的人来说，hexo最大的痛点就是只能在本地保存，没有办法揣在兜里就能走（<s>没有管理后台</s>），没法及时保存，及时发布，及时更新。同时，也让多用户协同发生了亿点点不太愉快。</p>
+<h2 id="准备"><a class="header-anchor" href="#准备">¶</a>准备</h2>
+<div class="warning">
+<p><strong>注意</strong><br />
+本文中的演示密钥等皆不会上传到生产环境。</p>
+</div>
+<h3 id="准备工作"><a class="header-anchor" href="#准备工作">¶</a>准备工作</h3>
+<p>在开始之前，你要完成一些<strong>非常简单</strong>的准备工作，比如一个<a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/">github</a>账号，一个已经在本地运行的<a target="_blank" rel="noopener external nofollow noreferrer" href="https://hexo.io/zh-cn/">hexo博客框架</a>，还有任意一个页面代理的网站，类似<a target="_blank" rel="noopener external nofollow noreferrer" href="https://gh.awaae001.top/">awaae001.github.io</a>。</p>
+<p>先在本地确定你的hexo是正常的：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">hexo clean<br>hexo deploy<br></code></pre></td></tr></table></figure>
+<p>如果不是正常的，那请先部署一个hexo博客框架再进行教程！</p>
+<p>至于如何设置和使用 Hexo，请参考：</p>
+<div class="card-item">
+    <link type="text/css" rel="stylesheet" href="/css/links-page.css" />
+    <div class="card-thumbnail">
+        <img alt="文件获取" title="scdn" decoding="async"
+    src="https://pic.awaae001.top/%E8%97%8F%E7%BB%8F%E9%98%81/github-action/%E6%AD%A3%E6%96%87/scdn_608d8a91.jpg"
+    class="not-shadow not-light-box" width="130" height="80" style="max-height: 80px;">
+    </div>
+    <div class="card-info">
+        <a class="card-links">外部链接【安全】:</a>
+        <br>
+        <a href="https://blog.csdn.net/sinat_37781304/article/details/82729029" rel="external nofollow noreferrer" target="_blank" class="card-title">CSDN-hexo史上最全搭建教程</a>
+        <div class="card-excerpt">
+           Hexo是一款基于Node.js的静态博客框架，依赖少易于安装使用，可以方便的生成静态网页托管在GitHub上，是搭建博客的首选框架。大家可以进入hexo官网进行详细查看，因为Hexo的创建者是台湾人，对中文的支持很友好，可以选择中文进行查看。
+        </div>
+    </div>
+</div>
+<p>如果一切正常，那么请你确定你的hexo主配置文件<code>_config.yml</code>是否有以下的配置，而且注意：<code>repository</code>对应的是你的<strong>仓库SSH</strong>位置</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><code class="hljs yml"><span class="hljs-attr">deploy:</span><br>  <span class="hljs-attr">type:</span> <span class="hljs-string">git</span><br>  <span class="hljs-attr">repository:</span><br>    <span class="hljs-attr">github:</span> <span class="hljs-string">git@github.com:awaae001/awaae001.github.io.git</span><br>    <span class="hljs-comment">#coding: git@e.coding.net:g-sulf7984/awaae001/awaae001.git</span><br></code></pre></td></tr></table></figure>
+<h3 id="密钥生成"><a class="header-anchor" href="#密钥生成">¶</a>密钥生成</h3>
+<p>互联网上面的教程有一部分是使用github-token来进行推送操作，不同的方式有不同的好，我们这里选择在本地生成独属于这个仓库的<code>ssh-key</code>，这个密钥如果控制得当，它将会只有你<code>.github.io</code>仓库的权限，<strong>我们不建议你使用你绑定的github-ssh-key，这会非常危险！</strong></p>
+<p>在<strong>Git-Bash</strong>中输入命令（windows），linux\MacOS 在终端中输入:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">ssh-keygen -t rsa -b 4096 -C <span class="hljs-string">&quot;Hexo Deploy Key&quot;</span> -f github-deploy-key -N <span class="hljs-string">&quot;&quot;</span><br></code></pre></td></tr></table></figure>
+<p>这会在当前目录生成两个文件：</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>github-deploy-key 【私钥】</p>
+</li>
+<li class="lvl-2">
+<p>github-deploy-key.pub 【公钥】</p>
+</li>
+</ul>
+<p><img src="https://pic.awaae001.top/%E8%97%8F%E7%BB%8F%E9%98%81/github-action/%E6%AD%A3%E6%96%87/%E7%94%9F%E6%88%90ssh-key_8584dea3.webp" alt="生成ssh-key" /></p>
+<p>请保管好你的密钥！</p>
+<p>我们把私钥放到我们存放 Hexo 原始文件的代码仓库里面，它的位置在你hexo文件夹的<code>/</code>目录，直接复制粘贴就好了，用于用于触发 Actions 时使用</p>
+<p>把公钥放到 GitHub Pages 对应的代码仓库里面，建议放在你的<strong>主题</strong>的<code>/source</code>（资源）文件夹下面，用于 Hexo 部署时的写入工作。可以参考下图进行操作</p>
+<p><img src="https://pic.awaae001.top/%E8%97%8F%E7%BB%8F%E9%98%81/github-action/%E6%AD%A3%E6%96%87/%E6%94%BE%E5%9C%A8%E6%96%87%E4%BB%B6%E5%A4%B9%E9%87%8C%E9%9D%A2_b70a805f.webp" alt="放在文件夹里面" /></p>
+<blockquote>
+<p>至此，准备结束</p>
+</blockquote>
+<h2 id="Github"><a class="header-anchor" href="#Github">¶</a>Github</h2>
+<h3 id="变量-博客仓库"><a class="header-anchor" href="#变量-博客仓库">¶</a>变量-博客仓库</h3>
+<p>将你的博客上传到github仓库，记得使用<code>.gitignore</code>配置文件排除一部分的文件，如果你上传这些文件的话，你的github仓库可能会拒绝你的操作，因为这些文件可以重复生成，而且非常巨大！</p>
+<figure class="highlight txt"><table><tr><td class="code"><pre><code class="hljs txt">.DS_Store<br>Thumbs.db<br>db.json<br>*.log<br>node_modules/<br>public/<br>.deploy*/<br>_multiconfig.yml<br></code></pre></td></tr></table></figure>
+<p>GitHub 上打开保存 Hexo 的仓库，访问 <code>Settings</code> (设置)-&gt; <code>Secrets and variables</code> （机密和变量）-&gt;<code>New repository secret</code>（新存储库密钥【绿色】），将会出现一个页面：</p>
+<p><img src="https://pic.awaae001.top/%E8%97%8F%E7%BB%8F%E9%98%81/github-action/%E6%AD%A3%E6%96%87/%E5%A1%AB%E5%86%99%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F_f52738c5.webp" alt="填写环境变量" /></p>
+<p>你应该这样填写：</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>Name</p>
+<ul class="lvl-2">
+<li class="lvl-6">变量名称，在本文它为:<code>HEXO_DEPLOY_KEY</code> ，注意大小写，后面在编写工作流文件的时候用的到</li>
+</ul>
+</li>
+<li class="lvl-2">
+<p>Secret</p>
+<ul class="lvl-2">
+<li class="lvl-6">变量内容，<code>github-deploy-key</code> 也就是私钥中的内容</li>
+</ul>
+</li>
+</ul>
+<p>保存退出</p>
+<h3 id="变量-github-io仓库"><a class="header-anchor" href="#变量-github-io仓库">¶</a>变量-github.io仓库</h3>
+<p>和你第一次部署一样，你要往仓库中写入你的公钥，让系统对过来的读写请求进行验证，同样，这也是非常重要的一部分，让我们进入存放网页的仓库(<strong>就是你的.github.io站点仓库</strong>)，访问：访问 <code>Settings</code> (设置)-&gt; <code>Deploy keys</code> （部署密钥）-&gt;<code>add Deploy keys</code>（添加部署密钥）。</p>
+<p><img src="https://pic.awaae001.top/%E8%97%8F%E7%BB%8F%E9%98%81/github-action/%E6%AD%A3%E6%96%87/%E6%B7%BB%E5%8A%A0%E9%83%A8%E7%BD%B2%E5%AF%86%E9%92%A5_4a0e1c15.webp" alt="添加部署密钥" /></p>
+<p>你应该这样填写：</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>Title</p>
+<ul class="lvl-2">
+<li class="lvl-6">密钥名称，在这里<code>HEXO_DEPLOY_PUB</code> 字样，当然也可以填写其它自定义的名字，这里没有什么其他的要求</li>
+</ul>
+</li>
+<li class="lvl-2">
+<p>Key</p>
+<ul class="lvl-2">
+<li class="lvl-6">密钥内容，填写<code>github-deploy-key.pug </code>（公钥） 文件的内容。</li>
+</ul>
+</li>
+<li class="lvl-3">
+<p>Allow write access</p>
+<ul class="lvl-2">
+<li class="lvl-6">是否允许写入，选中运许</li>
+</ul>
+</li>
+</ul>
+<p>保存退出</p>
+<h3 id="创建-Workflow"><a class="header-anchor" href="#创建-Workflow">¶</a>创建 Workflow</h3>
+<p>到最后一步了，我们要在你的<strong>hexo</strong>仓库中创建一个<code>.github/workflows/deploy.yml</code>，文件名可以自定义，但是文件必须要在<code>.github/workflows/</code>下面，要不然会将无法正确的激活 <em>CI/CD</em> 工作流，文件的内容如下：</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><code class="hljs yml"><span class="hljs-attr">name:</span> <span class="hljs-string">Hexo</span> <span class="hljs-string">Blog</span> <span class="hljs-string">CI</span><br><br><span class="hljs-attr">on:</span><br>  <span class="hljs-attr">push:</span><br>    <span class="hljs-attr">branches:</span><br>      <span class="hljs-bullet">-</span> <span class="hljs-string">main</span><br>  <span class="hljs-attr">watch:</span><br>    <span class="hljs-attr">types:</span> [<span class="hljs-string">started</span>]<br><br><span class="hljs-attr">jobs:</span><br>  <span class="hljs-attr">build:</span><br>    <span class="hljs-attr">runs-on:</span> <span class="hljs-string">ubuntu-latest</span><br><br>    <span class="hljs-attr">steps:</span><br>    <span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-string">Checkout</span> <span class="hljs-string">Repository</span> <span class="hljs-string">master</span> <span class="hljs-string">branch</span><br>      <span class="hljs-attr">uses:</span> <span class="hljs-string">actions/checkout@main</span><br><br>    <span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-string">Setup</span> <span class="hljs-string">Node.js</span> <span class="hljs-string">latest</span><br>      <span class="hljs-attr">uses:</span> <span class="hljs-string">actions/setup-node@main</span><br>      <span class="hljs-attr">with:</span><br>        <span class="hljs-attr">node-version:</span> <span class="hljs-string">&quot;latest&quot;</span><br><br>    <span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-string">Setup</span> <span class="hljs-string">Hexo</span> <span class="hljs-string">Dependencies</span><br>      <span class="hljs-attr">run:</span> <span class="hljs-string">|</span><br><span class="hljs-string">        npm i hexo-cli -g</span><br><span class="hljs-string">        npm i yarn -g</span><br><span class="hljs-string">        yarn</span><br><span class="hljs-string"></span><br>    <span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-string">Setup</span> <span class="hljs-string">Deploy</span> <span class="hljs-string">Private</span> <span class="hljs-string">Key</span><br>      <span class="hljs-attr">env:</span><br>        <span class="hljs-attr">ACTION_DEPLOY_KEY:</span> <span class="hljs-string">$&#123;&#123;</span> <span class="hljs-string">secrets.HEXO_DEPLOY_KEY</span> <span class="hljs-string">&#125;&#125;</span><br>      <span class="hljs-attr">run:</span> <span class="hljs-string">|</span><br><span class="hljs-string">        mkdir -p ~/.ssh/</span><br><span class="hljs-string">        echo &quot;$ACTION_DEPLOY_KEY&quot; &gt; ~/.ssh/id_rsa</span><br><span class="hljs-string">        chmod 700 ~/.ssh</span><br><span class="hljs-string">        chmod 600 ~/.ssh/id_rsa</span><br><span class="hljs-string">        ssh-keyscan github.com &gt;&gt; ~/.ssh/known_hosts</span><br><span class="hljs-string">        git config --global user.email &quot;3271436144@qq.com&quot;</span><br><span class="hljs-string">        git config --global user.name &quot;awaae001&quot;</span><br><span class="hljs-string"></span><br>    <span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-string">Deploy</span> <span class="hljs-string">Hexo</span><br>      <span class="hljs-attr">run:</span> <span class="hljs-string">|</span><br><span class="hljs-string">        hexo clean</span><br><span class="hljs-string">        hexo deploy</span><br></code></pre></td></tr></table></figure>
+<p>保存后，它会持续监测<code>main</code>分支的更改，一旦监测到更改，他就会在最新版<code>ubuntu</code>系统下为使用最新版的<code>Node.js</code>来您部署你的<code>hexo</code></p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><code class="hljs yml"><span class="hljs-string">git</span> <span class="hljs-string">config</span> <span class="hljs-string">--global</span> <span class="hljs-string">user.email</span> <span class="hljs-string">&quot;3271436144@qq.com&quot;</span><br><span class="hljs-string">git</span> <span class="hljs-string">config</span> <span class="hljs-string">--global</span> <span class="hljs-string">user.name</span> <span class="hljs-string">&quot;awaae001&quot;</span><br></code></pre></td></tr></table></figure>
+<p>注意将这些内容替换成你的用户名和邮件哦</p>
+<p>注意 ：<code>$&#123;&#123; secrets.HEXO_DEPLOY_KEY &#125;&#125; </code>就是对应我们之前设置的私钥，如果你更改了你的私钥，请更改这里的变量名字，否则将无法使用。</p>
+<h3 id="效果"><a class="header-anchor" href="#效果">¶</a>效果</h3>
+<p><img src="https://pic.awaae001.top/%E8%97%8F%E7%BB%8F%E9%98%81/github-action/%E6%AD%A3%E6%96%87/%E6%95%88%E6%9E%9C%E5%9B%BE_795ae725.webp" alt="效果图" /></p>
+<p>前面有绿色钩钩的，就表示部署成功，红色叉叉的表示失败。如果部署失败，还会收到 GitHub 的邮件提醒（当然，部署成功也会有）</p>
+<h2 id="最后"><a class="header-anchor" href="#最后">¶</a>最后</h2>
+<p>其实到这里就要结束了，你在部署了github action后就可以去试试<a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.oplog.cn/qexo/start.html">qexo</a>或者是<a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.dev/github/dev">github.dev</a>，你也可以享受直接在<strong>VScode</strong>的<code>源代码管理</code>界面直接提交的便利。而且使用ssh-KEY还会方便你以后将hexo上传到服务器哦！</p>
+
+
+    <div class="page-cover">
+      
+        <p style="font-size: 24px;">封面图片：</p>
+        <img src="https://pic.awaae001.top/%E8%97%8F%E7%BB%8F%E9%98%81/github-action/%E7%94%BB%E6%9D%BF%201_a87f7363.jpg" alt="github-action" class="page-cover-image">
+        
+    </div>
+  </div>
+
+  
+    <div id="share-give">
+      <div class="share-button-container">
+        <link rel="stylesheet" type="text/css" href="/css/pach-post.css">
+        <div>
+          <button class="support-button" onclick="openSupportDialog()"><i class="fa fa-qrcode" aria-hidden="true" style="margin-right: 4px;"></i>赞助</button>
+
+          <div id="support-dialog">
+            <p class="info">
+              呓语梦轩-赞助
+            </p>
+            <div id="image-container">
+              <img class="give-img" src="/file/微信.webp" alt="Support Image">
+              <img class="give-img" src="/file/支付宝.webp" alt="Support Image">
+            </div>
+            <p class="like-p">啊，没钱了，谁来帮帮我啊</p>
+            <button class="close-button" onclick="closeSupportDialog()">好的</button>
+          </div>
+        </div>
+        <button class="share-button" onclick="generateAndCopyLink()"><i class="	fa fa-share-square"aria-hidden="true" style="margin-right: 4px;"></i>分享</button>
+      </div>
+    </div>
+    
+
+      <div id="article-categories">
+        <span class="span-info">
+          本站评论因服务器问题，请要发图片的各位自行至
+          <a target="_blank" rel="noopener" href="//image.m-c.top">博主自建图床</a>
+          上传再分享
+        </span>
+        </br>
+        <span class="span-info">
+          欢迎阅读本站评论区
+          <a href="/">指南</a>
+          再进行评论
+        </span>
+      </div>
+
+      <div id="comment" style="margin-top: 16px;">
+        
+          
+            
+            
+              
+    <!-- Artalk -->
+    <div id="Comments"></div>
+    <script>
+        Artalk.init({
+            el: '#Comments',                // 绑定元素的 Selector
+            pageKey: '',                  // 固定链接 (留空自动获取)
+            pageTitle: '',  // 页面标题 (留空自动获取)
+            server: 'https://talk.m-c.top',  // 后端地址
+            site: '呓语梦轩',             // 你的站点名
+        })
+    </script>
+    
+
+              
+                <div class="post-guide">
+                  <div class="item left">
+                    
+                      <a href="/posts/908575.html">
+                        <i class="fa fa-angle-left" aria-hidden="true"></i>
+                        06-时代造青年，还是青年造时代？
+                      </a>
+                      
+                  </div>
+                  <div class="item right">
+                    
+                      <a href="/posts/52004.html">
+                        友链区JavaScript组件-重做版
+                          <i class="fa fa-angle-right" aria-hidden="true"></i>
+                      </a>
+                      
+                  </div>
+                </div>
+                
+      </div>
+
+                </div>
+                <div id="footer">
+	<div class="footer-links">
+		<div>
+			<span>
+				友情链接
+				-
+				<button id="regenerateButton" class="randomLinks">刷新</button>
+			</span>
+			<div id="randomLinks"></div>
+			<script src="/js/randomlinks.js"></script>
+		</div>
+		<div>
+			<span class="a-links">
+				<span>
+					其他链接
+				</span>
+				<a href="//blog.awaae001.top/about" target="_blank">关于我</a>
+				---
+				<a href="//blog.awaae001.top/atom.xml" target="_blank">Rss订阅</a>
+				---
+				<a href="https://blog.awaae001.top/posts/57663.html" target="_blank">隐私协议</a>
+			</span>
+		</div>
+	</div>
+	<p>
+		©&nbsp;<span id="footerYear-start">2022</span>-<span id="footerYear-end"></span>
+		
+				<a href="/">awaae(player8635)</a>
+				
+					<br>
+					Theme <a href="//github.com/awaae001/hexo-theme-banyan" target="_blank">banyan（榕）</a>
+					by <a href="//awaae001.top" target="_blank">awaae001</a>
+					Powered by <a href="//hexo.io" target="_blank">Hexo</a>
+
+					<!-- 新添加的链接 -->
+					<br>
+					<a href="https://icp.gov.moe/?keyword=20234005" rel="external nofollow noreferrer" target="_blank">萌ICP备20234005号</a>
+					&nbsp;|&nbsp;
+					<a target="_blank" rel="noopener" href="https://beian.miit.cn.com/gov/search.php?domain=blog.awaae001.top"
+						title="MIIT备00008635号">MIIT-00008635号</a>
+					<br>
+
+					<span>
+						本站图片由
+						<a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.lightxi.com/">
+							晞云
+						</a>
+						提供全局加速服务
+					</span>
+					<br>
+
+					<span>
+						总访问量 :<span id="busuanzi_site_pv"></span>
+						总访客数 :<span id="busuanzi_site_uv"></span>
+					</span>
+
+					<br>
+					<a title="呓语梦轩" target="_blank" rel="noopener external nofollow noreferrer" href="https://boringbay.com"><img height="18px"
+							src="https://boringbay.com/api/badge/blog.awaae001.top"></img></a>
+
+					<br>
+					<img src="https://img.shields.io/badge/Frame-Hexo-blue?logo=Hexo&label=框架">
+					<img
+						src="https://img.shields.io/badge/CDN%E5%8A%A0%E9%80%9F-%E6%99%9E%E4%BA%91-%2392daff?logo=icloud&logoColor=%2392daff">
+					<a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/awaae001">
+						<img
+						src="https://img.shields.io/badge/Github-awaae001-%238db90b?style=flat&logo=github&logoColor=%23181717&link=https%3A%2F%2Fgithub.com%2Fawaae001"> </a>
+					<img
+						src="https://img.shields.io/badge/%E7%BC%96%E8%BE%91%E5%99%A8-VScode-%23007ACC?style=flat&logo=visualstudiocode&logoColor=%23007ACC&color=%23007ACC">
+					<img
+						src="https://img.shields.io/badge/%E4%B8%BB%E9%A2%98-banyan-rgb(172%2C%2071%2C%2053)?logo=hexo&logoColor=rgb(172%2C%2071%2C%2053)">
+					<img
+						src="https://img.shields.io/badge/%E5%89%8D%E7%AB%AF%E6%A1%86%E6%9E%B6-VanillaJS-%23f3d890?logo=javascript&logoColor=%23f3d890g">
+
+					<br>
+
+					<div>
+						<button class="blog-links" onclick="Showlinks()">
+							展示\关闭-博客园塔
+						</button>
+						<div id="blogLinks">
+							<!-- 博客园塔 -->
+							<a href="https://blogverse.cn" target="_blank" rel="noopener noreferrer"
+								title="中文博客圈列表">博客圈列表</a>
+							<br /># -> 随机跳转页面
+							<div class="bokequan">
+								<a href="https://firewood.news" target="_blank" rel="noopener noreferrer"
+									title="积薪-致敬那些还在写博客的人">积薪</a>
+								|
+								<a href="https://chuanliu.org" target="_blank" rel="noopener noreferrer"
+									title="川流，取川之意，流水之情">川流</a>
+								|
+								<a href="https://www.boyouquan.com/planet-shuttle" target="_blank"
+									rel="noopener noreferrer" title="博友圈-博客人的朋友圈">博友圈</a>
+								<a href="https://www.boyouquan.com/planet-shuttle" target="_blank"
+									rel="noopener noreferrer" title="星球穿梭-博友圈">#</a>
+								<br />
+								<a href="http://www.jetli.com.cn" target="_blank" rel="noopener noreferrer"
+									title="博客志-优秀个人独立博客导航">博客志</a>
+								|
+								<a href="https://bokequan.cn" target="_blank" rel="noopener noreferrer"
+									title="致力于个人独立博客，按地区分类，由段先森维护">博客圈</a>
+								<a href="https://bokequan.cn/?suiji" target="_blank" rel="noopener noreferrer"
+									title="穿梭-致力于个人独立博客博客园">#</a>
+								|
+								<a href="https://www.travellings.cn" target="_blank" rel="noopener noreferrer"
+									title="让传统友链“活跃”，让网页相互接力，让流量相互流动，让网络开放起来">开往</a>
+								<a href="https://www.travellings.cn/go.html" target="_blank" rel="noopener noreferrer"
+									title="开往-友链接力">#</a>
+								<br />
+								<a href="https://blogwe.com" target="_blank" rel="noopener noreferrer"
+									title="致敬还在写博客的我们！">BlogWe</a>
+								|
+								<a href="https://zhblogs.ohyee.cc" target="_blank" rel="noopener noreferrer"
+									title="尝试链接几乎所有的中文博客">中文博客列表导航</a>
+								<a href="https://zhblogs.ohyee.cc/go" target="_blank" rel="noopener noreferrer"
+									title="随机跳转-尝试链接几乎所有的中文博客">#</a>
+								<br />
+								<a href="https://blogscn.fun" target="_blank" rel="noopener noreferrer"
+									title="致敬还在写博客的我们">笔墨迹</a>
+								<a href="https://blogscn.fun/random.html" target="_blank" rel="noopener noreferrer"
+									title="笔墨迹-虫洞">#</a>
+								|
+								<a href="https://storeweb.cn" target="_blank" rel="noopener noreferrer"
+									title="一个精致的，带社交元素的个人网站发布平台，博客收录网站">个站商店</a>
+								<a href="https://storeweb.cn/s/2070" target="_blank" rel="noopener noreferrer"
+									title="个站商店-虫洞">#</a>
+								|
+								<a href="https://www.wlxxq.com" target="_blank" rel="noopener noreferrer"
+									title="未来信息-希望在未来还能遇见你博客的信息">未来信息</a>
+								<br />
+								<a href="https://boke.lu" target="_blank" rel="noopener noreferrer"
+									title="boke.lu · 博客收录展示平台~">博客录</a>
+								<a href="https://bokelu.suijiboke.gs" target="_blank" rel="noopener noreferrer"
+									title="随机浏览博客录收录的所有博客">#</a>
+								|
+								<a href="https://travel.moe" target="_blank" rel="noopener noreferrer"
+									title="我们一起去萌站成员de星球旅行吧 ！">异次元之旅</a>
+								<a href="https://travel.moe/go.html?travel=on" target="_blank" rel="noopener noreferrer"
+									title="跃迁-我们一起去萌站成员de星球旅行吧 ！">#</a>
+								|
+								<a href="https://www.foreverblog.cn" target="_blank" rel="noopener noreferrer"
+									title="一个人的寂寞，一群人的狂欢。">十年之约</a>
+								<a href="https://www.foreverblog.cn/go.html" target="_blank" rel="noopener noreferrer"
+									title="穿梭虫洞-随机访问十年之约友链博客">#</a>
+								<br />
+								<a href="https://ourblo.gs" target="_blank" rel="noopener noreferrer"
+									title="在茫茫比特流之中，能遇见你，真是幸运！">OurBlogs</a>
+								|
+								<a href="https://github.com/timqian/chinese-independent-blogs" target="_blank"
+									rel="noopener noreferrer" title="中文独立博客列表">中文独立博客列表</a>
+								|
+								<a href="https://bf.zzxworld.com" target="_blank" rel="noopener noreferrer"
+									title="BlogFinder-发现优秀的个人博客">BlogFinder</a>
+								<br />
+							</div>
+						</div>
+
+					</div>
+	</p>
+
+	<!-- 一段用于在页底显示运行时间的代码 by:awaae001 -->
+	
+		<div id="runtime-card" style="background-color: #60281e; color: #fff; text-align: center; padding: 10px;">
+			本站已运行：
+				</br>
+				<span id="uptime">加载中...</span>
+		</div>
+		
+
+			<script type="text/javascript">
+				const TIME_CONST = 365 * 24 * 60 * 60 * 1000;
+				const TIME_START = new Date("5/28/2023 14:13:45");
+
+				function update_website_uptime_banner() {
+					var website_uptime_banner = document.getElementById("uptime");
+					var timestamp_now = new Date(); // 当前时间
+					var time = timestamp_now.getTime() - TIME_START.getTime();
+					var years = time / TIME_CONST;
+					var int_years = parseInt(years);
+					var days = time / (24 * 60 * 60 * 1000); // 计算有多少天
+					var int_days = parseInt(days); // 计算有多少完整的天
+					var hours = (days - int_days) * 24; // 计算除去完整的天 剩下不完整的天有多少 ×24得到有多少个小时
+					var int_hours = parseInt(hours); // 计算完整的小时
+					var mins = (hours - int_hours) * 60; // 计算除去完整的天,小时 剩下不完整的小时 x60得到有多少分钟
+					var int_mins = parseInt(mins); // 计算完整的分钟
+					var sec = (mins - int_mins) * 60; // 计算除去完整的天,小时,分钟 剩下不完整的分钟 x60得到有多少秒
+					var int_sec = parseInt(sec); // 计算完整的秒
+					//var msec = (sec - int_sec) * 1000; 计算除去完整的天,小时,分钟,秒 剩下不完整的秒 x1000得到有多少毫秒
+					//var int_msec = parseInt(msec); 计算完整的毫秒
+
+					website_uptime_banner.innerHTML =
+						int_days +
+						" 日 " +
+						String(int_hours) +
+						" 小时 " +
+						String(int_mins) +
+						" 分 " +
+						String(int_sec) +
+						" 秒 " +
+						"(共：" +
+						int_years +
+						" 年)";
+				}
+
+				update_website_uptime_banner();
+				setInterval(update_website_uptime_banner, 1000);
+			</script>
+
+
+			
+					<script type="text/javascript">
+						document.getElementById('footerYear-end').innerHTML = new Date().getFullYear() + '';
+					</script>
+
+					
+                    <div id="toggle">
+    <div id="toggle-bord">
+        <button id="totop-toggle-totop" class="toggle" title="返回顶部">
+            <i class="fa fa-angle-double-up" aria-hidden="true"></i>
+        </button>
+        <button id="footer-toggle-tocommet" class="toggle-tocommet"
+            title="前往评论区">
+            <span class="button-text">前往评论区</span>
+            <i class="fa fa-commenting-o" aria-hidden="true"></i>
+        </button>
+    </div>
+</div>
+
+<div id="myModal" class="modal">
+    <div class="modal-content">
+        <p>未找到评论区！,我们会在3秒后为你跳转到留言板</p>
+    </div>
+</div>
+
+<div id="myModal" class="modal">
+    <div class="modal-content">
+        <p>未找到评论区！,我们会在3秒后为你跳转到留言板</p>
+    </div>
+</div>
+
+<div>
+    <link rel="stylesheet" type="text/css" href="/css/lnterception.css">
+    <script src="/js/lnterception.js"></script>
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <div id="website-name"></div>
+            <p style="color: black;">你即将前往：</p>
+            <div id="website-url" style="color:rgb(43, 105, 100);"></div>
+            <p style="color: black;">请注意你的账号财产安全！</p>
+            <button id="cancel-btn" class="popup-btn">取消</button>
+            <button id="confirm-btn" class="popup-btn">确定</button>
+        </div>
+    </div>
+</div>
+
+<div id="popup-box" class="mess-popup mess-hidden">
+    <div id="popup-info">
+        <span id="popup-title"></span>
+        <span id="popup-timer"></span>
+    </div>
+    <span id="popup-content"></span>
+</div>
+
+<script>
+const Popup = (() => {
+    let countdownInterval;
+    let popupQueue = [];
+    let isPopupVisible = false;
+
+    function processQueue() {
+        if (popupQueue.length > 0 && !isPopupVisible) {
+            const nextPopup = popupQueue.shift(); // 取出队列中的下一个弹窗
+            showPopup(nextPopup.title, nextPopup.message, nextPopup.type);
+        }
+    }
+
+    function showPopup(title, message, type) {
+        const popupBox = document.getElementById('popup-box');
+        const popupTitle = document.getElementById('popup-title');
+        const popupTimer = document.getElementById('popup-timer');
+        const popupContent = document.getElementById('popup-content');
+
+        popupTitle.textContent = title;
+        popupContent.textContent = message;
+
+        popupBox.classList.remove('mess-warning', 'mess-error', 'mess-prompt', 'mess-hidden');
+
+        if (type === 'warning') {
+            popupBox.classList.add('mess-warning');
+        } else if (type === 'error') {
+            popupBox.classList.add('mess-error');
+        } else if (type === 'prompt') {
+            popupBox.classList.add('mess-prompt');
+        }
+
+        // 防止倒计时冲突
+        if (countdownInterval) {
+            clearInterval(countdownInterval);
+        }
+
+        // 设置倒计时为 5 秒
+        let countdown = 5;
+        popupTimer.textContent = `(${countdown}s)`;
+
+        // 标记弹窗为显示状态
+        isPopupVisible = true;
+
+        countdownInterval = setInterval(() => {
+            countdown -= 1;
+            popupTimer.textContent = `(${countdown}s)`;
+            if (countdown <= 0) {
+                clearInterval(countdownInterval);
+            }
+        }, 1000);
+
+        // 显示弹窗动画
+        setTimeout(() => {
+            popupBox.style.right = '10px';
+        }, 100); // 确保动画生效的小延迟
+
+        // 5 秒后隐藏弹窗，并在隐藏后检查队列
+        setTimeout(() => {
+            popupBox.style.right = '-100%';
+            setTimeout(() => {
+                popupBox.classList.add('mess-hidden');
+                isPopupVisible = false; // 标记弹窗已隐藏
+                processQueue(); // 检查并显示队列中的下一个弹窗
+            }, 500); // 等待隐藏动画结束后再处理队列
+        }, 5000);
+    }
+
+    function queuePopup(title, message, type) {
+        // 将新的弹窗请求加入队列
+        popupQueue.push({ title, message, type });
+        processQueue(); // 处理队列中的弹窗
+    }
+
+    return {
+        show: queuePopup // 使用队列的方式调用弹窗
+    };
+})();
+
+// 示例用法：
+// Popup.show('Warning Title', 'This is a warning message', 'warning');
+// Popup.show('Error Title', 'This is an error message', 'error');
+// Popup.show('Prompt Title', 'This is a prompt message', 'prompt');
+</script>
+                    <script src="/js/footer/img-reback.js" async></script>
+                    <script src="/js/instant.js" ></script>
+    </body>
+
+</html>
+<!-- 
+       　  　▃▆█▇▄▖
+　 　 　 ▟◤▖　　　◥█▎
+   　 ◢◤　 ▐　　　 　▐▉
+　 ▗◤　　　▂　▗▖　　▕█▎
+　◤　▗▅▖◥▄　▀◣　　█▊
+▐　▕▎◥▖◣◤　　　　◢██
+█◣　◥▅█▀　　　　▐██◤
+▐█▙▂　　     　◢██◤
+◥██◣　　　　◢▄◤
+ 　　▀██▅▇▀
+
+
+哲学♂ 114514 
+ -->
