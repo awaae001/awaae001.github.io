@@ -1,0 +1,1906 @@
+<!--
+               * _oo0oo_
+              * o8888888o * 
+              88"  .  "88 
+              * (| -_- |) * 
+                 0\ = /0 
+            * ___/`---'\___ *
+              .' \\| |// '. 
+          * / \\||| : |||// \ *
+          / _||||| -:- |||||- \ 
+          * | | \\\ - /// | | * 
+          | \_| ''\---/'' |_/ |
+         * \ .-\__ '-' ___/-. / *
+        ___'. .' /--.--\ `. .'___ 
+   * ."" '< `.___\_<|>_/___.' >' "". * 
+    | | : `- \`.;`\ _ /`;.`/ - ` : | |
+    * \ \ `_. \_ __\ /__ _/ .-` / / * =====`
+     -.____`.___ \_____/___.-`___.-
+             '===== * `=---=' 
+                  * * * 
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+       佛祖保佑 永不宕机 永无BUG  
+	   服务器不卡，图床不崩，CDN正常
+
+       大慈大悲
+-->
+
+<!DOCTYPE html>
+<html lang="zh">
+
+<!-- 欢迎使用hexo_BT-banyun[榕树] 
+
+ █████╗ ██╗    ██╗ █████╗  █████╗ ███████╗    ██████╗  █████╗ ███╗   ██╗██╗   ██╗██╗   ██╗███╗   ██╗
+██╔══██╗██║    ██║██╔══██╗██╔══██╗██╔════╝    ██╔══██╗██╔══██╗████╗  ██║╚██╗ ██╔╝██║   ██║████╗  ██║
+███████║██║ █╗ ██║███████║███████║█████╗█████╗██████╔╝███████║██╔██╗ ██║ ╚████╔╝ ██║   ██║██╔██╗ ██║
+██╔══██║██║███╗██║██╔══██║██╔══██║██╔══╝╚════╝██╔══██╗██╔══██║██║╚██╗██║  ╚██╔╝  ██║   ██║██║╚██╗██║
+██║  ██║╚███╔███╔╝██║  ██║██║  ██║███████╗    ██████╔╝██║  ██║██║ ╚████║   ██║   ╚██████╔╝██║ ╚████║
+╚═╝  ╚═╝ ╚══╝╚══╝ ╚═╝  ╚═╝╚═╝  ╚═╝╚══════╝    ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═══╝   ╚═╝    ╚═════╝ ╚═╝  ╚═══╝
+                                                                                                    
+-->
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+
+  <script>
+    window.si = window.si || function () {
+      (window.siq = window.siq || []).push(arguments);
+    };
+  </script>
+
+  <!-- Title -->
+  
+  <title>
+    
+      自建busuanzi统计API |
+    
+    呓语梦轩
+  </title>
+
+  <!-- Metadata -->
+  <meta name="description" content="feedId:66423920692680713+userId:75549670478944256" />
+
+  
+    <meta name="keywords" content="busuanzi,自建busuanzi,不蒜子,自建不蒜子API,小说,游戏,hexo,教程" />
+  
+
+  
+    <meta name="description" content="这篇文章介绍了作者如何自己部署busuanzi访问量统计服务。作者发现官方服务经常无法加载出来，影响网站加载速度，因此决定自己部署并管理访问数据。Busuanzi是一个轻量级的网站访问统计工具，可以统计页面浏览量、访客数量，并实时更新统计数据。它可以通过JavaScript代码轻松嵌入网站页面，并提供一些可定制的选项。作者通过使用开源代码和Redis数据库实现了类似于busuanzi的功能。" />
+  
+
+  <!-- Favicon -->
+  
+    <link rel="shortcut icon" href="/ico.jpg">
+  
+
+  <!-- Search -->
+  <script>
+    var searchEngine = "https://www.google.com/search?q=";
+    if (!searchEngine) {
+      searchEngine = "https://www.google.com/search?q=";
+    }
+
+    var homeHost = "blog.awaae001.top";
+    if (!homeHost) {
+      homeHost = window.location.host;
+    }
+  </script>
+
+  <!-- Clarity -->
+  <script type="text/javascript">
+    (function (c, l, a, r, i, t, y) {
+      c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+      t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+      y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+    })(window, document, "clarity", "script", "j67354s1x5");
+  </script>
+
+  <!-- CSS -->
+  
+<link rel="stylesheet" href="/css/main.css">
+
+  
+<link rel="stylesheet" href="/css/top-botton/site-info.css">
+
+  
+<link rel="stylesheet" href="/css/top-botton/postgo.css">
+
+  
+<link rel="stylesheet" href="/css/top-botton/siteinfo-page.css">
+
+  
+<link rel="stylesheet" href="/css/font-awesome.min.css">
+
+  
+<link rel="stylesheet" href="/css/darcula.min.css">
+
+  
+<link rel="stylesheet" href="/css/code.css">
+
+  
+<link rel="stylesheet" href="/css/artalk.css">
+
+  
+<link rel="stylesheet" href="/css/home.css">
+
+
+  <link rel="stylesheet" type="text/css" href="https://blog.awaae001.top/css/card.css">
+  <link rel="preconnect" href="https://fonts.font.im">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.font.im/css2?family=Noto+Serif+SC:wght@200..900&display=swap" rel="stylesheet">
+
+  <!-- JS -->
+  <script src="/js/vendor/jquery.min.js" defer></script>
+  <script src="/js/ui-interactions.js" defer></script>
+  <script src="/js/vendor/highlight.min.js" defer></script>
+  <script src="/js/vendor/jquery.pjax.min.js" defer></script>
+  <script src="/js/main.js" defer></script>
+  <script async src="https://pv.neosora.cc/js"></script>
+  <script src="/js/page-features.js" defer></script>
+  <script src="/js/page-utils.js" defer></script>
+    <script src="/js/lnterception.js" defer></script>
+  <script defer src="https://umami.awaae001.top/script.js" data-website-id="614c425b-3d03-443b-9bc0-36503a1edbdd"></script>
+  <script src="/file/artalk.js"></script>
+
+  
+    <script src="/js/vendor/jquery.fancybox.min.js" defer></script>
+    <script src="/js/fancybox.js" defer></script>
+    
+<link rel="stylesheet" href="/css/jquery.fancybox.min.css">
+
+  
+
+  
+
+  <!-- Background -->
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      position: relative;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      background-image: url('https://pic.awaae001.top/ai1_178504_e25aaeb4.webp');
+      background-size: cover;
+      filter: blur(10px);
+    }
+  </style>
+
+  <!-- Optional SW -->
+  <!-- <script src="/sw-start.js"></script> -->
+<meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="呓语梦轩" type="application/atom+xml">
+</head>
+
+
+    <body>
+        <header id="header">
+  <a id="title" href="/" class="logo">呓语梦轩</a>
+
+<ul id="menu">
+  
+
+  
+
+  
+
+  
+    
+    
+      <li class="menu-item">
+        <a href='/link/' class="menu-item-link" target="_blank">
+          友人帐
+        </a>
+      </li>
+    
+      <li class="menu-item">
+        <a href='/daily/' class="menu-item-link" target="_blank">
+          说说
+        </a>
+      </li>
+    
+      <li class="menu-item">
+        <a href='/link/commit/' class="menu-item-link" target="_blank">
+          留言板
+        </a>
+      </li>
+    
+  
+
+  <li class="menu-item">
+    <a class="travellings" href="https://www.travellings.cn/go.html" target="_blank" rel="noopener external nofollow noreferrer" title="开往-友链接力">
+        🚇 开往
+    </a>
+    
+<link rel="stylesheet" href="/css/other.css">
+
+</li>
+
+  
+    <li class="menu-item">
+      <a href='https://github.com/awaae001' rel="external nofollow noreferrer" class="menu-item-link" target="_blank">
+        <i class="fa fa-github fa-2x"></i>
+      </a>
+    </li>
+  
+</ul>
+</header>
+
+        
+<div id="sidebar">
+	<button id="sidebar-toggle" class="toggle" ><i class="fa fa-arrow-right " aria-hidden="true"></i></button>
+	
+	<div id="site-toc">
+		<input id="search-input" class="search-input" type="search" placeholder="Press Enter to search">
+		<div id="tree">
+			
+
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/12578.html">
+                     
+										    回声洞
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/5401.html">
+                     
+										    about-各大分区内容介绍
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/16107.html">
+                     
+										    Hello World
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										人言堂（感想）
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/posts/50701.html">
+                     
+										    06-《你想活出怎样的人生》-高塔、苍鹭、少年、人生
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										游戏
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/posts/23435.html">
+                     
+										    彼方的她：一场跨越时空的对话，一段孤寂宇宙的回响
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/26598.html">
+                     
+										    逐光 · 启航：愿领航员畅行无阻
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/6884.html">
+                     
+										    飞跃13号房-对网瘾治疗披露与反抗
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/23024.html">
+                     
+										    饿殍：明末千里行-岁大饥，人相食
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										呓语亭（随笔）
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/posts/39440.html">
+                     
+										    【破事水】-对于未来的前瞻于回望
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										热点
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/posts/52376.html">
+                     
+										    AI时代-汹涌而来
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/13860.html">
+                     
+										    贵州消防栓事件的思考
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/25133.html">
+                     
+										    霸凌行为-地狱空荡荡，恶魔在人间！
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										言论
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/posts/1579.html">
+                     
+										    00-少年：江湖走马，陪剑长行
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/20519.html">
+                     
+										    01-我发现一件事
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/10312.html">
+                     
+										    02-成绩可以代表一切吗?
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/27079.html">
+                     
+										    03-早晚都得死，那我们为什么要活着？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/63283.html">
+                     
+										    04-写文章是为了什么?
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/22861.html">
+                     
+										    05-过程与结果
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/908575.html">
+                     
+										    06-时代造青年，还是青年造时代？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/11645.html">
+                     
+										    07-剧终：故事的开端与终末
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/63703.html">
+                     
+										    08-AGI：算力洪流与未坍缩的星光
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										布告板（公告）
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/posts/48274.html">
+                     
+										    更新发布和问题提出
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/46576.html">
+                     
+										    本站转移到云服务器了
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/786782.html">
+                     
+										    十年之约-我与十年后的自己有一个约定
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/57663.html">
+                     
+										    隐私政策
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										幽篁里（其他）
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/posts/57024.html">
+                     
+										    再见2024 · 共赴一场烟火绚烂
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/56520.html">
+                     
+										    一周年-忽而回望，不知光阴几何
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/52584.html">
+                     
+										    2023年度总结
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										忘忧台（记事）
+									</a>
+									
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										2024井冈山
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/posts/65197.html">
+                     
+										    【总结】井冈山研学-了解历史，明见未来
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/17937.html">
+                     
+										    【多图警告】井冈山研学D1
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/18257.html">
+                     
+										    【多图警告】井冈山研学D2
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/38016.html">
+                     
+										    【多图警告】井冈山研学D3
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/46222.html">
+                     
+										    挽歌：第一次相逢与离别
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/27646.html">
+                     
+										    砥砺奋进，勿忘国殇
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										文轩斋（小说）
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/posts/54465.html">
+                     
+										    about-(原创小说)解殃生
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										第一章
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/posts/12593.html">
+                     
+										    第01幕 引子
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/10177.html">
+                     
+										    第02幕 好盆油！
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/52320.html">
+                     
+										    第03幕 军训 天地异动
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/4242.html">
+                     
+										    第04幕 军训 突发情况
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/54466.html">
+                     
+										    第05幕 军训 全员撤离
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/47925.html">
+                     
+										    第06幕 但到远古去
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/5037.html">
+                     
+										    第07幕 有间客栈
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/9309.html">
+                     
+										    第08幕 有间客栈_那个夜晚
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/18297.html">
+                     
+										    第09幕 回景阳城！
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/57307.html">
+                     
+										    第10幕 鹿鼎公府
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										第零章
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/posts/15397.html">
+                     
+										    H1 P0 S1 质子自衰变
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/65294.html">
+                     
+										    H1 P0 S2 降熵实验与质能转换方程的逆应用 壹
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/18316.html">
+                     
+										    H1 P0 S3 降熵实验与质能转换方程的逆应用 贰
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/60691.html">
+                     
+										    H1 P0 S4 降熵实验与质能转换方程的逆应用 叁
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/7638.html">
+                     
+										    H1 P0 S5 降熵实验与质能转换方程的逆应用 肆
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/47362.html">
+                     
+										    H1 P0 S6 几份资料片
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/5047.html">
+                     
+										    H1 P0 S7 万事之由-那个午后
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										记叙文
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/posts/32398.html">
+                     
+										    迟到了!迟到了！
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/2042429.html">
+                     
+										    【短文】-彼时故城皆繁华
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										缘缘堂（转载）
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/posts/52608.html">
+                     
+										    原神-李猛干语录MD版-世界树
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/59025.html">
+                     
+										    原神-米忽悠玩家预防针（厂商离谱行为）-世界树
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/47513.html">
+                     
+										    幻兽帕鲁-学习版-资源分享
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/38498.html">
+                     
+										    一枝红信出墙来-steam假激活入库
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/51132.html">
+                     
+										    不要再带XXX回去了
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										藏经阁（教程）
+									</a>
+									
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										hexo
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/posts/45649.html">
+                     
+										    回声洞-开源html组件
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/26785.html">
+                     
+										    hexo + github-action持续集成
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/52004.html">
+                     
+										    友链区JavaScript组件-重做版
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/25937.html">
+                     
+										    ChatRoom.js-在文章流中分享你的聊天记录
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file active">
+									<a href="/posts/63154.html">
+                     
+										    自建busuanzi统计API
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/30593.html">
+                     
+										    image+onedrive 公益图床
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										软件推荐
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/posts/44173.html">
+                     
+										    Windows工具-让你的Windows锦上添花，添了又添
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/859850.html">
+                     
+										    EasyPub-轻量Kindle电子书格式转换工具
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+		</div>
+	</div>
+</div>
+
+                <!-- 引入正文 -->
+                <div id="content" class="content">
+                    <div id="top-obn-space">
+    <div style="flex-grow: 1;">
+        <div class="bulletin-space">
+            <span class="bulletin-span">
+                <i class="fa fa-bullhorn" style="margin: 3px;"></i>
+                公告
+            </span>
+            <p class="bulletin-info">
+                暂无数据-可能是正在加载中或者加载遇到问题
+            </p>
+        </div>
+    </div>
+    <div class="button-space">
+        <div>
+            <button class="top-button" onclick="opensiteinfo()" title="查看站点信息"><i class="fa fa-info-circle"
+                aria-hidden="true" style="margin-right: 4px;"></i>信息</button>
+            <div class="overlay" id="overlay"></div>
+            <div id="siteinfo-page">
+                <p class="text-websiteName">呓语梦轩-站点信息</p>
+                <div id="site-info-div">
+                    <div id="siteinfo-line1">
+                        <div class="meta-info">
+                            <span>
+                                <i class="fa fa-bar-chart" aria-hidden="true"></i> 
+                                总字数：
+                            </span>
+                            <hr>
+                            <span id="all-words" class="number-info">处理中</span>
+                        </div>
+                        <div class="meta-info">
+                            <span>
+                                <i class="fa fa-file-text-o"></i>
+                                总文章数：
+                            </span>
+                            <hr>
+                            <span id="all-posts" class="number-info">处理中</span>
+                        </div>
+                        <div class="meta-info">
+                            <span>
+                                <i class="fa fa-comments" aria-hidden="true"></i>
+                                总评论数：
+                            </span>
+                            <hr>
+                            <span id="all-commets" class="number-info">处理中</span>
+                        </div>
+                    </div>
+                    <button onclick="closesiteinfo()" id="siteinfo-close">关闭</button>
+                </div>
+            </div>
+        </div>
+        <div>
+            <button class="top-button" onclick="showConfirmation()" style="margin-left: 6px;" title="随机跳转一篇文章">
+                <i class="fa fa-random" aria-hidden="true" style="margin-right: 4px;"></i>随机文章
+            </button>
+
+            <div id="goto-post">
+                <div>
+                    <p class="text-websiteName">
+                        呓语梦轩-随机跳转
+                    </p>
+                </div>
+                <div class="post-info">
+                    <div style="display: flex;">
+                        <p id="text-info">你即将前往：</p>
+                    </div>
+                    <div id="post-info"></div>
+                    <div id="btn-space-postinfo">
+                        <div>
+                            <button id="goto-post-yes" class="onfirm-btn gopost-btn">确定</button>
+                            <button id="goto-post-no" class="cancel-btn gopost-btn">取消</button>
+                        </div>
+                        <div>
+                            <button id="refresh" class="refresh-btn gopost-btn"> <i class="fa fa-refresh"
+                                    aria-hidden="true" style="margin-right: 4px;"></i>换一换</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<h1 id="article-title">
+  自建busuanzi统计API
+</h1>
+
+<!-- meta -->
+<div class="article-meta">
+  
+    <div class="meta-cc">
+      <p class="meta-p">温馨提示：本文适用于</p>
+      <p class="meta-p">
+        <a href="https://creativecommons.org/licenses/by-nc/4.0/legalcode.zh-hans" rel="external nofollow noreferrer" target="_blank">
+          署名-非商业性使用(BY-NC)
+        </a>
+      </p>
+      <p class="meta-p2">禁止商用-转载请标注出处</p>
+    </div>
+    <div style="margin-top: 10px;"></div>
+  
+
+  
+
+  
+
+  <span>阅读量 <span id="busuanzi_page_pv">ERROR</span> 次</span>
+  <span class="article_information">· 共计 <span id="word_count">ERROR</span> 字</span>
+  <span class="article_information">· 大致要花 <span id="read_time">ERROR</span> 分钟读完</span>
+  <br>
+  <span>awaae(player8635)</span>
+  <span>2024-03-24 08:03:41</span>
+
+  <div id="article-categories">
+    
+      <span>Categories：</span>
+      
+    
+
+    
+      <span>Tags：</span>
+      
+    
+
+    
+      <span>本文已启用fancybox灯箱</span>
+    
+    <br>
+  </div>
+</div>
+
+
+    
+        <link rel="stylesheet" href="/css/tianli_gpt.css">
+        <script>
+            let tianliGPT_postSelector = '#article-content';
+            let tianliGPT_key = 'vgJgWKgS0Va';
+            let tianliGPT_postURL = "*/posts/*.html";
+            let tianliGPT_wordLimit = 1000;
+        </script>
+        <script src="/js/tianli_gpt.js"></script>
+        
+            
+
+<!-- content -->
+<div id="article-content">
+  <h2 id="导入"><a class="header-anchor" href="#导入">¶</a>导入</h2>
+<p>目前网上的统计其实也挺多的，比如:51La、百度统计、微软清晰度。但它们都有一个通病：只有一个后台，无法在前端显示这篇文章(博文)的具体数据，也就无法让访客直观的看到这篇文章的访问量或者说是热度。</p>
+<p>于是，不蒜子就诞生了</p>
+<p>根据它的开发者的原话：</p>
+<blockquote>
+<p>静态网站建站现在有很多快速的技术和平台，但静态是优点也有缺点，由于是静态的，一些动态的内容如评论、计数等等模块就需要借助外来平台，评论有“<a target="_blank" rel="noopener external nofollow noreferrer" href="http://duoshuo.com/">多说</a>”，计数有“<a target="_blank" rel="noopener external nofollow noreferrer" href="https://busuanzi.ibruce.info/">不蒜</a>”！<strong>（多说即将关闭，不蒜子还活着涅，这是程序员对程序员的承诺。）</strong></p>
+</blockquote>
+<p>但，随着<a target="_blank" rel="noopener external nofollow noreferrer" href="https://pages.github.com/?(null)">github page</a> / <a target="_blank" rel="noopener external nofollow noreferrer" href="https://vercel.com/">vercel</a> 等项目的上线，静态博客公开API的访问量与日俱，会经常出现一些问题：</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>速度慢，不稳定，经常会出现 502 错误。</p>
+</li>
+<li class="lvl-2">
+<p>代码过时，使用的是 Referrer 方法进行统计，这种方法在移动端 / Firefox / Safari 上统计不准确。</p>
+</li>
+<li class="lvl-2">
+<p>不蒜子的代码使用的是 JSONP 回调，这种方法容易受到 CSRF 攻击，威胁网站安全。</p>
+</li>
+</ul>
+<p>所以，互联网上就涌现了各种各样的busuanzi自建的版本，这也是本次教程的主题。</p>
+<h2 id="项目"><a class="header-anchor" href="#项目">¶</a>项目</h2>
+<p>本次的教程使用的是：<a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/soxft/busuanzi/">https://github.com/soxft/busuanzi/</a><br />
+这个教程</p>
+<div class="card-item">
+    <div class="card-info">
+        <a class="card-links">外部链接【安全】:</a>
+        <br>
+        <a href="https://github.com/soxft/busuanzi/ " rel="external nofollow noreferrer" target="_blank" class="card-title">Github-soxft/busuanzi-自建不蒜子</a>
+        <div class="card-excerpt">
+        自建不蒜子，一个基于 Golang + Redis 的简易访问量统计系统，A simple visitor statistics system based on Golang + Redis，统计站点的，UV, PV统计子页面的 UV, PV，
+        </div>
+    </div>
+</div>
+<p>它还有一个带管理后台的版本：<a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/yuantuo666/busuanzi">https://github.com/yuantuo666/busuanzi</a></p>
+<p>然后，这里有一个测试Demo可以使用：<a target="_blank" rel="noopener external nofollow noreferrer" href="https://busuanzi.9420.ltd/">测试Demo</a></p>
+<h2 id="准备工作！"><a class="header-anchor" href="#准备工作！">¶</a>准备工作！</h2>
+<p>为了这篇教程，你必须准备以下的内容</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>一台服务器</p>
+<ul class="lvl-2">
+<li class="lvl-5">1C1G</li>
+<li class="lvl-5">10G硬盘</li>
+<li class="lvl-5">安装宝塔面板环境</li>
+<li class="lvl-5"><strong>安装<a target="_blank" rel="noopener external nofollow noreferrer" href="https://zhuanlan.zhihu.com/p/653856066">GO环境</a>！</strong></li>
+</ul>
+</li>
+<li class="lvl-2">
+<p>一个自己的域名</p>
+</li>
+<li class="lvl-2">
+<p>脑子 （<strong>这是喂奶级教程，不带也可以</strong>）</p>
+</li>
+</ul>
+<p>tips:</p>
+<p>本教程还有docker部署版本，<s>但是我太懒了没有写</s>所以请点击链接跳转到其他站点进行查阅，我不保证链接的可用性（<s>不是我的站点</s>）</p>
+<div class="card-item">
+    <div class="card-info">
+        <a class="card-links">外部链接【安全】:</a>
+        <br>
+         <a href="https://blog.qyliu.top/posts/e401be2d/" rel="external nofollow noreferrer" target="_blank" class="card-title">docker自部署busuanzi访问量统计服务-清羽飞扬</a>
+        <div class="card-excerpt">
+        这篇文章介绍了作者如何自己部署busuanzi访问量统计服务。作者发现官方服务经常无法加载出来，影响网站加载速度，因此决定自己部署并管理访问数据。Busuanzi是一个轻量级的网站访问统计工具，可以统计页面浏览量、访客数量，并实时更新统计数据。它可以通过JavaScript代码轻松嵌入网站页面，并提供一些可定制的选项。作者通过使用开源代码和Redis数据库实现了类似于busuanzi的功能。
+        </div>
+    </div>
+</div>
+<h2 id="部署"><a class="header-anchor" href="#部署">¶</a>部署</h2>
+<h3 id="易错省流版"><a class="header-anchor" href="#易错省流版">¶</a>易错省流版</h3>
+<ol>
+<li class="lvl-3">
+<p><code>git clone https://github.com/soxft/busuanzi.git &amp;&amp; cd busuanzi</code></p>
+<p><code>go build -o busuanzi main.go</code></p>
+</li>
+</ol>
+<p>2.根据提示修改 config.yml</p>
+<p>3.编辑 dist/busuanzi.js 替换链接为自己的, 也可以编辑ts文件自行编译</p>
+<p>4.通过命令 ./busuanzi 启动程序</p>
+<hr />
+<h3 id="特殊编译环境准备：GO"><a class="header-anchor" href="#特殊编译环境准备：GO">¶</a>特殊编译环境准备：GO</h3>
+<p>后面需要用到GO环境的编译服务器busuanzi核心文件，在这里使用包管理器安装GO</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>Ubuntu/Debian</p>
+</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">sudo apt update<br>sudo apt install golang<br></code></pre></td></tr></table></figure>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>Fedora</p>
+</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">sudo dnf install golang<br></code></pre></td></tr></table></figure>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>CentOS/RHEL</p>
+</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">sudo yum install golang<br></code></pre></td></tr></table></figure>
+<h3 id="step-1-资源准备"><a class="header-anchor" href="#step-1-资源准备">¶</a>step-1 资源准备</h3>
+<p>打开你的宝塔面板 ，进入<code>文件</code>页面，点击<code>新建目录</code>，在文件夹的命名框中将文件夹命名为<code>data</code>，而后确定！<br />
+<img src="https://pic.awaae001.top/%E8%97%8F%E7%BB%8F%E9%98%81/busuanzi/%E6%AD%A3%E6%96%87/%E6%96%B0%E5%BB%BAdata_32296be8.webp" alt="新建data" /></p>
+<p>打开<a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/soxft/busuanzi">github仓库</a>，点击<code>&lt;&gt;code</code>绿色按钮，在呼出的菜单中右键<code>Download ZIP</code>，在右键菜单中选择<code>复制链接</code><br />
+<img src="https://pic.awaae001.top/%E8%97%8F%E7%BB%8F%E9%98%81/busuanzi/%E6%AD%A3%E6%96%87/%E8%8E%B7%E5%8F%96%E9%93%BE%E6%8E%A5_c0a6934b.webp" alt="获取链接" /></p>
+<p>回到你的宝塔面板，此时，您应该在<code>文件页面</code>下的<code>data</code>目录里面，如果是的，那我们继续！</p>
+<p>点击<code>远程下载</code>在呼出的下拉菜单中选择第一个<code>从URL链接下载</code>并在弹出的弹窗中输入在上一步获取的<code>链接</code>，注意：<strong>这个输入框已预填充了http://，请覆盖填充，确保链接开头是Https://</strong></p>
+<p>点击<code>确定</code>并等待下载完成！</p>
+<p>下载完成后<code>双击</code>或者<code>右键文件</code>并在呼出的右键菜单中选择：<code>解压缩</code>，等待解压完成！</p>
+<p><img src="https://pic.awaae001.top/%E8%97%8F%E7%BB%8F%E9%98%81/busuanzi/%E6%AD%A3%E6%96%87/%E4%B8%8B%E8%BD%BDURL_74c530b4.webp" alt="下载URL" /></p>
+<p>目前为止，所有资源准备就绪！</p>
+<p><strong>记得把<code>busuanzi-main</code>更名为<code>busuanzi</code>！！！！！！</strong></p>
+<h3 id="step-2-添加网站"><a class="header-anchor" href="#step-2-添加网站">¶</a>step-2 添加网站</h3>
+<p>接下来跳转到网站页面，点击<code>添加站点</code>在弹出的弹窗中选中<code>域名</code>输入框并在里面输入<strong>你的域名</strong>。然后，选中根目录输入框并点击后面的<code>文件夹</code>小图标。选择<code>目录</code>到<code>你安装busuanzi的地方</code>，即/<strong>busuanzi</strong></p>
+<p>确认，安装！<br />
+<img src="https://pic.awaae001.top/%E8%97%8F%E7%BB%8F%E9%98%81/busuanzi/%E6%AD%A3%E6%96%87/%E6%B7%BB%E5%8A%A0%E7%AB%99%E7%82%B9_8a5d5c3a.webp" alt="添加站点" /></p>
+<p>进入新网站的管理页面：<br />
+<img src="https://pic.awaae001.top/%E8%97%8F%E7%BB%8F%E9%98%81/busuanzi/%E6%AD%A3%E6%96%87/%E5%AE%8C%E6%88%90_3caf870a.webp" alt="完成" /></p>
+<p>在你的DNS服务商那里添加你域名的DNS记录方便访问。</p>
+<p><strong>因为DNS服务商太多了,这里不一一列举，我拿我用的Cloudflare举例子。</strong><br />
+<img src="https://pic.awaae001.top/%E8%97%8F%E7%BB%8F%E9%98%81/busuanzi/%E6%AD%A3%E6%96%87/%E6%B7%BB%E5%8A%A0DNS_8fd857d1.webp" alt="添加DNS" /><br />
+<s>图片里面的busuanzi少打了一个<strong>a</strong>,不要学我。</s></p>
+<p><strong>记得提前配置SSL</strong>！</p>
+<h3 id="step-3-数据库"><a class="header-anchor" href="#step-3-数据库">¶</a>step-3 数据库</h3>
+<p>完成网站的配置后进入宝塔面板的<code>数据库</code>页面，选择<code>Redis</code>数据库，如果你没有安装Redis数据库，它会提示您安装，点击<code>点击安装</code>并在弹出的弹窗中点击<code>快速安装</code><br />
+<img src="https://pic.awaae001.top/%E8%97%8F%E7%BB%8F%E9%98%81/busuanzi/%E6%AD%A3%E6%96%87/%E5%AE%89%E8%A3%85redis_e415caf6.webp" alt="安装redis" /></p>
+<p>等待安装完成</p>
+<h3 id="step-4-进入配置"><a class="header-anchor" href="#step-4-进入配置">¶</a>step-4 进入配置</h3>
+<p>其实在等待数据库安装的时候我们就可以去调整配置了，这个步骤非常重要，将会影响到你的busuanzi<strong>可不可以正常使用</strong>，没搞好的话要重新下载，重新部署</p>
+<p>进入你busuanzi的安装位置，在这个教程的安装位置应该是<code>~/data/busuanzi</code>，在宝塔面板中的<code>文件页面</code>中打开这个目录。</p>
+<p>找到<code>data/busuanzi/config.yaml</code>配置文件，你也可以在SSH中输入</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">vim /data/busuanzi/config.yaml<br></code></pre></td></tr></table></figure>
+<p>来使用ssh进行配置</p>
+<p>在这里，你只需要更改Redis的地址，将<code>Redis</code>下面的<code>Address</code>字段中<code>Redis:6379</code>更改为<code>127.0.0.1:6379</code>保存即可，当然，我也建议您将数据有效期关闭，原来的有效期是<code>一个月</code>，这有点短了。</p>
+<p><img src="https://pic.awaae001.top/%E8%97%8F%E7%BB%8F%E9%98%81/busuanzi/%E6%AD%A3%E6%96%87/%E7%BC%96%E8%BE%91%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6_b54ea204.webp" alt="编辑配置文件" /></p>
+<p>宝塔面板按快捷键<code>Ctrl</code>+<code>s</code>保存，vim编辑器使用<code>:wq</code>保存并退出。</p>
+<p>接着，保存并关闭配置文件，进入目录下面的<code>/dist</code>文件夹，找到里面名为<code>/busuanzi.js</code>的JavaScript文件，绝对路径是：<code>/data/busuanzi/dist/busanzi.js</code>，宝塔面板双击编辑，ssh使用命令：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">vim /data/busuanzi/dist/busuanzi.js<br></code></pre></td></tr></table></figure>
+<p>进入编辑器，</p>
+<p>将<code>http://127.0.0.1:8080/api</code>改为<code>https://你的域名/api</code>，加入你要使用SSL的话，请必须将<code>http</code>改为<code>https</code>，否则，在生成后，你将无法修改http的属性，有可能要重新部署！<br />
+<img src="https://pic.awaae001.top/%E8%97%8F%E7%BB%8F%E9%98%81/busuanzi/%E6%AD%A3%E6%96%87/busaunzi-js_86f9fcff.webp" alt="busaunzi-js" /></p>
+<p>同样：宝塔面板按快捷键<code>Ctrl</code>+<code>s</code>保存，vim编辑器使用<code>:wq</code>保存并退出。</p>
+<h3 id="step-5-编译"><a class="header-anchor" href="#step-5-编译">¶</a>step-5 编译</h3>
+<p>在确保上面的配置均无异常以后，我们准备开始编译busuanzi服务器了，这一步比较简单，让我们开始吧！</p>
+<p>回到busuanzi的根文件夹<code>/data/busuanzi</code>，你可以使用宝塔自带的ssh终端，也可以使用自己的终端，在宝塔终端中输入：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">go build -o busuanzi main.go<br></code></pre></td></tr></table></figure>
+<p>在其他ssh软件中输入：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">cd /data/busuanzi<br>go build -o busuanzi main.go<br></code></pre></td></tr></table></figure>
+<p>回车</p>
+<p><img src="https://pic.awaae001.top/%E8%97%8F%E7%BB%8F%E9%98%81/busuanzi/%E6%AD%A3%E6%96%87/build_3c922faf.webp" alt="build" /><br />
+<s>223开头的是客户端IP哦</s></p>
+<p>指令输出：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">go build -o busuanzi main.go<br>go: downloading github.com/gin-gonic/gin v1.7.7<br>go: downloading gopkg.in/yaml.v2 v2.4.0<br>go: downloading github.com/gomodule/redigo v1.8.8<br>go: downloading github.com/gin-contrib/sse v0.1.0<br>go: downloading github.com/mattn/go-isatty v0.0.12<br>go: downloading github.com/go-playground/validator/v10 v10.4.1<br>go: downloading github.com/golang/protobuf v1.3.3<br>go: downloading github.com/ugorji/go/codec v1.1.7<br>go: downloading golang.org/x/sys v0.15.0<br>go: downloading github.com/go-playground/universal-translator v0.17.0<br>go: downloading github.com/leodido/go-urn v1.2.0<br>go: downloading golang.org/x/crypto v0.17.0<br>go: downloading github.com/go-playground/locales v0.13.0<br></code></pre></td></tr></table></figure>
+<h3 id="step-6-反向代理"><a class="header-anchor" href="#step-6-反向代理">¶</a>step-6 反向代理</h3>
+<p>我们的不蒜子是运行在<code>8080</code>端口的，所以，我们得让其他人可以不带端口的访问，这就是反向代理。</p>
+<p>再次回到宝塔面板的网站控制，在你的不蒜子站点后面选择<code>设置</code>在弹窗中选项卡选择<code>反向代理-添加反向代理</code>接着，在<code>创建反向代理</code>弹窗中选择<code>名称</code>和<code>目标URL</code>字段。</p>
+<p><code>名称</code>可以随便填</p>
+<p><code>目标URL</code>必须为：<code>http://127.0.0.1:8080</code></p>
+<p>点击<code>提交</code></p>
+<p><img src="https://pic.awaae001.top/%E8%97%8F%E7%BB%8F%E9%98%81/busuanzi/%E6%AD%A3%E6%96%87/%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86_1d6cea9b.webp" alt="反向代理" /></p>
+<p>回到<code>busuanzi</code>的根目录，在ssh中键入<code>./busuanzi</code>以启动服务器</p>
+<p>访问【你的域名】即可看到不蒜子服务器成功启动！</p>
+<p><strong>守护进程参见：链接</strong></p>
+<h2 id="使用"><a class="header-anchor" href="#使用">¶</a>使用</h2>
+<p>部署完成了，接下来是使用</p>
+<p>你可以看到，自建不蒜子API页面已经有了使用的教程,但是,这里有一个小问题:<strong>它不是你部署的那个不蒜子,而是开发者的Demo</strong>。所以，你要使用的话，就必须将它给的api地址换成你的。</p>
+<p>还有就是，你要看下面的访问量，有数据才是成功</p>
+<p><img src="https://pic.awaae001.top/%E8%97%8F%E7%BB%8F%E9%98%81/busuanzi/%E6%AD%A3%E6%96%87/use_0d88401a.webp" alt="use" /></p>
+<h2 id="疑难杂症"><a class="header-anchor" href="#疑难杂症">¶</a>疑难杂症</h2>
+<h3 id="关闭ssh就退出-守护进程"><a class="header-anchor" href="#关闭ssh就退出-守护进程">¶</a>关闭ssh就退出-守护进程</h3>
+<p>目前还有一个问题，就是你一旦退出ssh，那么你的不蒜子就会退出，这边给你一个小方法来解决这个问题，那就是：<strong>创建系统守护进程</strong></p>
+<p>其实挺简单，在<code>/usr/lib/systemd/system</code>下面创建一个叫做：<code>busuanzi.service</code>的守护进程文件。</p>
+<p><strong>宝塔用户自己在<code>文件</code>页面找过去，双击编辑</strong>。喜欢用SSH的输入下面的指令：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">vim /usr/lib/systemd/system/busuanzi.service<br></code></pre></td></tr></table></figure>
+<p>将下面的内容复制过去，在本教程中<code>[你的busuanzi路径]</code>均为<code>/data/busuanzi</code></p>
+<figure class="highlight txt"><table><tr><td class="code"><pre><code class="hljs txt">[Unit]<br>Description=busuanzi<br>After=network.target<br> <br>[Service]<br>Type=simple<br>WorkingDirectory=[你busuanzi路径]<br>ExecStart=[你busuanzi路径]/busuanzi server<br>Restart=on-failure<br> <br>[Install]<br>WantedBy=multi-user.target<br></code></pre></td></tr></table></figure>
+<p>同样：宝塔面板按快捷键<code>Ctrl</code>+<code>s</code>保存，vim编辑器使用<code>:wq</code>保存并退出。</p>
+<p>接下来，使用指令SSH：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">systemctl daemon-reload<br></code></pre></td></tr></table></figure>
+<p>来重载服务器守护进程配置</p>
+<p><img src="https://pic.awaae001.top/%E8%97%8F%E7%BB%8F%E9%98%81/busuanzi/%E6%AD%A3%E6%96%87/%E5%AE%88%E6%8A%A4%E8%BF%9B%E7%A8%8B_e4d2fa73.webp" alt="守护进程" /></p>
+<p>这样，守护进程就完成配置了</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>启动: <code>systemctl start busuanzi</code></p>
+</li>
+<li class="lvl-2">
+<p>关闭: <code>systemctl stop busuanzi</code></p>
+</li>
+<li class="lvl-2">
+<p>配置开机自启: <code>systemctl enable busuanzi</code></p>
+</li>
+<li class="lvl-2">
+<p>取消开机自启: <code>systemctl disable busuanzi</code></p>
+</li>
+<li class="lvl-2">
+<p>状态: <code>systemctl status busuanzi</code></p>
+</li>
+<li class="lvl-2">
+<p>重启: <code>systemctl restart busuanzi</code></p>
+</li>
+</ul>
+<p>开机自启！</p>
+<h3 id="关闭ssh就退出-tumx服务"><a class="header-anchor" href="#关闭ssh就退出-tumx服务">¶</a>关闭ssh就退出-tumx服务</h3>
+<p>tmux是一种ssh持续化程序，它可以将你离开前的SSH服务保持为运行的状态,即使你关闭了ssh终端，你的命令依旧可以在服务器中运行，并不用担心你离开有服务就停止运行。</p>
+<p>但它是命令行程序，所以不太适合那些喜欢用服务器面板的读者。</p>
+<p>你可以使用</p>
+<p>centOS</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">yum install tmux<br></code></pre></td></tr></table></figure>
+<p>debian</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">apt-get install tmux<br></code></pre></td></tr></table></figure>
+<p>安装后在shell终端输入</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">tmux<br></code></pre></td></tr></table></figure>
+<p>即可！</p>
+<div class="card-item">
+    <link type="text/css" rel="stylesheet" href="https://blog.awaae001.top/css/links-page.css" />
+    <div class="card-info">
+        <a class="card-links">扩展阅读【安全】:</a>
+        <br>
+        <a href="https://www.ruanyifeng.com/blog/2019/10/tmux.html" rel="external nofollow noreferrer" target="_blank" class="card-title">Tmux 使用教程</a>
+        <div class="card-excerpt">
+            命令行的典型使用方式是，打开一个终端窗口（terminal window，以下简称"窗口"），在里面输入命令。用户与计算机的这种临时的交互，称为一次"会话"（session。会话的一个重要特点是，窗口与其中启动的进程是连在一起的。打开窗口，会话开始；关闭窗口，会话结束，会话内部的进程也会随之终止，不管有没有运行完。一个典型的例子就是，SSH 登录远程计算机，打开一个远程窗口执行命令。这时，网络突然断线，再次登录的时候，是找不回上一次执行的命令的。因为上一次 SSH 会话已经终止了，里面的进程也随之消失了。
+        </div>
+    </div>
+</div>
+<h2 id="最后的最后"><a class="header-anchor" href="#最后的最后">¶</a>最后的最后</h2>
+<p>不蒜子只是对于文章活跃度的指标，有盗刷的风险，本质上是给人看的东西，那应该也要搞好，是吧？</p>
+<p>目前这个busuanzi演示站点将会很快关闭，大家如果真的不想自建的话可以使用这个：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">async</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;https://pv.neosora.cc/js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br>本文总阅读量 <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;busuanzi_page_pv&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span> 次<br>本文总访客量 <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;busuanzi_page_uv&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span> 人<br>本站总访问量 <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;busuanzi_site_pv&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span> 次<br>本站总访客数 <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;busuanzi_site_uv&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span> 人<br></code></pre></td></tr></table></figure>
+<p>还有，感谢看到这里的你，谢谢！</p>
+
+
+  <div class="page-cover">
+    
+      <p style="font-size: 24px;">封面图片：</p>
+      <img src="https://pic.awaae001.top/%E8%97%8F%E7%BB%8F%E9%98%81/busuanzi/busanzi.webp" alt="busuanzi" class="page-cover-image">
+    
+  </div>
+</div>
+
+
+  <div id="share-give">
+    <div class="share-button-container">
+      <link rel="stylesheet" type="text/css" href="/css/pach-post.css">
+      <div>
+        <button class="support-button" onclick="openSupportDialog()">
+          <i class="fa fa-qrcode" aria-hidden="true" style="margin-right: 4px;"></i>
+          赞助
+        </button>
+
+        <div id="support-dialog">
+          <p class="info">
+            呓语梦轩 - 赞助
+          </p>
+          <div id="image-container">
+            <img class="give-img" src="/file/微信.webp" alt="Support Image">
+            <img class="give-img" src="/file/支付宝.webp" alt="Support Image">
+          </div>
+          <p class="like-p">啊，没钱了，谁来帮帮我啊</p>
+          <button class="close-button" onclick="closeSupportDialog()">好的</button>
+        </div>
+      </div>
+
+      <button class="share-button" onclick="generateAndCopyLink()">
+        <i class="fa fa-share-square" aria-hidden="true" style="margin-right: 4px;"></i>
+        分享
+      </button>
+    </div>
+  </div>
+
+
+<div id="article-categories">
+  <span class="span-info">
+    本站评论因服务器问题，请要发图片的各位自行至
+    <a target="_blank" rel="noopener" href="//image.neosora.cc">博主自建图床</a> 上传再分享
+  </span>
+  <br>
+  <span class="span-info">
+    欢迎阅读本站评论区 <a href="/">指南</a> 再进行评论
+  </span>
+</div>
+
+<div id="comment" style="margin-top: 16px;">
+  
+  
+            
+  
+  
+    <!-- Artalk -->
+    <div id="Comments"></div>
+    <script>
+        Artalk.init({
+            el: '#Comments',                // 绑定元素的 Selector
+            pageKey: '',                  // 固定链接 (留空自动获取)
+            pageTitle: '',  // 页面标题 (留空自动获取)
+            server: 'https://comment.neosora.cc',  // 后端地址
+            site: '呓语梦轩',             // 你的站点名
+        })
+    </script>
+    
+
+  
+    <div class="post-guide">
+      <div class="item left">
+        
+          <a href="/posts/25133.html">
+            <i class="fa fa-angle-left" aria-hidden="true"></i>
+            霸凌行为-地狱空荡荡，恶魔在人间！
+          </a>
+        
+      </div>
+      <div class="item right">
+        
+          <a href="/posts/63283.html">
+            04-写文章是为了什么?
+            <i class="fa fa-angle-right" aria-hidden="true"></i>
+          </a>
+        
+      </div>
+    </div>
+  
+</div>
+
+                </div>
+                <div id="footer">
+  <div class="footer-links">
+    <div>
+      <span>
+        友情链接 - 
+        <button id="regenerateButton" class="randomLinks">刷新</button>
+      </span>
+      <div id="randomLinks"></div>
+      <script src="/js/friend-links-combined.js"></script>
+    </div>
+    <div>
+      <span class="a-links">
+        <span>其他链接</span>
+        <a href="//blog.awaae001.top/about" target="_blank">关于我</a>
+        ---
+        <a href="//blog.awaae001.top/atom.xml" target="_blank">Rss订阅</a>
+        ---
+        <a href="https://blog.awaae001.top/posts/57663.html" target="_blank">隐私协议</a>
+      </span>
+    </div>
+  </div>
+
+  <p>
+    ©&nbsp;<span id="footerYear-start">2022</span>-
+    <span id="footerYear-end"></span>
+    
+      <a href="/">awaae(player8635)</a>
+    
+    <br>
+    Theme 
+    <a href="//github.com/awaae001/hexo-theme-banyan" target="_blank">banyan（榕）</a> by 
+    <a href="//awaae001.top" target="_blank">awaae001</a>
+    Powered by 
+    <a href="//hexo.io" target="_blank">Hexo</a>
+
+    <br>
+    <a href="https://icp.gov.moe/?keyword=20234005" rel="external nofollow noreferrer" target="_blank">萌ICP备20234005号</a>
+    &nbsp;|&nbsp;
+    <a target="_blank" rel="noopener external nofollow noreferrer" href="https://beian.miit.cn.com/gov/search.php?domain=blog.awaae001.top" title="MIIT备00008635号">MIIT-00008635号</a>
+
+    <br>
+    <span>
+      本站图片由 
+      <a target="_blank" rel="noopener external nofollow noreferrer" href="https://chuqiyun.com/">初七云</a> 提供全局加速服务
+    </span>
+
+    <br>
+    <span>
+      总访问量 : <span id="busuanzi_site_pv"></span>
+      总访客数 : <span id="busuanzi_site_uv"></span>
+    </span>
+
+    <br>
+    <a title="呓语梦轩" target="_blank" rel="noopener external nofollow noreferrer" href="https://boringbay.com">
+      <img height="18px" src="https://boringbay.com/api/badge/blog.awaae001.top" />
+    </a>
+
+    <br>
+    <img src="https://img.shields.io/badge/Frame-Hexo-blue?logo=Hexo&label=框架">
+    <img src="https://img.shields.io/badge/CDN%E5%8A%A0%E9%80%9F-%E5%88%9D%E4%B8%83%E4%BA%91-%252392daff?logo=icloud&logoColor=%252392daff">
+    <a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/awaae001">
+      <img src="https://img.shields.io/badge/Github-awaae001-%238db90b?style=flat&logo=github&logoColor=%23181717">
+    </a>
+    <img src="https://img.shields.io/badge/%E7%BC%96%E8%BE%91%E5%99%A8-VScode-%23007ACC?style=flat&logo=visualstudiocode&logoColor=%23007ACC&color=%23007ACC">
+    <img src="https://img.shields.io/badge/%E4%B8%BB%E9%A2%98-banyan-rgb(172%2C%2071%2C%2053)?logo=hexo&logoColor=rgb(172%2C%2071%2C%2053)">
+    <img src="https://img.shields.io/badge/%E5%89%8D%E7%AB%AF%E6%A1%86%E6%9E%B6-VanillaJS-%23f3d890?logo=javascript&logoColor=%23f3d890g">
+
+    <br>
+
+
+  <!-- 站点运行时间展示 -->
+  
+    <div id="runtime-card" style="background-color: #60281e; color: #fff; text-align: center; padding: 10px;">
+      本站已运行：
+      <br />
+      <span id="uptime">加载中...</span>
+    </div>
+  
+
+  <script type="text/javascript">
+    const TIME_CONST = 365 * 24 * 60 * 60 * 1000;
+    const TIME_START = new Date("5/28/2023 14:13:45");
+
+    function update_website_uptime_banner() {
+      const website_uptime_banner = document.getElementById("uptime");
+      const timestamp_now = new Date();
+      const time = timestamp_now.getTime() - TIME_START.getTime();
+      const years = time / TIME_CONST;
+      const int_years = parseInt(years);
+      const days = time / (24 * 60 * 60 * 1000);
+      const int_days = parseInt(days);
+      const hours = (days - int_days) * 24;
+      const int_hours = parseInt(hours);
+      const mins = (hours - int_hours) * 60;
+      const int_mins = parseInt(mins);
+      const sec = (mins - int_mins) * 60;
+      const int_sec = parseInt(sec);
+
+      website_uptime_banner.innerHTML = `${int_days} 日 ${int_hours} 小时 ${int_mins} 分 ${int_sec} 秒 (共：${int_years} 年)`;
+    }
+
+    update_website_uptime_banner();
+    setInterval(update_website_uptime_banner, 1000);
+  </script>
+
+  
+  <script type="text/javascript">
+    document.getElementById('footerYear-end').innerHTML = new Date().getFullYear() + '';
+  </script>
+
+  
+</div>
+
+                    <div id="toggle">
+    <div id="toggle-bord">
+        <button id="totop-toggle-totop" class="toggle" title="返回顶部">
+            <i class="fa fa-angle-double-up" aria-hidden="true"></i>
+        </button>
+        <button id="footer-toggle-tocommet" class="toggle-tocommet"
+            title="前往评论区">
+            <span class="button-text">前往评论区</span>
+            <i class="fa fa-commenting-o" aria-hidden="true"></i>
+        </button>
+    </div>
+</div>
+
+<div id="myModal" class="modal">
+    <div class="modal-content">
+        <p>未找到评论区！,我们会在3秒后为你跳转到留言板</p>
+    </div>
+</div>
+
+<div id="myModal" class="modal">
+    <div class="modal-content">
+        <p>未找到评论区！,我们会在3秒后为你跳转到留言板</p>
+    </div>
+</div>
+
+<div>
+    <link rel="stylesheet" type="text/css" href="/css/lnterception.css">
+    <script src="/js/lnterception.js"></script>
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <div id="website-name"></div>
+            <p style="color: black;">你即将前往：</p>
+            <div id="website-url" style="color:rgb(43, 105, 100);"></div>
+            <p style="color: black;">请注意你的账号财产安全！</p>
+            <button id="cancel-btn" class="popup-btn">取消</button>
+            <button id="confirm-btn" class="popup-btn">确定</button>
+        </div>
+    </div>
+</div>
+
+<div id="popup-box" class="mess-popup mess-hidden">
+    <div id="popup-info">
+        <span id="popup-title"></span>
+        <span id="popup-timer"></span>
+    </div>
+    <span id="popup-content"></span>
+</div>
+
+<script>
+const Popup = (() => {
+    let countdownInterval;
+    let popupQueue = [];
+    let isPopupVisible = false;
+
+    function processQueue() {
+        if (popupQueue.length > 0 && !isPopupVisible) {
+            const nextPopup = popupQueue.shift(); // 取出队列中的下一个弹窗
+            showPopup(nextPopup.title, nextPopup.message, nextPopup.type);
+        }
+    }
+
+    function showPopup(title, message, type) {
+        const popupBox = document.getElementById('popup-box');
+        const popupTitle = document.getElementById('popup-title');
+        const popupTimer = document.getElementById('popup-timer');
+        const popupContent = document.getElementById('popup-content');
+
+        popupTitle.textContent = title;
+        popupContent.textContent = message;
+
+        popupBox.classList.remove('mess-warning', 'mess-error', 'mess-prompt', 'mess-hidden');
+
+        if (type === 'warning') {
+            popupBox.classList.add('mess-warning');
+        } else if (type === 'error') {
+            popupBox.classList.add('mess-error');
+        } else if (type === 'prompt') {
+            popupBox.classList.add('mess-prompt');
+        }
+
+        // 防止倒计时冲突
+        if (countdownInterval) {
+            clearInterval(countdownInterval);
+        }
+
+        // 设置倒计时为 5 秒
+        let countdown = 5;
+        popupTimer.textContent = `(${countdown}s)`;
+
+        // 标记弹窗为显示状态
+        isPopupVisible = true;
+
+        countdownInterval = setInterval(() => {
+            countdown -= 1;
+            popupTimer.textContent = `(${countdown}s)`;
+            if (countdown <= 0) {
+                clearInterval(countdownInterval);
+            }
+        }, 1000);
+
+        // 显示弹窗动画
+        setTimeout(() => {
+            popupBox.style.right = '10px';
+        }, 100); // 确保动画生效的小延迟
+
+        // 5 秒后隐藏弹窗，并在隐藏后检查队列
+        setTimeout(() => {
+            popupBox.style.right = '-100%';
+            setTimeout(() => {
+                popupBox.classList.add('mess-hidden');
+                isPopupVisible = false; // 标记弹窗已隐藏
+                processQueue(); // 检查并显示队列中的下一个弹窗
+            }, 500); // 等待隐藏动画结束后再处理队列
+        }, 5000);
+    }
+
+    function queuePopup(title, message, type) {
+        // 将新的弹窗请求加入队列
+        popupQueue.push({ title, message, type });
+        processQueue(); // 处理队列中的弹窗
+    }
+
+    return {
+        show: queuePopup // 使用队列的方式调用弹窗
+    };
+})();
+
+// 示例用法：
+// Popup.show('Warning Title', 'This is a warning message', 'warning');
+// Popup.show('Error Title', 'This is an error message', 'error');
+// Popup.show('Prompt Title', 'This is a prompt message', 'prompt');
+</script>
+                    <script src="/js/instant.js" ></script>
+    </body>
+
+</html>
+<!-- 
+       　  　▃▆█▇▄▖
+　 　 　 ▟◤▖　　　◥█▎
+   　 ◢◤　 ▐　　　 　▐▉
+　 ▗◤　　　▂　▗▖　　▕█▎
+　◤　▗▅▖◥▄　▀◣　　█▊
+▐　▕▎◥▖◣◤　　　　◢██
+█◣　◥▅█▀　　　　▐██◤
+▐█▙▂　　     　◢██◤
+◥██◣　　　　◢▄◤
+ 　　▀██▅▇▀
+
+
+哲学♂ 114514 
+ -->

@@ -1,0 +1,65 @@
+div#siteinfo-page {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 9999;
+    border: 6px solid rgb(51, 124, 118);
+    /* 弹窗边框 */
+    border-radius: 4px;
+    max-width: 900px;
+    max-height: 750px;
+}
+
+div.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* 半透明黑色背景 */
+    z-index: 999;
+    /* 确保覆盖层在弹窗下方 */
+}
+
+div#site-info-div {
+    margin-top: 32px;
+}
+
+@media (min-width: 720px) {
+    div#siteinfo-line1 {
+        display: flex;
+    }
+}
+
+@media (max-width: 720px) {
+    div#siteinfo-line1 {
+        display: grid;
+    }
+}
+
+
+div.meta-info {
+    border: 3px solid rgb(51, 124, 118);
+    border-radius: 4px;
+    background-color: rgb(241, 243, 248);
+    margin: 6px;
+    padding: 8px;
+}
+
+span.number-info {
+    font-size: 24px;
+}
+
+button#siteinfo-close {
+    padding: 10px 14px 10px 14px;
+    background-color: rgb(242, 45, 45);
+    color: white;
+    border-radius: 4px;
+}

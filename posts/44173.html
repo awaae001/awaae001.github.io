@@ -1,0 +1,1976 @@
+<!--
+               * _oo0oo_
+              * o8888888o * 
+              88"  .  "88 
+              * (| -_- |) * 
+                 0\ = /0 
+            * ___/`---'\___ *
+              .' \\| |// '. 
+          * / \\||| : |||// \ *
+          / _||||| -:- |||||- \ 
+          * | | \\\ - /// | | * 
+          | \_| ''\---/'' |_/ |
+         * \ .-\__ '-' ___/-. / *
+        ___'. .' /--.--\ `. .'___ 
+   * ."" '< `.___\_<|>_/___.' >' "". * 
+    | | : `- \`.;`\ _ /`;.`/ - ` : | |
+    * \ \ `_. \_ __\ /__ _/ .-` / / * =====`
+     -.____`.___ \_____/___.-`___.-
+             '===== * `=---=' 
+                  * * * 
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+       佛祖保佑 永不宕机 永无BUG  
+	   服务器不卡，图床不崩，CDN正常
+
+       大慈大悲
+-->
+
+<!DOCTYPE html>
+<html lang="zh">
+
+<!-- 欢迎使用hexo_BT-banyun[榕树] 
+
+ █████╗ ██╗    ██╗ █████╗  █████╗ ███████╗    ██████╗  █████╗ ███╗   ██╗██╗   ██╗██╗   ██╗███╗   ██╗
+██╔══██╗██║    ██║██╔══██╗██╔══██╗██╔════╝    ██╔══██╗██╔══██╗████╗  ██║╚██╗ ██╔╝██║   ██║████╗  ██║
+███████║██║ █╗ ██║███████║███████║█████╗█████╗██████╔╝███████║██╔██╗ ██║ ╚████╔╝ ██║   ██║██╔██╗ ██║
+██╔══██║██║███╗██║██╔══██║██╔══██║██╔══╝╚════╝██╔══██╗██╔══██║██║╚██╗██║  ╚██╔╝  ██║   ██║██║╚██╗██║
+██║  ██║╚███╔███╔╝██║  ██║██║  ██║███████╗    ██████╔╝██║  ██║██║ ╚████║   ██║   ╚██████╔╝██║ ╚████║
+╚═╝  ╚═╝ ╚══╝╚══╝ ╚═╝  ╚═╝╚═╝  ╚═╝╚══════╝    ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═══╝   ╚═╝    ╚═════╝ ╚═╝  ╚═══╝
+                                                                                                    
+-->
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+
+  <script>
+    window.si = window.si || function () {
+      (window.siq = window.siq || []).push(arguments);
+    };
+  </script>
+
+  <!-- Title -->
+  
+  <title>
+    
+      Windows工具-让你的Windows锦上添花，添了又添 |
+    
+    呓语梦轩
+  </title>
+
+  <!-- Metadata -->
+  <meta name="description" content="feedId:66423920692680713+userId:75549670478944256" />
+
+  
+    <meta name="keywords" content="小说,游戏,hexo,教程" />
+  
+
+  
+    <meta name="description" content="一个小站点,很小，很破，很温馨-awaae" />
+  
+
+  <!-- Favicon -->
+  
+    <link rel="shortcut icon" href="/ico.jpg">
+  
+
+  <!-- Search -->
+  <script>
+    var searchEngine = "https://www.google.com/search?q=";
+    if (!searchEngine) {
+      searchEngine = "https://www.google.com/search?q=";
+    }
+
+    var homeHost = "blog.awaae001.top";
+    if (!homeHost) {
+      homeHost = window.location.host;
+    }
+  </script>
+
+  <!-- Clarity -->
+  <script type="text/javascript">
+    (function (c, l, a, r, i, t, y) {
+      c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+      t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+      y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+    })(window, document, "clarity", "script", "j67354s1x5");
+  </script>
+
+  <!-- CSS -->
+  
+<link rel="stylesheet" href="/css/main.css">
+
+  
+<link rel="stylesheet" href="/css/top-botton/site-info.css">
+
+  
+<link rel="stylesheet" href="/css/top-botton/postgo.css">
+
+  
+<link rel="stylesheet" href="/css/top-botton/siteinfo-page.css">
+
+  
+<link rel="stylesheet" href="/css/font-awesome.min.css">
+
+  
+<link rel="stylesheet" href="/css/darcula.min.css">
+
+  
+<link rel="stylesheet" href="/css/code.css">
+
+  
+<link rel="stylesheet" href="/css/artalk.css">
+
+  
+<link rel="stylesheet" href="/css/home.css">
+
+
+  <link rel="stylesheet" type="text/css" href="https://blog.awaae001.top/css/card.css">
+  <link rel="preconnect" href="https://fonts.font.im">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.font.im/css2?family=Noto+Serif+SC:wght@200..900&display=swap" rel="stylesheet">
+
+  <!-- JS -->
+  <script src="/js/vendor/jquery.min.js" defer></script>
+  <script src="/js/ui-interactions.js" defer></script>
+  <script src="/js/vendor/highlight.min.js" defer></script>
+  <script src="/js/vendor/jquery.pjax.min.js" defer></script>
+  <script src="/js/main.js" defer></script>
+  <script async src="https://pv.neosora.cc/js"></script>
+  <script src="/js/page-features.js" defer></script>
+  <script src="/js/page-utils.js" defer></script>
+    <script src="/js/lnterception.js" defer></script>
+  <script defer src="https://umami.awaae001.top/script.js" data-website-id="614c425b-3d03-443b-9bc0-36503a1edbdd"></script>
+  <script src="/file/artalk.js"></script>
+
+  
+    <script src="/js/vendor/jquery.fancybox.min.js" defer></script>
+    <script src="/js/fancybox.js" defer></script>
+    
+<link rel="stylesheet" href="/css/jquery.fancybox.min.css">
+
+  
+
+  
+
+  <!-- Background -->
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      position: relative;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      background-image: url('https://pic.awaae001.top/ai1_178504_e25aaeb4.webp');
+      background-size: cover;
+      filter: blur(10px);
+    }
+  </style>
+
+  <!-- Optional SW -->
+  <!-- <script src="/sw-start.js"></script> -->
+<meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="呓语梦轩" type="application/atom+xml">
+</head>
+
+
+    <body>
+        <header id="header">
+  <a id="title" href="/" class="logo">呓语梦轩</a>
+
+<ul id="menu">
+  
+
+  
+
+  
+
+  
+    
+    
+      <li class="menu-item">
+        <a href='/link/' class="menu-item-link" target="_blank">
+          友人帐
+        </a>
+      </li>
+    
+      <li class="menu-item">
+        <a href='/daily/' class="menu-item-link" target="_blank">
+          说说
+        </a>
+      </li>
+    
+      <li class="menu-item">
+        <a href='/link/commit/' class="menu-item-link" target="_blank">
+          留言板
+        </a>
+      </li>
+    
+  
+
+  <li class="menu-item">
+    <a class="travellings" href="https://www.travellings.cn/go.html" target="_blank" rel="noopener external nofollow noreferrer" title="开往-友链接力">
+        🚇 开往
+    </a>
+    
+<link rel="stylesheet" href="/css/other.css">
+
+</li>
+
+  
+    <li class="menu-item">
+      <a href='https://github.com/awaae001' rel="external nofollow noreferrer" class="menu-item-link" target="_blank">
+        <i class="fa fa-github fa-2x"></i>
+      </a>
+    </li>
+  
+</ul>
+</header>
+
+        
+<div id="sidebar">
+	<button id="sidebar-toggle" class="toggle" ><i class="fa fa-arrow-right " aria-hidden="true"></i></button>
+	
+	<div id="site-toc">
+		<input id="search-input" class="search-input" type="search" placeholder="Press Enter to search">
+		<div id="tree">
+			
+
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/12578.html">
+                     
+										    回声洞
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/5401.html">
+                     
+										    about-各大分区内容介绍
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/16107.html">
+                     
+										    Hello World
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										人言堂（感想）
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/posts/50701.html">
+                     
+										    06-《你想活出怎样的人生》-高塔、苍鹭、少年、人生
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										游戏
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/posts/23435.html">
+                     
+										    彼方的她：一场跨越时空的对话，一段孤寂宇宙的回响
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/26598.html">
+                     
+										    逐光 · 启航：愿领航员畅行无阻
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/6884.html">
+                     
+										    飞跃13号房-对网瘾治疗披露与反抗
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/23024.html">
+                     
+										    饿殍：明末千里行-岁大饥，人相食
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										呓语亭（随笔）
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/posts/39440.html">
+                     
+										    【破事水】-对于未来的前瞻于回望
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										热点
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/posts/52376.html">
+                     
+										    AI时代-汹涌而来
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/13860.html">
+                     
+										    贵州消防栓事件的思考
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/25133.html">
+                     
+										    霸凌行为-地狱空荡荡，恶魔在人间！
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										言论
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/posts/1579.html">
+                     
+										    00-少年：江湖走马，陪剑长行
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/20519.html">
+                     
+										    01-我发现一件事
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/10312.html">
+                     
+										    02-成绩可以代表一切吗?
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/27079.html">
+                     
+										    03-早晚都得死，那我们为什么要活着？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/63283.html">
+                     
+										    04-写文章是为了什么?
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/22861.html">
+                     
+										    05-过程与结果
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/908575.html">
+                     
+										    06-时代造青年，还是青年造时代？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/11645.html">
+                     
+										    07-剧终：故事的开端与终末
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/63703.html">
+                     
+										    08-AGI：算力洪流与未坍缩的星光
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										布告板（公告）
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/posts/48274.html">
+                     
+										    更新发布和问题提出
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/46576.html">
+                     
+										    本站转移到云服务器了
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/786782.html">
+                     
+										    十年之约-我与十年后的自己有一个约定
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/57663.html">
+                     
+										    隐私政策
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										幽篁里（其他）
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/posts/57024.html">
+                     
+										    再见2024 · 共赴一场烟火绚烂
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/56520.html">
+                     
+										    一周年-忽而回望，不知光阴几何
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/52584.html">
+                     
+										    2023年度总结
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										忘忧台（记事）
+									</a>
+									
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										2024井冈山
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/posts/65197.html">
+                     
+										    【总结】井冈山研学-了解历史，明见未来
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/17937.html">
+                     
+										    【多图警告】井冈山研学D1
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/18257.html">
+                     
+										    【多图警告】井冈山研学D2
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/38016.html">
+                     
+										    【多图警告】井冈山研学D3
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/46222.html">
+                     
+										    挽歌：第一次相逢与离别
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/27646.html">
+                     
+										    砥砺奋进，勿忘国殇
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										文轩斋（小说）
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/posts/54465.html">
+                     
+										    about-(原创小说)解殃生
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										第一章
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/posts/12593.html">
+                     
+										    第01幕 引子
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/10177.html">
+                     
+										    第02幕 好盆油！
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/52320.html">
+                     
+										    第03幕 军训 天地异动
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/4242.html">
+                     
+										    第04幕 军训 突发情况
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/54466.html">
+                     
+										    第05幕 军训 全员撤离
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/47925.html">
+                     
+										    第06幕 但到远古去
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/5037.html">
+                     
+										    第07幕 有间客栈
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/9309.html">
+                     
+										    第08幕 有间客栈_那个夜晚
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/18297.html">
+                     
+										    第09幕 回景阳城！
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/57307.html">
+                     
+										    第10幕 鹿鼎公府
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										第零章
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/posts/15397.html">
+                     
+										    H1 P0 S1 质子自衰变
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/65294.html">
+                     
+										    H1 P0 S2 降熵实验与质能转换方程的逆应用 壹
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/18316.html">
+                     
+										    H1 P0 S3 降熵实验与质能转换方程的逆应用 贰
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/60691.html">
+                     
+										    H1 P0 S4 降熵实验与质能转换方程的逆应用 叁
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/7638.html">
+                     
+										    H1 P0 S5 降熵实验与质能转换方程的逆应用 肆
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/47362.html">
+                     
+										    H1 P0 S6 几份资料片
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/5047.html">
+                     
+										    H1 P0 S7 万事之由-那个午后
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										记叙文
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/posts/32398.html">
+                     
+										    迟到了!迟到了！
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/2042429.html">
+                     
+										    【短文】-彼时故城皆繁华
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										缘缘堂（转载）
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/posts/52608.html">
+                     
+										    原神-李猛干语录MD版-世界树
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/59025.html">
+                     
+										    原神-米忽悠玩家预防针（厂商离谱行为）-世界树
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/47513.html">
+                     
+										    幻兽帕鲁-学习版-资源分享
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/38498.html">
+                     
+										    一枝红信出墙来-steam假激活入库
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/51132.html">
+                     
+										    不要再带XXX回去了
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										藏经阁（教程）
+									</a>
+									
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										hexo
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/posts/45649.html">
+                     
+										    回声洞-开源html组件
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/26785.html">
+                     
+										    hexo + github-action持续集成
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/52004.html">
+                     
+										    友链区JavaScript组件-重做版
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/25937.html">
+                     
+										    ChatRoom.js-在文章流中分享你的聊天记录
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/63154.html">
+                     
+										    自建busuanzi统计API
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/30593.html">
+                     
+										    image+onedrive 公益图床
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										软件推荐
+									</a>
+									
+							<ul>
+								<li class="file active">
+									<a href="/posts/44173.html">
+                     
+										    Windows工具-让你的Windows锦上添花，添了又添
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/859850.html">
+                     
+										    EasyPub-轻量Kindle电子书格式转换工具
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+		</div>
+	</div>
+</div>
+
+                <!-- 引入正文 -->
+                <div id="content" class="content">
+                    <div id="top-obn-space">
+    <div style="flex-grow: 1;">
+        <div class="bulletin-space">
+            <span class="bulletin-span">
+                <i class="fa fa-bullhorn" style="margin: 3px;"></i>
+                公告
+            </span>
+            <p class="bulletin-info">
+                暂无数据-可能是正在加载中或者加载遇到问题
+            </p>
+        </div>
+    </div>
+    <div class="button-space">
+        <div>
+            <button class="top-button" onclick="opensiteinfo()" title="查看站点信息"><i class="fa fa-info-circle"
+                aria-hidden="true" style="margin-right: 4px;"></i>信息</button>
+            <div class="overlay" id="overlay"></div>
+            <div id="siteinfo-page">
+                <p class="text-websiteName">呓语梦轩-站点信息</p>
+                <div id="site-info-div">
+                    <div id="siteinfo-line1">
+                        <div class="meta-info">
+                            <span>
+                                <i class="fa fa-bar-chart" aria-hidden="true"></i> 
+                                总字数：
+                            </span>
+                            <hr>
+                            <span id="all-words" class="number-info">处理中</span>
+                        </div>
+                        <div class="meta-info">
+                            <span>
+                                <i class="fa fa-file-text-o"></i>
+                                总文章数：
+                            </span>
+                            <hr>
+                            <span id="all-posts" class="number-info">处理中</span>
+                        </div>
+                        <div class="meta-info">
+                            <span>
+                                <i class="fa fa-comments" aria-hidden="true"></i>
+                                总评论数：
+                            </span>
+                            <hr>
+                            <span id="all-commets" class="number-info">处理中</span>
+                        </div>
+                    </div>
+                    <button onclick="closesiteinfo()" id="siteinfo-close">关闭</button>
+                </div>
+            </div>
+        </div>
+        <div>
+            <button class="top-button" onclick="showConfirmation()" style="margin-left: 6px;" title="随机跳转一篇文章">
+                <i class="fa fa-random" aria-hidden="true" style="margin-right: 4px;"></i>随机文章
+            </button>
+
+            <div id="goto-post">
+                <div>
+                    <p class="text-websiteName">
+                        呓语梦轩-随机跳转
+                    </p>
+                </div>
+                <div class="post-info">
+                    <div style="display: flex;">
+                        <p id="text-info">你即将前往：</p>
+                    </div>
+                    <div id="post-info"></div>
+                    <div id="btn-space-postinfo">
+                        <div>
+                            <button id="goto-post-yes" class="onfirm-btn gopost-btn">确定</button>
+                            <button id="goto-post-no" class="cancel-btn gopost-btn">取消</button>
+                        </div>
+                        <div>
+                            <button id="refresh" class="refresh-btn gopost-btn"> <i class="fa fa-refresh"
+                                    aria-hidden="true" style="margin-right: 4px;"></i>换一换</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<h1 id="article-title">
+  Windows工具-让你的Windows锦上添花，添了又添
+</h1>
+
+<!-- meta -->
+<div class="article-meta">
+  
+    <div class="meta-cc">
+      <p class="meta-p">温馨提示：本文适用于</p>
+      <p class="meta-p">
+        <a href="https://creativecommons.org/licenses/by-nc/4.0/legalcode.zh-hans" rel="external nofollow noreferrer" target="_blank">
+          署名-非商业性使用(BY-NC)
+        </a>
+      </p>
+      <p class="meta-p2">禁止商用-转载请标注出处</p>
+    </div>
+    <div style="margin-top: 10px;"></div>
+  
+
+  
+
+  
+
+  <span>阅读量 <span id="busuanzi_page_pv">ERROR</span> 次</span>
+  <span class="article_information">· 共计 <span id="word_count">ERROR</span> 字</span>
+  <span class="article_information">· 大致要花 <span id="read_time">ERROR</span> 分钟读完</span>
+  <br>
+  <span>awaae(player8635)</span>
+  <span>2024-09-01 11:24:47</span>
+
+  <div id="article-categories">
+    
+      <span>Categories：</span>
+      
+    
+
+    
+      <span>Tags：</span>
+      
+    
+
+    
+      <span>本文已启用fancybox灯箱</span>
+    
+    <br>
+  </div>
+</div>
+
+
+
+<!-- content -->
+<div id="article-content">
+  <p>微软的 Windows 系统在市场上占了相当大的份额，同样，这个系统也因为其超高的<strong>兼容性</strong>和那<strong>堆成屎一样</strong>的代码而闻名于世（<s>虽然我写的也好不到哪里去就对了</s>），各种远古版本的特性到现在都没修，其美名曰是为了兼容性，但看起来应该是<strong>技术债</strong>（谁没有啊，我现在就看不懂以前写的朋友圈逻辑了）</p>
+<p>自然，也会有许多开发者为 <em>M$</em> 擦屁股。</p>
+<p>这些软件有很多类型：优化系统、添加功能、修复 bug</p>
+<h2 id="前言"><a class="header-anchor" href="#前言">¶</a>前言</h2>
+<p>作为一位 Windows 用户，我对于 Windows 社区内部对于 Windows 系统魔改的软件持支持态度。这些软件可以优化 Windows 的使用体验，或者为 Windows 添加更加绚丽的 UI 或者桌面背景（<a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.bing.com/search?q=wallpaper+engine">wallpaper engine</a>），更好的垃圾处理工具（<a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.ccleaner.com/">C-cleaner</a>），还有在系统支持周期结束后依旧在对系统提供维护的<a target="_blank" rel="noopener external nofollow noreferrer" href="https://0patch.com/">0patch</a>（0patch！打钱！）</p>
+<p>在开始以前，先猜猜我的电脑系统是<code>WIN几</code>?</p>
+<p><img src="https://pic.awaae001.top/%E8%97%8F%E7%BB%8F%E9%98%81/24/01(win-tools)/%E7%88%B7%E7%9A%84%E6%A1%8C%E9%9D%A2%E6%88%AA%E5%9B%BE_f33287cc.webp" alt="爷的桌面截图" /></p>
+<p>这应该不是很难，但我的桌面像是<code>win7</code>和<code>win10</code>喝多了的产物，中间还夹杂着<code>win11</code>带来的更新（应该是更新吧）。坏事了，我好像说出来了，那就不管了，这就是<strong>windows <em>11</em></strong> 。</p>
+<p>win11没有带来什么新的让我<strong>眼前一亮</strong>的更新，道有更多<strong>眼前一黑</strong>的东西，改版右键菜单、修改<strong>文件管理器</strong>、没有意义的<strong>云母效果</strong>、卡的要死的<strong>设置</strong>（好像10就有的问题）、几乎没用的<strong>电源设置</strong>（我现在还是用的<code>PowerToys Awake</code>吊着）</p>
+<p>现在的微软三哥浓度有点太高了，连<strong>Windows</strong>这个集团<strong>最大的项目</strong>也能如此不上心，那自然可见其他项目有多么的水，整个公司都有一股草台班子的味道，现在维持WIN系统的似乎就只剩它（Windows 系统）积累的用户基数罢了。</p>
+<p>接下来就是官方和社区的支持了。</p>
+<h2 id="软件"><a class="header-anchor" href="#软件">¶</a>软件</h2>
+<p>我上面那图片中，先是使用了<a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.bing.com/search?q=wallpaper+engine">wallpaper engine</a>修改了桌面的背景，这非常显眼。接下来用了<a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.startallback.com/">StartAllBack </a>，简单的修改了任务栏，让它更符合我的使用习惯，当然也改了文件资源管理器的显示界面，节省了操作：</p>
+<p><img src="https://pic.awaae001.top/%E8%97%8F%E7%BB%8F%E9%98%81/24/01(win-tools)/%E4%BF%AE%E6%94%B9%E5%90%8E%E7%9A%84%E6%96%87%E4%BB%B6%E8%B5%84%E6%BA%90%E7%AE%A1%E7%90%86%E5%99%A8_1ad90832.webp" alt="修改后的文件资源管理器" /></p>
+<p>还有些藏在后面的小软件就不再一一列举，下面是我认为对于Windows系统使用有帮助的软件，各位可以酌情下载使用，我会在后面一一介绍这些软件：</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>PowerToys（动力玩具）</p>
+<ul class="lvl-2">
+<li class="lvl-6">开发者：Microsoft</li>
+<li class="lvl-6">github：<a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/microsoft/PowerToys">https://github.com/microsoft/PowerToys</a></li>
+<li class="lvl-6">文档：<a target="_blank" rel="noopener external nofollow noreferrer" href="https://learn.microsoft.com/zh-cn/windows/powertoys/">https://learn.microsoft.com/zh-cn/windows/powertoys/</a></li>
+<li class="lvl-6"><strong>免费软件</strong></li>
+</ul>
+</li>
+<li class="lvl-2">
+<p>StartAllBack</p>
+<ul class="lvl-2">
+<li class="lvl-6">开发者：未知</li>
+<li class="lvl-6">官网：<a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.startallback.com/">https://www.startallback.com/</a></li>
+<li class="lvl-6">github：闭源软件</li>
+<li class="lvl-6">收费软件（4$/设备）</li>
+</ul>
+</li>
+<li class="lvl-2">
+<p>Dism++</p>
+<ul class="lvl-2">
+<li class="lvl-6">开发者：Chuyu Team（团队）</li>
+<li class="lvl-6">Github: <a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/Chuyu-Team/Dism-Multi-language">https://github.com/Chuyu-Team/Dism-Multi-language</a></li>
+<li class="lvl-6">文档：未知</li>
+<li class="lvl-6">免费软件</li>
+</ul>
+</li>
+<li class="lvl-2">
+<p>Tai</p>
+<ul class="lvl-2">
+<li class="lvl-6">开发者：Plan shit</li>
+<li class="lvl-6">Github: <a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/Planshit/Tai">https://github.com/Planshit/Tai</a></li>
+<li class="lvl-6">文档： 暂无</li>
+<li class="lvl-6">免费软件</li>
+</ul>
+</li>
+</ul>
+<p>这里有<strong>优化系统</strong>的软件（StartAllBack、Dism++），有<strong>离线统计</strong>软件（Tai），有官方提供的系统<strong>高级用户工具包</strong>，可以有效的提高你的工作效率 <s>（摸鱼效率也可以提高）</s> 和系统外观</p>
+<p><img src="https://pic.awaae001.top/%E8%97%8F%E7%BB%8F%E9%98%81/24/01(win-tools)/logo_e051f399.png" alt="logo" /></p>
+<p>我们先从最简单的开始介绍：</p>
+<h3 id="👻Tai-监测软件"><a class="header-anchor" href="#👻Tai-监测软件">¶</a>👻Tai-监测软件</h3>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>👻 Tai</p>
+<ul class="lvl-2">
+<li class="lvl-6">开发者：Plan shit</li>
+<li class="lvl-6">Github: <a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/Planshit/Tai">https://github.com/Planshit/Tai</a></li>
+<li class="lvl-6">文档： 暂无</li>
+<li class="lvl-6">免费软件</li>
+</ul>
+</li>
+</ul>
+<p>win本身没有一个好用的<strong>使用监测</strong>程序，但我本人也时常懊恼于：<em>我的时间到底飞到哪里去了</em>，这个时候就需要一个小程序看看你到底将时间飞到哪里去了，群友推荐了很多，但是我最后选择了 <a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/Planshit/Tai">👻Tai</a> ，表面上是为了不泄露隐私（<a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/Planshit/Tai#:~:text=%E9%99%A4%E4%BA%86%E6%A3%80%E6%9F%A5%E6%9B%B4%E6%96%B0/%E5%8D%87%E7%BA%A7%E8%BD%AF%E4%BB%B6%E6%97%B6%EF%BC%88%E9%9C%80%E8%A6%81%E4%B8%BB%E5%8A%A8%E5%9C%A8%E8%AE%BE%E7%BD%AE%E4%B8%AD%E6%A3%80%E6%9F%A5%E6%9B%B4%E6%96%B0%EF%BC%89%E4%B9%8B%E5%A4%96%E5%AE%8C%E5%85%A8%E6%B2%A1%E6%9C%89%E5%85%B6%E4%BB%96%E7%BD%91%E7%BB%9C%E8%AF%B7%E6%B1%82%E3%80%82Tai%20%E5%B9%B6%E4%B8%8D%E4%BC%9A%E6%94%B6%E9%9B%86%E5%92%8C%E4%B8%8A%E4%BC%A0%E4%BD%A0%E7%9A%84%E4%BB%BB%E4%BD%95%E4%BF%A1%E6%81%AF%E3%80%82">应用程序声明了它们只在更新的时候产生网络流量</a>），<s>但那个小幽灵挺可爱的</s></p>
+<p>根据 Github 上公开的信息，你在使用前要安装 <a target="_blank" rel="noopener external nofollow noreferrer" href="https://dotnet.microsoft.com/zh-cn/download/dotnet-framework/net48">.NET Framework 4.8</a>，当然，假如你是<strong>WIN10</strong>及以上系统的用户<strong>可以直接忽略这段信息</strong>，（win已经预装了此运行库），在<a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/Planshit/Tai/releases/tag/1.5.0.6">GitHub-Releases</a>页面下载最新版本，完成后在下载目录找到<code>👻Tai.exe</code> ，启动程序，成功启动后你将在状态栏看到 👻 图标；</p>
+<p><img src="https://pic.awaae001.top/%E8%97%8F%E7%BB%8F%E9%98%81/24/01(win-tools)/tai/tai-%E8%BF%90%E8%A1%8C%E5%92%8C%E9%A1%B5%E9%9D%A2_02854163.webp" alt="tai-运行和页面" /></p>
+<p>当然，你要记得你放在你哪里，因为<code>👻Tai</code>的卸载有点原始：</p>
+<ol>
+<li class="lvl-3">
+<p>在设置中停用开机自启动（如果启用了）；</p>
+</li>
+<li class="lvl-3">
+<p><strong>删除所有文件</strong>即可完成卸载。</p>
+</li>
+</ol>
+<p>它提供了浏览器插件用来监视（统计）你的浏览器使用情况。目前，可以统计网站的<strong>名字</strong>和<strong>访问时间</strong>（上一张图片的<code>应用</code>边上的<code>网站</code>）其中的数据就不用我解释了吧，如果不想被查岗的话，别让这个东西被你的<strong>老板</strong>发现！</p>
+<p>应用程序的数据存储在<code>[tai目录]/data/data.db</code>下面，你随时可以作死删除掉这个文件，<s>反正我是不会去进行这种尝试</s>，目录里面还有一个<code>AppConfig.json</code>不知道是干什么的，就先不管了</p>
+<p>当然，它还有其他非常强大的功能等着我们发现和使用。就类似于：<code>关联进程</code>(多屏工作时将其他屏幕所使用的软件同时记录使用时长)。但是，碍于<strong>篇幅有限</strong>（主要是<em>我也没有研究透</em>）我们暂时按下不表，等<strong>各位大佬</strong>摸清楚这个统计程序的时，记得踢我一下</p>
+<h3 id="StartAllBack-美化工具"><a class="header-anchor" href="#StartAllBack-美化工具">¶</a>StartAllBack-美化工具</h3>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>StartAllBack</p>
+<ul class="lvl-2">
+<li class="lvl-6">开发者：未知</li>
+<li class="lvl-6">官网：<a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.startallback.com/">https://www.startallback.com/</a></li>
+<li class="lvl-6">github：闭源软件</li>
+<li class="lvl-6">收费软件（4$/设备）</li>
+</ul>
+</li>
+</ul>
+<div class="warning">
+<p><strong>注意</strong><br />
+使用bing国内版搜索出来的第一个结果无法确认是否为官方站点，如要访问官方站点，认准：<a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.startallback.com/">startallback.com</a></p>
+</div>
+<p>win11自带的快捷栏和资源管理器很难让人恭维。而且，<strong>M$</strong> 的更新还将我一直在使用的 <code>EarTrumpet</code> 一个 Windows 的音量控制组件直接搞不见（<strong>找不到入口</strong>）了，这让我非常不爽，同时，win11的更新也将文件资源管理器改得一塌糊涂（什么反向升级），于是，在一次互联网检索中，我遇到了<code>StartAllBack</code>。</p>
+<p><img src="https://pic.awaae001.top/%E8%97%8F%E7%BB%8F%E9%98%81/24/01(win-tools)/StartAllBack/StartAllBack-%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F_7f1313b7.webp" alt="StartAllBack-应用程序" /></p>
+<p>StartAllBack 本身的功能异常强大，可以对<strong>任务栏</strong>和<strong>资源管理器</strong>进行各种各样的<strong>骚操作</strong>，包括但不限于：</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>修改<strong>任务栏</strong></p>
+</li>
+<li class="lvl-2">
+<p>使用<strong>旧版文件资源管理器顶部栏</strong>样式</p>
+</li>
+<li class="lvl-2">
+<p>修改<strong>通知中心</strong>和<strong>时间</strong>界面</p>
+</li>
+<li class="lvl-2">
+<p>启用和禁用<strong>托盘图标</strong></p>
+</li>
+</ul>
+<p>就博客开头的那张桌面截图就是我调过设置后截的图</p>
+<p>对于任务栏的<code>win开始徽标</code>，你可以在<a target="_blank" rel="noopener external nofollow noreferrer" href="https://zhutix.com/tag/start-orbs/">致美化</a>找到更多的开始按钮素材。当然，你还可以在<strong>致美化</strong>上下载<strong>鼠标样式</strong>、<strong>动态背景</strong>、还有第三方<strong>主题</strong></p>
+<p>StartAllBack 的功能非常好，就一点要注意：它是<strong>付费</strong>的，如果你要支持正版的话要向开发者支付 <strong>4$ /设备</strong>，对于我来说有点小贵了，毕竟学生吗，囊中羞涩很正常吧。（<s>当然，你可以在伟大的简中互联网找到免费版，就是安全性，不敢保证。</s>）</p>
+<p><img src="https://pic.awaae001.top/%E8%97%8F%E7%BB%8F%E9%98%81/24/01(win-tools)/StartAllBack/%E6%98%AF%E5%A5%BD%E7%8E%A9%E7%9A%84%E5%8A%9F%E8%83%BD%E8%AF%B6-StartAllBack_b1c340ca.webp" alt="是好玩的功能诶-StartAllBack" /></p>
+<h3 id="Dism-系统优化工具"><a class="header-anchor" href="#Dism-系统优化工具">¶</a>Dism++ 系统优化工具</h3>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>Dism++</p>
+<ul class="lvl-2">
+<li class="lvl-6">开发者：Chuyu Team（团队）</li>
+<li class="lvl-6">Github: <a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/Chuyu-Team/Dism-Multi-language">https://github.com/Chuyu-Team/Dism-Multi-language</a></li>
+<li class="lvl-6">文档：未知</li>
+<li class="lvl-6">免费软件</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>此工具包括在<a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.tbtool.cn/download/202408.html"><strong>图吧工具箱 2023</strong></a> 内</p>
+</blockquote>
+<p><code>Dism++</code>由大学时期几个自症晚期患者打造，追求强功能、极致绿色的极小身材。 Dism++ 可以说是一个 Dism 的GUI 版，但是并不依赖 <a target="_blank" rel="noopener external nofollow noreferrer" href="https://learn.microsoft.com/zh-cn/windows-hardware/manufacture/desktop/what-is-dism">Dism</a>，接基于更底层的 <a target="_blank" rel="noopener external nofollow noreferrer" href="https://bbs.pcbeta.com/viewthread-1637784-1-1.html">CBS(Component Based Servicing Reference)</a>。 因此 <code>Dism++</code>往往比微软自带的 Dism 有<strong>更好的兼容性</strong>以及<strong>更加轻巧的体积</strong>。</p>
+<p>其提供了相对强大的功能，能满足<strong>非专业用户</strong>（像我这样的）和<strong>专业用户</strong>的使用需求，而我主要使用的是：<code>空间回收</code>和<code>系统优化</code>。其他的页面要么是不懂，要么是不敢乱尝试</p>
+<p><img src="https://pic.awaae001.top/%E8%97%8F%E7%BB%8F%E9%98%81/24/01(win-tools)/Dism%2B%2B/Dism%2B%2B_4f89a7fc.webp" alt="Dism++" /></p>
+<p>空间回收可以从系统底层回收被<strong>系统</strong>占用的空间，这也是我最喜欢的功能（主要是有空间焦虑）</p>
+<p><img src="https://pic.awaae001.top/%E8%97%8F%E7%BB%8F%E9%98%81/24/01(win-tools)/Dism%2B%2B/%E7%A9%BA%E9%97%B4%E5%9B%9E%E6%94%B6-Dism%2B%2B_9a882bc0.webp" alt="空间回收-Dism++" /></p>
+<p>除了空间回收，Dism++还提供了<code>系统优化</code>，这个部分主要是各种各样的开关，<strong>控制系统各种各样的功能的开启与关闭</strong>，提供了各种各样的使用功能，包括但不限于：<code>禁用Windows更新</code>、<code>创建快捷方式时不添“快捷方式”文字</code>、<code>隐藏快捷方式小箭头</code>、<code>隐藏科执行文件小盾牌</code>等功能，（可以不用去改注册表了捏🤣）</p>
+<p>此外，在系统工具箱还提供：</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>春哥附体</p>
+<ul class="lvl-2">
+<li class="lvl-6">使程序无视权限运行</li>
+</ul>
+</li>
+<li class="lvl-2">
+<p>系统备份</p>
+</li>
+<li class="lvl-2">
+<p>系统还原</p>
+</li>
+<li class="lvl-3">
+<p>账户管理</p>
+<ul class="lvl-2">
+<li class="lvl-6">管理系统上面的账户</li>
+</ul>
+</li>
+</ul>
+<p>程序是免费的，非常良心，但是你无法在开源平台找到它的源代码，这算是开源了吗？<strong>如开</strong>（开了，有没有完全开）。但是好用是没得说的。</p>
+<h3 id="PowerToys-微软工具合集"><a class="header-anchor" href="#PowerToys-微软工具合集">¶</a>PowerToys-微软工具合集</h3>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>PowerToys（动力玩具）</p>
+<ul class="lvl-2">
+<li class="lvl-6">开发者：Microsoft</li>
+<li class="lvl-6">github：<a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/microsoft/PowerToys">https://github.com/microsoft/PowerToys</a></li>
+<li class="lvl-6">文档：<a target="_blank" rel="noopener external nofollow noreferrer" href="https://learn.microsoft.com/zh-cn/windows/powertoys/">https://learn.microsoft.com/zh-cn/windows/powertoys/</a></li>
+<li class="lvl-6"><strong>免费软件</strong></li>
+</ul>
+</li>
+</ul>
+<p>先插个题外话，这个文章写起来本来就是为了介绍<code>PowerToys</code>的，但仔细想想，不如把其他我觉得好用的小工具一起介绍吧。于是，整个文章<strong>变答变糕</strong>（变大变高）。从最开始单独介绍<code>PowerToys</code>的博文变成<code>Windows实用工具推荐</code>。但是，内容多了，质量不会缩水的，一定不会的！</p>
+<p>最开始连封面都做好了：</p>
+<p><img src="https://pic.awaae001.top/%E8%97%8F%E7%BB%8F%E9%98%81/24/01(win-tools)/power-toys/powertoys_32108863.jpg" alt="powertoys" /></p>
+<p>回归正题：</p>
+<p>按照官方（Microsoft）在 <code>Microsoft PowerToys</code> 的文档中的描述：</p>
+<blockquote>
+<p>Microsoft PowerToys 是一组<strong>实用工具</strong>，可帮助高级用户调整和简化其 Windows 体验，从而<strong>提高工作效率</strong>。</p>
+</blockquote>
+<p>效率有没有提高我<strong>不知道</strong>，但是我摸鱼却摸地<strong>非常的自在</strong>，正如文档中描写的：<code>实用工具</code>，当你熟练运用（记住其快捷键）后，就会在任何地方尝试唤出对应的功能（哪怕对应的设备没有安装<code>Microsoft PowerToys</code>）</p>
+<p>依据维基百科，Microsoft PowerToys的第一个版本在1998年发布<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>，后续又在 2019 年 5 月 8 日重启了<code>PowerToys</code>，使得开发者可以<strong>自行新增</strong>和<strong>自定义</strong> <code>PowerToys</code> 的功能，如果你感兴趣，你可以下面的链接这里下载<code>PowerToys</code>的1996年版本，由互联网博物馆提供</p>
+<div class="card-item">
+    <link type="text/css" rel="stylesheet" href="https://blog.awaae001.top/css/links-page.css" />
+    <div class="card-thumbnail">
+        <img alt="Internet Archive" title="Internet Archive" decoding="async"
+            src="https://pic.awaae001.top/file/internet-archive_45dbe7a8.webp"
+            class="not-shadow not-light-box" width="130" height="80">
+    </div>
+    <div class="card-info">
+        <span class="card-links">Internet Archive</span>
+        <br>
+        <a href="https://www.bilibili.com/video/BV18841197Xa" rel="external nofollow noreferrer" target="_blank" class="card-title">Internet Archive-PowerToys 1996 download</a>
+        <div class="card-excerpt">
+            This is the installer for Microsoft Windows 95 Power Toys released on the 17th November 1996.
+        </div>
+    </div>
+</div>
+<p>我没那个环境，我就不瞎掺和了，如果你有时间和精力，你可以去试一下！</p>
+<p>既然是工具集，那么，这个工具箱最重要的应该是工具，而 <code>PowerToys</code> 提供了以下共计20种小程序来提升用户体验，不是每一款都都非常好用，但总有一款适合你！</p>
+<p>下面是功能列表：</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>Always On Top 将一个窗口始终保持在最前</p>
+</li>
+<li class="lvl-2">
+<p>PowerToys Awake 使电脑一直保持唤醒，而不睡眠／休眠</p>
+</li>
+<li class="lvl-2">
+<p>Color Picker 取色器</p>
+</li>
+<li class="lvl-2">
+<p>FancyZones 快捷分屏</p>
+</li>
+<li class="lvl-2">
+<p>File Explorer (Preview Panes) 向文件资源管理器的预览窗格增加更多格式的支持</p>
+</li>
+<li class="lvl-2">
+<p>File Locksmith 检查并解除文件或文件夹占用</p>
+</li>
+<li class="lvl-2">
+<p>Host File Editor 快捷编辑Hosts文件</p>
+</li>
+<li class="lvl-2">
+<p>Image Resizer 快捷调整图片分辨率</p>
+</li>
+<li class="lvl-2">
+<p>Keyboard Manager 重新映射键和快捷键</p>
+</li>
+<li class="lvl-2">
+<p>Mouse utilities 包含多个关于鼠标的工具</p>
+<ul class="lvl-2">
+<li class="lvl-6">Find My Mouse 找到鼠标指针在屏幕上的位置</li>
+<li class="lvl-6">Mouse Highlighter 展示鼠标的点击</li>
+<li class="lvl-6">Mouse jump 快速在远距离上移动鼠标指针</li>
+<li class="lvl-6">Mouse pointer Crosshairs 显示以鼠标指针为中心的十字准线</li>
+<li class="lvl-6">Mouse Without Borders 跨多台电脑移动鼠标</li>
+</ul>
+</li>
+<li class="lvl-2">
+<p>Paste as Plain Text 粘贴去除文本格式的文本</p>
+</li>
+<li class="lvl-2">
+<p>PowerRename 使用正则表达式批量重命名文件</p>
+</li>
+<li class="lvl-2">
+<p>PowerToys Run 快捷搜索文件夹、文件、应用程序和其他项目</p>
+</li>
+<li class="lvl-2">
+<p>Quick Accent 快速输入重音字符和货币符号</p>
+</li>
+<li class="lvl-2">
+<p>Registry Preview 在写入注册表之前预览和编辑REG文件</p>
+</li>
+<li class="lvl-2">
+<p>Screen Ruler 测量屏幕上的像素距离</p>
+</li>
+<li class="lvl-2">
+<p>Shortcut Guide 查看包含Windows徽标键的快捷键</p>
+</li>
+<li class="lvl-2">
+<p>Text Extractor 一个OCR工具，从屏幕上任意位置复制文本</p>
+</li>
+<li class="lvl-2">
+<p>Video Conference Mute 快速开关摄像头和麦克风</p>
+</li>
+</ul>
+<p>接下来我会介绍一下我用的较多的小功能：</p>
+<h4 id="PowerToys-Run-快速启动"><a class="header-anchor" href="#PowerToys-Run-快速启动">¶</a>PowerToys.Run-快速启动</h4>
+<p>这是一个非常好用的小软件，它的外观<code>Utools</code>更加圆滑，同时也足够轻量、齐全，平时用来启动应用程序就<strong>不用在到桌面去一个个找</strong>了，轻轻<code>Alt</code>+<code>Space</code>就可以轻松唤出来进行<strong>快捷的运行</strong>和<strong>启动</strong></p>
+<p><img src="https://pic.awaae001.top/%E8%97%8F%E7%BB%8F%E9%98%81/24/01(win-tools)/power-toys/PowerToys.Run-%E7%A8%8B%E5%BA%8F%E6%88%AA%E5%9B%BE_b8fe0116.webp" alt="PowerToys.Run-程序截图" /></p>
+<p>它支持实时扫描正在运行的程序，同时，基于<strong>Windows索引</strong>的文件检测器可以让你使用<code>?</code><strong>查找文件</strong>和使用<code>.</code><strong>访问程序</strong>，还支持诸如：哈希运算、单位换算、互联网搜索、运行Windows命令等，功能足够强大（是我喜欢的料）</p>
+<h4 id="PowerToys-AlwaysOnTop-强制置顶"><a class="header-anchor" href="#PowerToys-AlwaysOnTop-强制置顶">¶</a>PowerToys.AlwaysOnTop-强制置顶</h4>
+<p>我的电脑屏幕有点小，假如我要调某些东西，想一直看到那个窗口，但是有会被其他<strong>窗口覆盖且软件本身没有置顶程序</strong>，我推荐你使用这个，它可以将任何一个应用的窗口<strong>强制置顶</strong>，在<strong>小屏幕设备</strong>上使用类似<strong>计算器</strong>还有<strong>某些编辑器</strong>都会享受到这个功能带来的福利。</p>
+<p>毕竟不用不同窗口<strong>切来切去</strong>。</p>
+<p><img src="https://pic.awaae001.top/%E8%97%8F%E7%BB%8F%E9%98%81/24/01(win-tools)/power-toys/PowerToys.AlwaysOnTop-%E7%A8%8B%E5%BA%8F%E6%88%AA%E5%9B%BE_21937bad.webp" alt="PowerToys.AlwaysOnTop-程序截图" /></p>
+<h4 id="PTs-KeyboardManagerEngine-键盘管理器"><a class="header-anchor" href="#PTs-KeyboardManagerEngine-键盘管理器">¶</a>PTs.KeyboardManagerEngine-键盘管理器</h4>
+<p>当初认识 <code>PowerToys</code> 就是应为自己玩的一款游戏它<strong>不支持修改键位</strong>。就充分发挥主观能动性，去搜：<code>键盘映射工具</code>，接着，就搜到了<code>PowerToys</code>的头上来，接触了<code>PowerToys</code>和它的<strong>键盘映射器</strong>。</p>
+<p>其实这个功能非常的简单，就是用一个虚拟键盘输入，正式键盘的键位映射到虚拟键盘上面，就像一条条先一样.按下<code>A</code>，虚拟键盘就发送：<code>Ctrl+A</code>诸如此类。</p>
+<p>你可以使用它来：</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>简化操作</p>
+</li>
+<li class="lvl-2">
+<p>修改游戏键位</p>
+</li>
+<li class="lvl-2">
+<p>创建老板键</p>
+</li>
+</ul>
+<h4 id="PowerToys-Awake-强制唤醒"><a class="header-anchor" href="#PowerToys-Awake-强制唤醒">¶</a>PowerToys.Awake-强制唤醒</h4>
+<p>这个工具旨在使计算机保持清醒状态，而无需管理其<code>电源和睡眠设置</code>。运行耗时较长的任务时，它非常有用，可<strong>确保计算机不会进入睡眠状态或关闭其屏幕</strong>。</p>
+<h4 id="还有更多！"><a class="header-anchor" href="#还有更多！">¶</a>还有更多！</h4>
+<p><code>PowerToys</code>还有其他的功能，比如：改<code>host</code>文件的 <strong>PowerToys.HostFileEditor</strong> 、快速批量重命名的 <strong>PowerToys.PowerRename</strong> 、提供类似360文件占用解除的<strong>PowerToys.FileLocksmith</strong>、让Windows拥有像<code>MacOS</code>那样快速预览的<strong>PowerToys.Peek</strong>等等，这些应用程序可以解决和方便Windows的问题和使用。</p>
+<p><code>PowerToys</code>是免费的开源软件，啊！<strong>开源盛世</strong>，你可以点击<a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/microsoft/PowerToys/releases/">这里</a>前往Github下载<code>PowerToys</code>的最新版本</p>
+<h3 id="其他的小东西"><a class="header-anchor" href="#其他的小东西">¶</a>其他的小东西</h3>
+<p>Win11切换经典右键菜单：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">reg add <span class="hljs-string">&quot;HKCU\Software\Classes\CLSID\&#123;86ca1aa0-34aa-4e8b-a509-50c905bae2a2&#125;\InprocServer32&quot;</span> /f /ve<br>taskkill /f /im explorer.exe &amp; start explorer.exe<br></code></pre></td></tr></table></figure>
+<h2 id="结语"><a class="header-anchor" href="#结语">¶</a>结语</h2>
+<p>希望上面的程序可以帮到你！</p>
+<p>谢谢！</p>
+<hr class="footnotes-sep" />
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://zh.wikipedia.org/zh-cn/Microsoft_PowerToys">https://zh.wikipedia.org/zh-cn/Microsoft_PowerToys</a> Microsoft PowerToys - 维基百科，自由的百科全书 <a href="#fnref1" class="footnote-backref">↩︎</a></p>
+</li>
+</ol>
+</section>
+
+
+  <div class="page-cover">
+    
+  </div>
+</div>
+
+
+  <div id="share-give">
+    <div class="share-button-container">
+      <link rel="stylesheet" type="text/css" href="/css/pach-post.css">
+      <div>
+        <button class="support-button" onclick="openSupportDialog()">
+          <i class="fa fa-qrcode" aria-hidden="true" style="margin-right: 4px;"></i>
+          赞助
+        </button>
+
+        <div id="support-dialog">
+          <p class="info">
+            呓语梦轩 - 赞助
+          </p>
+          <div id="image-container">
+            <img class="give-img" src="/file/微信.webp" alt="Support Image">
+            <img class="give-img" src="/file/支付宝.webp" alt="Support Image">
+          </div>
+          <p class="like-p">啊，没钱了，谁来帮帮我啊</p>
+          <button class="close-button" onclick="closeSupportDialog()">好的</button>
+        </div>
+      </div>
+
+      <button class="share-button" onclick="generateAndCopyLink()">
+        <i class="fa fa-share-square" aria-hidden="true" style="margin-right: 4px;"></i>
+        分享
+      </button>
+    </div>
+  </div>
+
+
+<div id="article-categories">
+  <span class="span-info">
+    本站评论因服务器问题，请要发图片的各位自行至
+    <a target="_blank" rel="noopener" href="//image.neosora.cc">博主自建图床</a> 上传再分享
+  </span>
+  <br>
+  <span class="span-info">
+    欢迎阅读本站评论区 <a href="/">指南</a> 再进行评论
+  </span>
+</div>
+
+<div id="comment" style="margin-top: 16px;">
+  
+  
+            
+  
+  
+    <!-- Artalk -->
+    <div id="Comments"></div>
+    <script>
+        Artalk.init({
+            el: '#Comments',                // 绑定元素的 Selector
+            pageKey: '',                  // 固定链接 (留空自动获取)
+            pageTitle: '',  // 页面标题 (留空自动获取)
+            server: 'https://comment.neosora.cc',  // 后端地址
+            site: '呓语梦轩',             // 你的站点名
+        })
+    </script>
+    
+
+  
+    <div class="post-guide">
+      <div class="item left">
+        
+          <a href="/posts/39440.html">
+            <i class="fa fa-angle-left" aria-hidden="true"></i>
+            【破事水】-对于未来的前瞻于回望
+          </a>
+        
+      </div>
+      <div class="item right">
+        
+          <a href="/posts/2042429.html">
+            【短文】-彼时故城皆繁华
+            <i class="fa fa-angle-right" aria-hidden="true"></i>
+          </a>
+        
+      </div>
+    </div>
+  
+</div>
+
+                </div>
+                <div id="footer">
+  <div class="footer-links">
+    <div>
+      <span>
+        友情链接 - 
+        <button id="regenerateButton" class="randomLinks">刷新</button>
+      </span>
+      <div id="randomLinks"></div>
+      <script src="/js/friend-links-combined.js"></script>
+    </div>
+    <div>
+      <span class="a-links">
+        <span>其他链接</span>
+        <a href="//blog.awaae001.top/about" target="_blank">关于我</a>
+        ---
+        <a href="//blog.awaae001.top/atom.xml" target="_blank">Rss订阅</a>
+        ---
+        <a href="https://blog.awaae001.top/posts/57663.html" target="_blank">隐私协议</a>
+      </span>
+    </div>
+  </div>
+
+  <p>
+    ©&nbsp;<span id="footerYear-start">2022</span>-
+    <span id="footerYear-end"></span>
+    
+      <a href="/">awaae(player8635)</a>
+    
+    <br>
+    Theme 
+    <a href="//github.com/awaae001/hexo-theme-banyan" target="_blank">banyan（榕）</a> by 
+    <a href="//awaae001.top" target="_blank">awaae001</a>
+    Powered by 
+    <a href="//hexo.io" target="_blank">Hexo</a>
+
+    <br>
+    <a href="https://icp.gov.moe/?keyword=20234005" rel="external nofollow noreferrer" target="_blank">萌ICP备20234005号</a>
+    &nbsp;|&nbsp;
+    <a target="_blank" rel="noopener external nofollow noreferrer" href="https://beian.miit.cn.com/gov/search.php?domain=blog.awaae001.top" title="MIIT备00008635号">MIIT-00008635号</a>
+
+    <br>
+    <span>
+      本站图片由 
+      <a target="_blank" rel="noopener external nofollow noreferrer" href="https://chuqiyun.com/">初七云</a> 提供全局加速服务
+    </span>
+
+    <br>
+    <span>
+      总访问量 : <span id="busuanzi_site_pv"></span>
+      总访客数 : <span id="busuanzi_site_uv"></span>
+    </span>
+
+    <br>
+    <a title="呓语梦轩" target="_blank" rel="noopener external nofollow noreferrer" href="https://boringbay.com">
+      <img height="18px" src="https://boringbay.com/api/badge/blog.awaae001.top" />
+    </a>
+
+    <br>
+    <img src="https://img.shields.io/badge/Frame-Hexo-blue?logo=Hexo&label=框架">
+    <img src="https://img.shields.io/badge/CDN%E5%8A%A0%E9%80%9F-%E5%88%9D%E4%B8%83%E4%BA%91-%252392daff?logo=icloud&logoColor=%252392daff">
+    <a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/awaae001">
+      <img src="https://img.shields.io/badge/Github-awaae001-%238db90b?style=flat&logo=github&logoColor=%23181717">
+    </a>
+    <img src="https://img.shields.io/badge/%E7%BC%96%E8%BE%91%E5%99%A8-VScode-%23007ACC?style=flat&logo=visualstudiocode&logoColor=%23007ACC&color=%23007ACC">
+    <img src="https://img.shields.io/badge/%E4%B8%BB%E9%A2%98-banyan-rgb(172%2C%2071%2C%2053)?logo=hexo&logoColor=rgb(172%2C%2071%2C%2053)">
+    <img src="https://img.shields.io/badge/%E5%89%8D%E7%AB%AF%E6%A1%86%E6%9E%B6-VanillaJS-%23f3d890?logo=javascript&logoColor=%23f3d890g">
+
+    <br>
+
+
+  <!-- 站点运行时间展示 -->
+  
+    <div id="runtime-card" style="background-color: #60281e; color: #fff; text-align: center; padding: 10px;">
+      本站已运行：
+      <br />
+      <span id="uptime">加载中...</span>
+    </div>
+  
+
+  <script type="text/javascript">
+    const TIME_CONST = 365 * 24 * 60 * 60 * 1000;
+    const TIME_START = new Date("5/28/2023 14:13:45");
+
+    function update_website_uptime_banner() {
+      const website_uptime_banner = document.getElementById("uptime");
+      const timestamp_now = new Date();
+      const time = timestamp_now.getTime() - TIME_START.getTime();
+      const years = time / TIME_CONST;
+      const int_years = parseInt(years);
+      const days = time / (24 * 60 * 60 * 1000);
+      const int_days = parseInt(days);
+      const hours = (days - int_days) * 24;
+      const int_hours = parseInt(hours);
+      const mins = (hours - int_hours) * 60;
+      const int_mins = parseInt(mins);
+      const sec = (mins - int_mins) * 60;
+      const int_sec = parseInt(sec);
+
+      website_uptime_banner.innerHTML = `${int_days} 日 ${int_hours} 小时 ${int_mins} 分 ${int_sec} 秒 (共：${int_years} 年)`;
+    }
+
+    update_website_uptime_banner();
+    setInterval(update_website_uptime_banner, 1000);
+  </script>
+
+  
+  <script type="text/javascript">
+    document.getElementById('footerYear-end').innerHTML = new Date().getFullYear() + '';
+  </script>
+
+  
+</div>
+
+                    <div id="toggle">
+    <div id="toggle-bord">
+        <button id="totop-toggle-totop" class="toggle" title="返回顶部">
+            <i class="fa fa-angle-double-up" aria-hidden="true"></i>
+        </button>
+        <button id="footer-toggle-tocommet" class="toggle-tocommet"
+            title="前往评论区">
+            <span class="button-text">前往评论区</span>
+            <i class="fa fa-commenting-o" aria-hidden="true"></i>
+        </button>
+    </div>
+</div>
+
+<div id="myModal" class="modal">
+    <div class="modal-content">
+        <p>未找到评论区！,我们会在3秒后为你跳转到留言板</p>
+    </div>
+</div>
+
+<div id="myModal" class="modal">
+    <div class="modal-content">
+        <p>未找到评论区！,我们会在3秒后为你跳转到留言板</p>
+    </div>
+</div>
+
+<div>
+    <link rel="stylesheet" type="text/css" href="/css/lnterception.css">
+    <script src="/js/lnterception.js"></script>
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <div id="website-name"></div>
+            <p style="color: black;">你即将前往：</p>
+            <div id="website-url" style="color:rgb(43, 105, 100);"></div>
+            <p style="color: black;">请注意你的账号财产安全！</p>
+            <button id="cancel-btn" class="popup-btn">取消</button>
+            <button id="confirm-btn" class="popup-btn">确定</button>
+        </div>
+    </div>
+</div>
+
+<div id="popup-box" class="mess-popup mess-hidden">
+    <div id="popup-info">
+        <span id="popup-title"></span>
+        <span id="popup-timer"></span>
+    </div>
+    <span id="popup-content"></span>
+</div>
+
+<script>
+const Popup = (() => {
+    let countdownInterval;
+    let popupQueue = [];
+    let isPopupVisible = false;
+
+    function processQueue() {
+        if (popupQueue.length > 0 && !isPopupVisible) {
+            const nextPopup = popupQueue.shift(); // 取出队列中的下一个弹窗
+            showPopup(nextPopup.title, nextPopup.message, nextPopup.type);
+        }
+    }
+
+    function showPopup(title, message, type) {
+        const popupBox = document.getElementById('popup-box');
+        const popupTitle = document.getElementById('popup-title');
+        const popupTimer = document.getElementById('popup-timer');
+        const popupContent = document.getElementById('popup-content');
+
+        popupTitle.textContent = title;
+        popupContent.textContent = message;
+
+        popupBox.classList.remove('mess-warning', 'mess-error', 'mess-prompt', 'mess-hidden');
+
+        if (type === 'warning') {
+            popupBox.classList.add('mess-warning');
+        } else if (type === 'error') {
+            popupBox.classList.add('mess-error');
+        } else if (type === 'prompt') {
+            popupBox.classList.add('mess-prompt');
+        }
+
+        // 防止倒计时冲突
+        if (countdownInterval) {
+            clearInterval(countdownInterval);
+        }
+
+        // 设置倒计时为 5 秒
+        let countdown = 5;
+        popupTimer.textContent = `(${countdown}s)`;
+
+        // 标记弹窗为显示状态
+        isPopupVisible = true;
+
+        countdownInterval = setInterval(() => {
+            countdown -= 1;
+            popupTimer.textContent = `(${countdown}s)`;
+            if (countdown <= 0) {
+                clearInterval(countdownInterval);
+            }
+        }, 1000);
+
+        // 显示弹窗动画
+        setTimeout(() => {
+            popupBox.style.right = '10px';
+        }, 100); // 确保动画生效的小延迟
+
+        // 5 秒后隐藏弹窗，并在隐藏后检查队列
+        setTimeout(() => {
+            popupBox.style.right = '-100%';
+            setTimeout(() => {
+                popupBox.classList.add('mess-hidden');
+                isPopupVisible = false; // 标记弹窗已隐藏
+                processQueue(); // 检查并显示队列中的下一个弹窗
+            }, 500); // 等待隐藏动画结束后再处理队列
+        }, 5000);
+    }
+
+    function queuePopup(title, message, type) {
+        // 将新的弹窗请求加入队列
+        popupQueue.push({ title, message, type });
+        processQueue(); // 处理队列中的弹窗
+    }
+
+    return {
+        show: queuePopup // 使用队列的方式调用弹窗
+    };
+})();
+
+// 示例用法：
+// Popup.show('Warning Title', 'This is a warning message', 'warning');
+// Popup.show('Error Title', 'This is an error message', 'error');
+// Popup.show('Prompt Title', 'This is a prompt message', 'prompt');
+</script>
+                    <script src="/js/instant.js" ></script>
+    </body>
+
+</html>
+<!-- 
+       　  　▃▆█▇▄▖
+　 　 　 ▟◤▖　　　◥█▎
+   　 ◢◤　 ▐　　　 　▐▉
+　 ▗◤　　　▂　▗▖　　▕█▎
+　◤　▗▅▖◥▄　▀◣　　█▊
+▐　▕▎◥▖◣◤　　　　◢██
+█◣　◥▅█▀　　　　▐██◤
+▐█▙▂　　     　◢██◤
+◥██◣　　　　◢▄◤
+ 　　▀██▅▇▀
+
+
+哲学♂ 114514 
+ -->

@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>呓语梦轩 API - 顶级人工智能接口分发服务</title>
+    <style>
+        :root {
+            --primary: #4c35e0;
+            --secondary: #3498db;
+            --dark: #121212;
+            --light: #f8f9fa;
+            --accent: #00c9ff;
+            --text: #e0e0e0;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--dark);
+            color: var(--text);
+            overflow-x: hidden;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, rgba(30, 30, 40, 0.95), rgba(15, 15, 25, 0.97));
+            backdrop-filter: blur(10px);
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            background: radial-gradient(circle at top right, rgba(76, 53, 224, 0.15), transparent 70%),
+                        radial-gradient(circle at bottom left, rgba(0, 201, 255, 0.15), transparent 70%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: "";
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: rgba(76, 53, 224, 0.1);
+            filter: blur(80px);
+            top: -100px;
+            right: -100px;
+        }
+        
+        .hero::after {
+            content: "";
+            position: absolute;
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            background: rgba(0, 201, 255, 0.1);
+            filter: blur(80px);
+            bottom: -100px;
+            left: 10%;
+        }
+        
+        .hero-content {
+            max-width: 700px;
+            z-index: 1;
+        }
+        
+        h1 {
+            font-size: 4rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            line-height: 1.1;
+            background: linear-gradient(90deg, var(--light), var(--accent));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            line-height: 1.5;
+        }
+        
+        .tech-grid {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 40%;
+            height: 100%;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            padding: 100px 20px;
+            opacity: 0.2;
+        }
+        
+        .tech-item {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 5px;
+        }
+        
+        section {
+            padding: 100px 0;
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            text-align: center;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .card-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            padding: 30px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 25px rgba(76, 53, 224, 0.2);
+        }
+        
+        .card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+        }
+        
+        .card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--light);
+        }
+        
+        .model-card {
+            text-align: center;
+            padding: 40px 20px;
+        }
+        
+        .model-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary), transparent);
+            font-size: 30px;
+            color: var(--light);
+        }
+        
+        .advantage {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 30px;
+        }
+        
+        .advantage-icon {
+            flex-shrink: 0;
+            width: 50px;
+            height: 50px;
+            border-radius: 10px;
+            background: rgba(76, 53, 224, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+            font-size: 20px;
+        }
+        
+        .team-member {
+            text-align: center;
+        }
+        
+        .team-photo {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 40px;
+            font-weight: bold;
+        }
+        
+        .team-name {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 5px;
+            color: var(--light);
+        }
+        
+        .team-role {
+            color: var(--accent);
+            margin-bottom: 10px;
+        }
+        
+        .global-map {
+            width: 100%;
+            height: 400px;
+            background: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiB2aWV3Qm94PSIwIDAgMTAwMCA1MDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTI1MCAxMDBNNTAwIDEwME03NTAgMTAwTTEwMCAyMDBNNDAwIDIwME03MDAgMjAwTTkwMCAyMDBNMjAwIDMwME01MDAgMzAwTTgwMCAzMDBNMzAwIDQwME02MDAgNDAwIiBzdHJva2U9IiM0YzM1ZTAiIHN0cm9rZS1vcGFjaXR5PSIwLjIiIHN0cm9rZS13aWR0aD0iMiIgZmlsbD0ibm9uZSIgLz48Y2lyY2xlIGN4PSIyNTAiIGN5PSIyMDAiIHI9IjUiIGZpbGw9IiMwMGM5ZmYiIC8+PGNpcmNsZSBjeD0iNTAwIiBjeT0iMTUwIiByPSI1IiBmaWxsPSIjMDBjOWZmIiAvPjxjaXJjbGUgY3g9IjcwMCIgY3k9IjI1MCIgcj0iNSIgZmlsbD0iIzAwYzlmZiIgLz48Y2lyY2xlIGN4PSIzNTAiIGN5PSIzNTAiIHI9IjUiIGZpbGw9IiMwMGM5ZmYiIC8+PGNpcmNsZSBjeD0iNjAwIiBjeT0iMzAwIiByPSI1IiBmaWxsPSIjMDBjOWZmIiAvPjxjaXJjbGUgY3g9IjgwMCIgY3k9IjIwMCIgcj0iNSIgZmlsbD0iIzAwYzlmZiIgLz48cGF0aCBkPSJNMjUwIDIwMEw1MDAgMTUwTDcwMCAyNTBMNjAwIDMwMEwzNTAgMzUwTDI1MCAyMDAiIHN0cm9rZT0iIzAwYzlmZiIgc3Ryb2tlLXdpZHRoPSIxIiBzdHJva2Utb3BhY2l0eT0iMC41IiBmaWxsPSJub25lIiAvPjxwYXRoIGQ9Ik01MDAgMTUwTDgwMCAyMDBMNjAwIDMwMCIgc3Ryb2tlPSIjMDBjOWZmIiBzdHJva2Utd2lkdGg9IjEiIHN0cm9rZS1vcGFjaXR5PSIwLjUiIGZpbGw9Im5vbmUiIC8+PC9zdmc+') center center no-repeat;
+            background-size: contain;
+            margin: 50px auto;
+            position: relative;
+        }
+        
+        .server-point {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: var(--primary);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            box-shadow: 0 0 0 rgba(76, 53, 224, 0.6);
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(76, 53, 224, 0.6);
+            }
+            70% {
+                box-shadow: 0 0 0 10px rgba(76, 53, 224, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(76, 53, 224, 0);
+            }
+        }
+        
+        footer {
+            background: linear-gradient(135deg, rgba(30, 30, 40, 0.95), rgba(15, 15, 25, 0.97));
+            padding: 30px 0;
+            text-align: center;
+            margin-top: 50px;
+        }
+        
+        .stats {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            margin: 50px 0;
+        }
+        
+        .stat-item {
+            text-align: center;
+            flex: 1;
+            min-width: 200px;
+        }
+        
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .stat-label {
+            font-size: 1.2rem;
+            color: var(--text);
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 3rem;
+            }
+            
+            .subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .tech-grid {
+                display: none;
+            }
+            
+            section {
+                padding: 60px 0;
+            }
+        }
+        
+        .animated-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.3;
+        }
+        
+        .bg-line {
+            position: absolute;
+            height: 1px;
+            width: 100%;
+            background: linear-gradient(90deg, transparent, rgba(76, 53, 224, 0.3), transparent);
+            animation: lineScan 8s linear infinite;
+        }
+        
+        @keyframes lineScan {
+            0% {
+                transform: translateY(-100vh);
+            }
+            100% {
+                transform: translateY(100vh);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="animated-bg">
+        <div class="bg-line" style="animation-delay: 0s;"></div>
+        <div class="bg-line" style="animation-delay: 2s;"></div>
+        <div class="bg-line" style="animation-delay: 4s;"></div>
+        <div class="bg-line" style="animation-delay: 6s;"></div>
+    </div>
+
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">呓语梦轩 API</div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>顶级AI能力<br>一站式接入</h1>
+                <p class="subtitle">呓语梦轩 API 为您提供最强大、最稳定的人工智能接口分发服务，支持 ChatGPT、Gemini、Claude 和 Deepseek 等业界顶级模型，以极致性能满足全球企业需求。</p>
+            </div>
+        </div>
+        <div class="tech-grid">
+            <div class="tech-item"></div>
+            <div class="tech-item"></div>
+            <div class="tech-item"></div>
+            <div class="tech-item"></div>
+            <div class="tech-item"></div>
+            <div class="tech-item"></div>
+            <div class="tech-item"></div>
+            <div class="tech-item"></div>
+            <div class="tech-item"></div>
+        </div>
+    </section>
+
+    <section id="stats">
+        <div class="container">
+            <div class="stats">
+                <div class="stat-item">
+                    <div class="stat-number" id="modelsCount">15+</div>
+                    <div class="stat-label">支持AI模型</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" id="requestsCount">1000+</div>
+                    <div class="stat-label">每秒并发请求</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" id="serversCount">70+</div>
+                    <div class="stat-label">全球服务节点</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" id="clientsCount">99.9%</div>
+                    <div class="stat-label">服务可用性</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="models">
+        <div class="container">
+            <h2 class="section-title">全面覆盖顶级AI模型</h2>
+            <div class="card-container">
+                <div class="card model-card">
+                    <div class="model-icon">GPT</div>
+                    <h3>ChatGPT</h3>
+                    <p>支持OpenAI全系列模型，包括最新的GPT-o1，提供最强大的语言理解与生成能力</p>
+                </div>
+                <div class="card model-card">
+                    <div class="model-icon">G</div>
+                    <h3>Gemini</h3>
+                    <p>Google DeepMind推出的多模态模型，支持Gemini Pro和Gemini Flash，具备卓越的逻辑推理能力</p>
+                </div>
+                <div class="card model-card">
+                    <div class="model-icon">C</div>
+                    <h3>Claude</h3>
+                    <p>Anthropic旗舰模型Claude 3.7 Sonnet，拥有出色的长文本理解能力</p>
+                </div>
+                <div class="card model-card">
+                    <div class="model-icon">DS</div>
+                    <h3>Deepseek</h3>
+                    <p>新一代AI模型Deepseek R1/Deepseek V3，在编程和技术领域表现尤为突出</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="advantages">
+        <div class="container">
+            <h2 class="section-title">为什么选择 呓语梦轩 API</h2>
+            <div class="advantage">
+                <div class="advantage-icon">⚡</div>
+                <div>
+                    <h3>超高并发性能</h3>
+                    <p>采用分布式架构设计，单节点支持10万+并发请求，智能负载均衡确保请求永不排队</p>
+                </div>
+            </div>
+            <div class="advantage">
+                <div class="advantage-icon">🔄</div>
+                <div>
+                    <h3>无缝转发与降级</h3>
+                    <p>自动检测上游服务状态，实现智能故障转移和服务降级，确保服务可用性达到99.9%</p>
+                </div>
+            </div>
+            <div class="advantage">
+                <div class="advantage-icon">🔒</div>
+                <div>
+                    <h3>企业级安全保障</h3>
+                    <p>全链路TLS加密，数据传输零存储，符合GDPR等全球数据安全标准</p>
+                </div>
+            </div>
+            <div class="advantage">
+                <div class="advantage-icon">🌐</div>
+                <div>
+                    <h3>全球网络覆盖</h3>
+                    <p>30+全球数据中心，智能路由技术确保全球任何地区的请求延迟低于100ms</p>
+                </div>
+            </div>
+            <div class="advantage">
+                <div class="advantage-icon">💰</div>
+                <div>
+                    <h3>成本优化</h3>
+                    <p>独特的资源调度算法，相比直接对接原厂API可节省30%以上成本</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="team">
+        <div class="container">
+            <h2 class="section-title">世界级AI专家团队</h2>
+            <div class="card-container">
+                <div class="card team-member">
+                    <div class="team-photo">R</div>
+                    <div class="team-name">Dr. Richard Wilson</div>
+                    <div class="team-role">首席科学家</div>
+                    <p>高级研究员，在大规模语言模型优化方面拥有10年研究经验</p>
+                </div>
+                <div class="card team-member">
+                    <div class="team-photo">J</div>
+                    <div class="team-name">Jennifer Lawrence</div>
+                    <div class="team-role">架构总监</div>
+                    <p>首席架构师，专注于高并发分布式系统设计，领导了多个百万级QPS系统</p>
+                </div>
+                <div class="card team-member">
+                    <div class="team-photo">M</div>
+                    <div class="team-name">Michael Chen</div>
+                    <div class="team-role">工程VP</div>
+                    <p>基础设施工程师，拥有丰富的大规模服务部署和运维经验</p>
+                </div>
+                <div class="card team-member">
+                    <div class="team-photo">S</div>
+                    <div class="team-name">Dr. Sarah Miller</div>
+                    <div class="team-role">AI研究总监</div>
+                    <p>在自然语言处理领域发表30+高影响力论文，专注于提升大型语言模型的推理性能</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="global">
+        <div class="container">
+            <h2 class="section-title">全球服务网络</h2>
+            <p style="text-align: center; margin-bottom: 30px;">我们的服务器分布在全球各大洲的战略位置，确保无论您身在何处，都能以最低延迟访问顶级AI能力</p>
+            
+            <div class="global-map">
+                <div class="server-point" style="top: 30%; left: 20%;"></div>
+                <div class="server-point" style="top: 35%; left: 48%;"></div>
+                <div class="server-point" style="top: 25%; left: 70%;"></div>
+                <div class="server-point" style="top: 60%; left: 85%;"></div>
+                <div class="server-point" style="top: 55%; left: 30%;"></div>
+                <div class="server-point" style="top: 40%; left: 90%;"></div>
+            </div>
+            
+            <div class="card-container">
+                <div class="card">
+                    <h3>北美数据中心</h3>
+                    <p>位于美国东西海岸和加拿大的多个数据中心，为北美地区提供超低延迟服务</p>
+                </div>
+                <div class="card">
+                    <h3>欧洲数据中心</h3>
+                    <p>覆盖伦敦、法兰克福、阿姆斯特丹等主要欧洲城市，符合欧盟数据规范</p>
+                </div>
+                <div class="card">
+                    <h3>亚太数据中心</h3>
+                    <p>分布于东京、新加坡、悉尼等地区，确保亚太区域的稳定连接</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>© 2023-2024 呓语梦轩 API. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // 简单的数字动画效果
+        function animateValue(id, start, end, duration) {
+            const obj = document.getElementById(id);
+            let startTimestamp = null;
+            const step = (timestamp) => {
+                if (!startTimestamp) startTimestamp = timestamp;
+                const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+                const value = Math.floor(progress * (end - start) + start);
+                
+                if (id === 'clientsCount') {
+                    obj.innerHTML = value.toFixed(1) + '%';
+                } else {
+                    obj.innerHTML = value + '+';
+                }
+                
+                if (progress < 1) {
+                    window.requestAnimationFrame(step);
+                }
+            };
+            window.requestAnimationFrame(step);
+        }
+
+        // 观察器检测元素是否进入视口
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    if (entry.target.id === 'stats') {
+                        animateValue('modelsCount', 0, 15, 1500);
+                        animateValue('requestsCount', 0, 100, 1500);
+                        animateValue('serversCount', 0, 30, 1500);
+                        animateValue('clientsCount', 98.0, 99.9, 1500);
+                    }
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+
+        observer.observe(document.getElementById('stats'));
+        
+        // 创建动态背景效果
+        document.addEventListener('DOMContentLoaded', () => {
+            // 为卡片添加悬停效果
+            const cards = document.querySelectorAll('.card');
+            cards.forEach(card => {
+                card.addEventListener('mousemove', (e) => {
+                    const rect = card.getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
+                    
+                    card.style.background = `radial-gradient(circle at ${x}px ${y}px, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05) 40%, rgba(255, 255, 255, 0.02) 60%)`;
+                });
+                
+                card.addEventListener('mouseleave', () => {
+                    card.style.background = 'rgba(255, 255, 255, 0.05)';
+                });
+            });
+        });
+    </script>
+</body>
+</html>

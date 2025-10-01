@@ -1,0 +1,1091 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>旅程ΟΡΙΖΟΝΤΑΣ Discord Bot 准入题库编辑器</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📝</text></svg>">
+    <style>
+        :root {
+            /* 现代化暗色主题色彩 */
+            --bg-color: #0f0f14;
+            --bg-secondary: #1a1a1f;
+            --bg-tertiary: #23232a;
+            --bg-card: #6262a1;
+            --bg-input: #35353f;
+            
+            /* 文字颜色 */
+            --font-color: #ffffff;
+            --font-color-secondary: #ececec;
+            --font-color-muted: #808090;
+            
+            /* 主题色 */
+            --accent-color: #6366f1;
+            --accent-color-hover: #5855eb;
+            --accent-secondary: #8b5cf6;
+            
+            /* 状态颜色 */
+            --danger-color: #ef4444;
+            --danger-color-hover: #dc2626;
+            --success-color: #10b981;
+            --success-color-hover: #059669;
+            --warning-color: #f59e0b;
+            
+            /* 边框和分割线 */
+            --border-color: #2a2a32;
+            --border-color-light: #3a3a42;
+            --border-radius: 8px;
+            --border-radius-sm: 6px;
+            
+            /* 字体 */
+            --font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Microsoft YaHei', system-ui, sans-serif;
+            --font-mono: 'JetBrains Mono', 'Fira Code', 'Consolas', 'Monaco', monospace;
+            
+            /* 阴影 */
+            --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+            --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.5);
+            
+            /* 过渡动画 */
+            --transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-family);
+            background: linear-gradient(135deg, var(--bg-color) 0%, #0a0a0f 100%);
+            color: var(--font-color);
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            min-height: 100vh;
+            line-height: 1.6;
+        }
+
+        .container {
+            display: flex;
+            gap: 24px;
+            height: calc(100vh - 120px);
+        }
+
+        .editor-panel, .output-panel {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius);
+            padding: 24px;
+            box-shadow: var(--shadow);
+            display: flex;
+            flex-direction: column;
+            backdrop-filter: blur(10px);
+        }
+
+        .editor-panel {
+            flex: 3;
+            overflow-y: auto;
+        }
+
+        .editor-panel::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .editor-panel::-webkit-scrollbar-track {
+            background: var(--bg-tertiary);
+            border-radius: 3px;
+        }
+
+        .editor-panel::-webkit-scrollbar-thumb {
+            background: var(--border-color-light);
+            border-radius: 3px;
+        }
+
+        .editor-panel::-webkit-scrollbar-thumb:hover {
+            background: var(--font-color-muted);
+        }
+
+        .output-panel {
+            flex: 2;
+        }
+
+        .header {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 24px;
+            align-items: center;
+            padding: 20px 24px;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-sm);
+        }
+
+        h1, h2, h3 {
+            margin: 0;
+            padding: 0;
+            color: var(--font-color);
+            font-weight: 600;
+        }
+
+        h1 {
+            flex-grow: 1;
+            font-size: 1.5rem;
+            background: linear-gradient(135deg, var(--accent-color), var(--accent-secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        h2 {
+            font-size: 1.2rem;
+        }
+
+        button, .button-like {
+            background: var(--accent-color);
+            color: white;
+            border: none;
+            padding: 10px 16px;
+            border-radius: var(--border-radius-sm);
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 500;
+            font-family: var(--font-family);
+            transition: var(--transition);
+            text-align: center;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            text-decoration: none;
+            box-shadow: var(--shadow-sm);
+            position: relative;
+            overflow: hidden;
+        }
+
+        button::before, .button-like::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+            transition: left 0.5s;
+        }
+
+        button:hover::before, .button-like:hover::before {
+            left: 100%;
+        }
+
+        button:hover, .button-like:hover {
+            background: var(--accent-color-hover);
+            transform: translateY(-1px);
+            box-shadow: var(--shadow);
+        }
+
+        button:active, .button-like:active {
+            transform: translateY(0);
+        }
+
+        button.danger {
+            background: var(--danger-color);
+        }
+        
+        button.danger:hover {
+            background: var(--danger-color-hover);
+        }
+        
+        button.success {
+            background: var(--success-color);
+        }
+        
+        button.success:hover {
+            background: var(--success-color-hover);
+        }
+
+        input[type="text"], textarea, select {
+            width: 100%;
+            padding: 12px 16px;
+            background: var(--bg-input);
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius-sm);
+            color: var(--font-color);
+            font-family: var(--font-family);
+            font-size: 14px;
+            box-sizing: border-box;
+            margin-bottom: 12px;
+            transition: var(--transition);
+        }
+
+        input[type="text"]:focus, textarea:focus, select:focus {
+            outline: none;
+            border-color: var(--accent-color);
+            box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 80px;
+            line-height: 1.5;
+        }
+
+        select {
+            cursor: pointer;
+        }
+
+        #toml-output {
+            flex-grow: 1;
+            font-family: var(--font-mono);
+            font-size: 13px;
+            white-space: pre;
+            line-height: 1.6;
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border-color);
+            padding: 16px;
+            border-radius: var(--border-radius-sm);
+        }
+
+        .category-block {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius);
+            margin-bottom: 24px;
+            padding: 20px;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+        }
+
+        .category-block:hover {
+            border-color: var(--border-color-light);
+            box-shadow: var(--shadow);
+        }
+
+        .category-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .category-header > div {
+            display: flex;
+            gap: 12px;
+        }
+        
+        .category-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--font-color);
+        }
+        
+        .category-title input {
+            font-size: 1.1rem;
+            padding: 8px 12px;
+            font-weight: 600;
+            background: var(--bg-input);
+            border: 1px solid var(--border-color);
+        }
+
+        .question-card {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius);
+            padding: 20px;
+            margin-bottom: 16px;
+            position: relative;
+            transition: var(--transition);
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .question-card:hover {
+            border-color: var(--border-color-light);
+            box-shadow: var(--shadow);
+        }
+        
+        .question-card.char-limit-exceeded {
+            border-color: var(--danger-color);
+            box-shadow: 0 0 0 1px rgba(239, 68, 68, 0.2);
+        }
+
+        .question-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 16px;
+        }
+
+        .question-controls {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .question-controls select {
+            width: auto;
+            margin-bottom: 0;
+            min-width: 120px;
+            padding: 9px 16px;
+        }
+        
+        .char-counter {
+            position: absolute;
+            top: 26px;
+            right: 100px;
+            font-size: 11px;
+            padding: 4px 8px;
+            border-radius: var(--border-radius-sm);
+            background: var(--bg-tertiary);
+            color: var(--font-color-muted);
+            font-family: var(--font-mono);
+            font-weight: 500;
+            border: 1px solid var(--border-color);
+        }
+        
+        .char-counter.error {
+            color: white;
+            background: var(--danger-color);
+            border-color: var(--danger-color);
+        }
+        
+        .char-counter.normal {
+            color: white;
+            background: var(--success-color);
+            border-color: var(--success-color);
+        }
+
+        .lang-group {
+            display: grid;
+            grid-template-columns: 50px 1fr;
+            gap: 12px;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+
+        .lang-label {
+            font-weight: 600;
+            color: var(--font-color-secondary);
+            text-align: right;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .options-container .option {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 12px;
+            background: var(--bg-tertiary);
+            padding: 16px;
+            border-radius: var(--border-radius-sm);
+            border: 1px solid var(--border-color);
+            transition: var(--transition);
+        }
+        
+        .options-container .option:hover {
+            border-color: var(--border-color-light);
+            background: var(--bg-input);
+        }
+        
+        .options-container .option .lang-group {
+            flex-grow: 1;
+            margin-bottom: 0;
+        }
+        
+        .correct-answer-toggle {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            background: var(--bg-input);
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius-sm);
+            transition: var(--transition);
+        }
+        
+        .correct-answer-toggle:hover {
+            border-color: var(--accent-color);
+        }
+        
+        .correct-answer-toggle input {
+            width: 18px;
+            height: 18px;
+            cursor: pointer;
+            accent-color: var(--accent-color);
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid var(--border-color);
+            margin: 20px 0;
+        }
+        
+        .toast {
+            position: fixed;
+            bottom: 24px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--success-color);
+            color: white;
+            padding: 16px 24px;
+            border-radius: var(--border-radius);
+            z-index: 1000;
+            opacity: 0;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            pointer-events: none;
+            box-shadow: var(--shadow-lg);
+            font-weight: 500;
+            backdrop-filter: blur(10px);
+        }
+        
+        .toast.show {
+            opacity: 1;
+            transform: translateX(-50%) translateY(0);
+        }
+
+        /* 文件输入样式优化 */
+        input[type="file"] {
+            display: none;
+        }
+
+        /* 滚动条全局样式 */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--bg-tertiary);
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--border-color-light);
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--font-color-muted);
+        }
+
+        /* 响应式设计优化 */
+        @media (max-width: 1200px) {
+            .container {
+                flex-direction: column;
+                height: auto;
+            }
+            
+            .editor-panel, .output-panel {
+                flex: none;
+            }
+            
+            .output-panel {
+                min-height: 300px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 12px;
+            }
+            
+            .header {
+                flex-direction: column;
+                gap: 12px;
+                align-items: stretch;
+            }
+            
+            .header > div {
+                display: flex;
+                gap: 8px;
+                flex-wrap: wrap;
+            }
+            
+            .lang-group {
+                grid-template-columns: 1fr;
+                gap: 8px;
+            }
+            
+            .lang-label {
+                text-align: left;
+            }
+            
+            .char-counter {
+                position: static;
+                margin: 8px 0;
+                display: inline-block;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1>✨ 题库编辑器</h1>
+        <input type="file" id="toml-file-input" accept=".toml" style="display: none;">
+        <label for="toml-file-input" class="button-like">导入 TOML</label>
+        <button id="add-category-btn">✚ 添加类别</button>
+    </div>
+
+    <div class="container">
+        <div class="editor-panel" id="editor-container">
+            <!-- 类别和问题将动态生成在这里 -->
+        </div>
+
+        <div class="output-panel">
+            <div class="category-header">
+                <h2>TOML 输出 (即时保存)</h2>
+                <div>
+                    <button id="download-toml-btn" class="success">📥 下载文件</button>
+                    <button id="copy-toml-btn" class="success">📋 复制内容</button>
+                </div>
+            </div>
+            <textarea id="toml-output" readonly placeholder="这里会显示生成的 TOML 内容..."></textarea>
+        </div>
+    </div>
+    
+    <div id="toast-notification" class="toast">内容已复制!</div>
+
+    <script type="module">
+    // 在这里，我们将用爱和魔法注入JavaScript逻辑！ (ﾉ>ω<)ﾉ
+    import smolToml from 'https://cdn.jsdelivr.net/npm/smol-toml@1.3.4/+esm';
+
+    window.onload = () => {
+        let database = {}; // 存储所有题库数据
+        let version = "v1.0"; // 版本管理
+        const MAX_CATEGORIES = 4; // 最大类别数量，可在此修改
+
+        const editorContainer = document.getElementById('editor-container');
+        const tomlOutput = document.getElementById('toml-output');
+        const fileInput = document.getElementById('toml-file-input');
+        const addCategoryBtn = document.getElementById('add-category-btn');
+        const copyBtn = document.getElementById('copy-toml-btn');
+        const downloadBtn = document.getElementById('download-toml-btn');
+        const toast = document.getElementById('toast-notification');
+        
+        // --- 核心功能：渲染、保存、防抖 ---
+
+        // 防抖函数，防止因为输入太快导致频繁刷新，影响性能
+        function debounce(func, delay) {
+            let timeout;
+            return function(...args) {
+                clearTimeout(timeout);
+                timeout = setTimeout(() => func.apply(this, args), delay);
+            };
+        }
+
+        // 保存状态并更新TOML输出
+        const saveState = () => {
+            console.log("Saving state...", database);
+            tomlOutput.value = generateToml(database);
+            // 更新标题显示当前版本
+            const versionTitle = document.querySelector('.output-panel h2');
+            versionTitle.textContent = `TOML 输出 (${version}) - 即时保存`;
+        };
+        
+        const debouncedSave = debounce(saveState, 500);
+
+        // 主渲染函数，根据 database 对象重新绘制整个编辑器界面
+        const render = () => {
+            editorContainer.innerHTML = ''; // 清空旧界面
+            Object.keys(database).sort().forEach(categoryName => {
+                const category = database[categoryName];
+                const categoryBlock = document.createElement('div');
+                categoryBlock.className = 'category-block';
+                categoryBlock.innerHTML = `
+                    <div class="category-header">
+                        <div class="category-title">${categoryName}</div>
+                        <div>
+                            <button class="add-question-btn" data-category="${categoryName}">✚ 添加问题</button>
+                            <button class="danger delete-category-btn" data-category="${categoryName}">🗑️ 删除类别</button>
+                        </div>
+                    </div>
+                    <div class="questions-container"></div>
+                `;
+                
+                const questionsContainer = categoryBlock.querySelector('.questions-container');
+                category.forEach((question, qIndex) => {
+                    questionsContainer.appendChild(createQuestionCard(categoryName, question, qIndex));
+                });
+
+                editorContainer.appendChild(categoryBlock);
+            });
+        };
+        
+        // --- 组件创建函数 ---
+
+        function createQuestionCard(categoryName, question, qIndex) {
+            const card = document.createElement('div');
+            card.className = 'question-card';
+            card.dataset.category = categoryName;
+            card.dataset.qIndex = qIndex;
+            
+            const isChoice = question.type === 'choice';
+            const optionsHtml = isChoice ? createOptionsHtml(question.options, question.correct_answer) : '';
+            const completionHtml = !isChoice ? createCompletionHtml(question.tips, question.correct_answer) : '';
+            
+            card.innerHTML = `
+                <div class="question-header">
+                    <div class="question-controls">
+                        <select class="question-type-select">
+                            <option value="choice" ${isChoice ? 'selected' : ''}>选择题</option>
+                            <option value="completion" ${!isChoice ? 'selected' : ''}>填空题</option>
+                        </select>
+                        ${isChoice ? '<button class="add-option-btn">✚ 添加选项</button>' : ''}
+                    </div>
+                    <button class="danger delete-question-btn">🗑️</button>
+                </div>
+                
+                <div class="char-counter"></div>
+
+                <div class="lang-group">
+                    <span class="lang-label">问题 CN</span>
+                    <textarea class="question-cn-input" rows="2" placeholder="选择题的中文问题?">${question.question.cn}</textarea>
+                </div>
+                <div class="lang-group">
+                    <span class="lang-label">问题 EN</span>
+                    <textarea class="question-en-input" rows="2" placeholder="Choice Question in English?">${question.question.en}</textarea>
+                </div>
+                
+                <hr>
+                
+                <div class="specifics-container">
+                    ${optionsHtml}
+                    ${completionHtml}
+                </div>
+            `;
+            
+            // 实时计算字数
+            updateCharCount(card, question);
+            
+            return card;
+        }
+
+        function createOptionsHtml(options, correctAnswers) {
+            return `
+                <div class="options-container">
+                    ${Object.keys(options).map((optKey, oIndex) => `
+                        <div class="option" data-option-key="${optKey}">
+                            <div class="correct-answer-toggle">
+                                <input type="checkbox" class="correct-answer-checkbox" ${correctAnswers.includes(optKey) ? 'checked' : ''}>
+                            </div>
+                            <div class="lang-group">
+                                <span class="lang-label">选项 ${oIndex + 1} CN</span>
+                                <input type="text" class="option-cn-input" value="${options[optKey].cn}" placeholder="选项 ${oIndex + 1} 的中文内容">
+                            </div>
+                            <div class="lang-group">
+                                <span class="lang-label">选项 ${oIndex + 1} EN</span>
+                                <input type="text" class="option-en-input" value="${options[optKey].en}" placeholder="Option ${oIndex + 1}'s English content">
+                            </div>
+                            <button class="danger delete-option-btn">✕</button>
+                        </div>
+                    `).join('')}
+                </div>
+            `;
+        }
+        
+        function createCompletionHtml(tips, correctAnswers) {
+             return `
+                <div class="completion-container">
+                    <div class="lang-group">
+                        <span class="lang-label">提示 CN</span>
+                        <input type="text" class="tips-cn-input" value="${tips.cn}" placeholder="填空题的中文提示">
+                    </div>
+                    <div class="lang-group">
+                        <span class="lang-label">提示 EN</span>
+                        <input type="text" class="tips-en-input" value="${tips.en}" placeholder="Completion question's English tips">
+                    </div>
+                    <div class="lang-group">
+                        <span class="lang-label">答案</span>
+                        <input type="text" class="completion-answer-input" value="${correctAnswers[0] || ''}" placeholder="填空题的唯一答案">
+                    </div>
+                </div>
+            `;
+        }
+
+        // --- 数据处理与验证 ---
+
+        function updateCharCount(cardElement, question) {
+            let cnCount = (question.question.cn || '').length;
+            let enCount = (question.question.en || '').length;
+            const limit = 960;
+            
+            if (question.type === 'choice') {
+                Object.values(question.options).forEach(opt => {
+                    cnCount += (opt.cn || '').length;
+                    enCount += (opt.en || '').length;
+                });
+            }
+            
+            const counterElement = cardElement.querySelector('.char-counter');
+            counterElement.innerHTML = `CN: ${cnCount}/${limit} | EN: ${enCount}/${limit}`;
+            
+            if (cnCount > limit || enCount > limit) {
+                cardElement.classList.add('char-limit-exceeded');
+                counterElement.classList.remove('normal');
+                counterElement.classList.add('error');
+            } else {
+                cardElement.classList.remove('char-limit-exceeded');
+                counterElement.classList.remove('error');
+                counterElement.classList.add('normal');
+            }
+        }
+        
+        // --- TOML 生成与解析 ---
+        
+        function generateToml(db) {
+            let tomlString = `version = "${version}"\n\n`;
+            Object.keys(db).sort().forEach(categoryName => {
+                db[categoryName].forEach((question, index) => {
+                    const questionIndex = `index_${index + 1}`;
+                    tomlString += `[${categoryName}.${questionIndex}]\n`;
+                    tomlString += `type = "${question.type}"\n`;
+                    tomlString += `question = { cn = "${question.question.cn}", en = "${question.question.en}" }\n`;
+                    
+                    if (question.type === 'choice') {
+                        Object.keys(question.options).forEach(optKey => {
+                            const option = question.options[optKey];
+                            tomlString += `${optKey} = { cn = "${option.cn}", en = "${option.en}" }\n`;
+                        });
+                    } else { // completion
+                        tomlString += `tips = { cn = "${question.tips.cn}", en = "${question.tips.en}" }\n`;
+                    }
+                    
+                    const correctAnswersStr = question.correct_answer.map(a => `"${a}"`).join(', ');
+                    tomlString += `correct_answer = [${correctAnswersStr}]\n\n`;
+                });
+            });
+            return tomlString;
+        }
+        
+        // 版本增加逻辑
+        function incrementVersion(currentVersion) {
+            const versionMatch = currentVersion.match(/^v(\d+)\.(\d+)$/);
+            if (!versionMatch) return "v1.0";
+            
+            let major = parseInt(versionMatch[1]);
+            let minor = parseInt(versionMatch[2]);
+            
+            minor += 1;
+            if (minor >= 100) {
+                major += 1;
+                minor = 0;
+            }
+            
+            return `v${major}.${minor}`;
+        }
+        
+        function parseTomlToDatabase(tomlString) {
+            try {
+                const parsed = smolToml.parse(tomlString);
+                const newDb = {};
+                
+                console.log("解析后的TOML数据:", parsed); // 调试输出
+                
+                // 提取版本信息并自动增加
+                if (parsed.version) {
+                    version = incrementVersion(parsed.version);
+                } else {
+                    version = incrementVersion("v1.0");
+                }
+                
+                // 遍历所有顶级键，查找类别
+                for (const topKey in parsed) {
+                    // 跳过版本字段
+                    if (topKey === 'version') continue;
+                    
+                    const categoryData = parsed[topKey];
+                    if (typeof categoryData === 'object' && categoryData !== null) {
+                        const categoryName = topKey;
+                        
+                        if (!newDb[categoryName]) {
+                            newDb[categoryName] = [];
+                        }
+                        
+                        // 遍历该类别下的所有问题索引
+                        for (const questionIndex in categoryData) {
+                            const rawQuestion = categoryData[questionIndex];
+                            
+                            if (typeof rawQuestion === 'object' && rawQuestion.type) {
+                                const question = {
+                                    type: rawQuestion.type,
+                                    question: rawQuestion.question || { cn: '', en: '' },
+                                    correct_answer: rawQuestion.correct_answer || [],
+                                };
+                                
+                                if (rawQuestion.type === 'choice') {
+                                    question.options = {};
+                                    Object.keys(rawQuestion).forEach(key => {
+                                        if (key.startsWith('answer_')) {
+                                            question.options[key] = rawQuestion[key];
+                                        }
+                                    });
+                                } else {
+                                    question.tips = rawQuestion.tips || { cn: '', en: '' };
+                                }
+                                
+                                newDb[categoryName].push(question);
+                            }
+                        }
+                    }
+                }
+                
+                // 对每个类别下的问题进行排序，确保 index 稳定
+                Object.keys(newDb).forEach(cat => {
+                    newDb[cat].sort((a,b) => {
+                        // 根据问题索引排序而不是问题内容
+                        return 0; // 保持原有顺序
+                    });
+                });
+
+                console.log("解析后的数据库:", newDb); // 调试输出
+                return newDb;
+            } catch (e) {
+                alert('TOML 文件解析失败！请检查文件格式。\n错误信息: ' + e.message);
+                console.error(e);
+                return null;
+            }
+        }
+        
+        // --- 事件监听器 ---
+
+        // 全局事件委托，处理动态生成的元素的事件
+        editorContainer.addEventListener('input', (e) => {
+            const card = e.target.closest('.question-card');
+            if (!card) return;
+            
+            const { category, qIndex } = card.dataset;
+            const question = database[category][qIndex];
+            
+            if (e.target.matches('.question-cn-input')) question.question.cn = e.target.value;
+            if (e.target.matches('.question-en-input')) question.question.en = e.target.value;
+
+            if (question.type === 'choice') {
+                const optionDiv = e.target.closest('.option');
+                if (optionDiv) {
+                    const { optionKey } = optionDiv.dataset;
+                    if (e.target.matches('.option-cn-input')) question.options[optionKey].cn = e.target.value;
+                    if (e.target.matches('.option-en-input')) question.options[optionKey].en = e.target.value;
+                }
+            } else {
+                if (e.target.matches('.tips-cn-input')) question.tips.cn = e.target.value;
+                if (e.target.matches('.tips-en-input')) question.tips.en = e.target.value;
+                if (e.target.matches('.completion-answer-input')) question.correct_answer = [e.target.value];
+            }
+            
+            updateCharCount(card, question);
+            debouncedSave();
+        });
+
+        editorContainer.addEventListener('change', (e) => {
+             const card = e.target.closest('.question-card');
+             if (!card) return;
+             
+             const { category, qIndex } = card.dataset;
+             const question = database[category][qIndex];
+
+            // 切换问题类型
+            if (e.target.matches('.question-type-select')) {
+                question.type = e.target.value;
+                // 从选择题切换到填空题时，初始化 tips
+                if (question.type === 'completion' && !question.tips) {
+                    question.tips = { cn: '', en: ''};
+                    question.correct_answer = ["answer"];
+                    delete question.options;
+                }
+                // 从填空题切换到选择题时，初始化 options
+                if (question.type === 'choice' && !question.options) {
+                    question.options = { 'answer_1': {cn: '', en: ''}};
+                    question.correct_answer = [];
+                    delete question.tips;
+                }
+                render();
+                debouncedSave();
+            }
+            
+            // 更新正确答案
+            if (e.target.matches('.correct-answer-checkbox')) {
+                const optionDiv = e.target.closest('.option');
+                const { optionKey } = optionDiv.dataset;
+                const currentCorrect = new Set(question.correct_answer);
+                if (e.target.checked) {
+                    currentCorrect.add(optionKey);
+                } else {
+                    currentCorrect.delete(optionKey);
+                }
+                question.correct_answer = Array.from(currentCorrect).sort();
+                debouncedSave();
+            }
+        });
+        
+        editorContainer.addEventListener('click', (e) => {
+            // 添加问题
+            if (e.target.matches('.add-question-btn')) {
+                const categoryName = e.target.dataset.category;
+                database[categoryName].push({
+                    type: 'choice',
+                    question: { cn: '', en: '' },
+                    options: { 'answer_1': { cn: '', en: '' }, 'answer_2': { cn: '', en: '' } },
+                    correct_answer: []
+                });
+                render();
+                debouncedSave();
+            }
+            
+            // 删除问题
+            if (e.target.matches('.delete-question-btn')) {
+                if (!confirm('确定要删除这道题吗？')) return;
+                const card = e.target.closest('.question-card');
+                const { category, qIndex } = card.dataset;
+                database[category].splice(qIndex, 1);
+                render();
+                debouncedSave();
+            }
+            
+            // 删除类别
+            if (e.target.matches('.delete-category-btn')) {
+                 const categoryName = e.target.dataset.category;
+                 if (!confirm(`确定要删除整个 "${categoryName}" 类别以及其中的所有问题吗？`)) return;
+                 delete database[categoryName];
+                 render();
+                 debouncedSave();
+            }
+            
+            // 添加选项
+            if (e.target.matches('.add-option-btn')) {
+                const card = e.target.closest('.question-card');
+                const { category, qIndex } = card.dataset;
+                const question = database[category][qIndex];
+                const newOptionIndex = Object.keys(question.options).length + 1;
+                const newOptionKey = `answer_${newOptionIndex}`;
+                question.options[newOptionKey] = { cn: '', en: '' };
+                render(); // 重绘以显示新选项
+                debouncedSave();
+            }
+            
+            // 删除选项
+            if (e.target.matches('.delete-option-btn')) {
+                if (!confirm('确定要删除这个选项吗？')) return;
+                const card = e.target.closest('.question-card');
+                const optionDiv = e.target.closest('.option');
+                const { category, qIndex } = card.dataset;
+                const { optionKey } = optionDiv.dataset;
+                
+                const question = database[category][qIndex];
+                delete question.options[optionKey];
+                
+                // 同时从正确答案中移除
+                question.correct_answer = question.correct_answer.filter(ans => ans !== optionKey);
+                
+                render();
+                debouncedSave();
+            }
+        });
+        
+        // 生成下一个类别名称
+        function getNextCategoryName() {
+            const letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j'];
+            const existingCategories = Object.keys(database);
+            
+            for (let i = 0; i < Math.min(MAX_CATEGORIES, letters.length); i++) {
+                const categoryName = `type-${letters[i]}`;
+                if (!existingCategories.includes(categoryName)) {
+                    return categoryName;
+                }
+            }
+            return null; // 所有类别都已存在
+        }
+        
+        // 顶部按钮事件
+        addCategoryBtn.addEventListener('click', () => {
+            const existingCount = Object.keys(database).length;
+            if (existingCount >= MAX_CATEGORIES) {
+                alert(`最多只能创建 ${MAX_CATEGORIES} 个类别！`);
+                return;
+            }
+            
+            const categoryName = getNextCategoryName();
+            if (categoryName) {
+                database[categoryName] = [];
+                render();
+                debouncedSave();
+            } else {
+                alert('无法创建更多类别！');
+            }
+        });
+
+        fileInput.addEventListener('change', (e) => {
+            const file = e.target.files[0];
+            if (!file) return;
+            
+            const reader = new FileReader();
+            reader.onload = (event) => {
+                const newDb = parseTomlToDatabase(event.target.result);
+                if (newDb) {
+                    database = newDb;
+                    render();
+                    saveState(); // 立即保存，不防抖
+                }
+            };
+            reader.readAsText(file);
+            fileInput.value = ''; // 允许再次选择相同的文件
+        });
+        
+        copyBtn.addEventListener('click', () => {
+            tomlOutput.select();
+            navigator.clipboard.writeText(tomlOutput.value).then(() => {
+                toast.classList.add('show');
+                setTimeout(() => toast.classList.remove('show'), 2000);
+            }).catch(err => {
+                alert('复制失败: ' + err);
+            });
+        });
+        
+        downloadBtn.addEventListener('click', () => {
+            const content = tomlOutput.value;
+            if (!content.trim()) {
+                alert('没有内容可下载！');
+                return;
+            }
+            
+            // 创建Blob对象
+            const blob = new Blob([content], { type: 'text/plain;charset=utf-8' });
+            
+            // 创建下载链接
+            const url = URL.createObjectURL(blob);
+            const link = document.createElement('a');
+            link.href = url;
+            
+            // 固定文件名
+            link.download = 'question_library.toml';
+            
+            // 触发下载
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            
+            // 清理URL对象
+            URL.revokeObjectURL(url);
+            
+            // 显示下载提示
+            const originalText = toast.textContent;
+            toast.textContent = '文件已下载！';
+            toast.classList.add('show');
+            setTimeout(() => {
+                toast.classList.remove('show');
+                toast.textContent = originalText;
+            }, 2000);
+        });
+        
+        // 初始化
+        render();
+    };
+    </script>
+</body>
+</html>

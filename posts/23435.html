@@ -1,0 +1,1915 @@
+<!--
+               * _oo0oo_
+              * o8888888o * 
+              88"  .  "88 
+              * (| -_- |) * 
+                 0\ = /0 
+            * ___/`---'\___ *
+              .' \\| |// '. 
+          * / \\||| : |||// \ *
+          / _||||| -:- |||||- \ 
+          * | | \\\ - /// | | * 
+          | \_| ''\---/'' |_/ |
+         * \ .-\__ '-' ___/-. / *
+        ___'. .' /--.--\ `. .'___ 
+   * ."" '< `.___\_<|>_/___.' >' "". * 
+    | | : `- \`.;`\ _ /`;.`/ - ` : | |
+    * \ \ `_. \_ __\ /__ _/ .-` / / * =====`
+     -.____`.___ \_____/___.-`___.-
+             '===== * `=---=' 
+                  * * * 
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+       佛祖保佑 永不宕机 永无BUG  
+	   服务器不卡，图床不崩，CDN正常
+
+       大慈大悲
+-->
+
+<!DOCTYPE html>
+<html lang="zh">
+
+<!-- 欢迎使用hexo_BT-banyun[榕树] 
+
+ █████╗ ██╗    ██╗ █████╗  █████╗ ███████╗    ██████╗  █████╗ ███╗   ██╗██╗   ██╗██╗   ██╗███╗   ██╗
+██╔══██╗██║    ██║██╔══██╗██╔══██╗██╔════╝    ██╔══██╗██╔══██╗████╗  ██║╚██╗ ██╔╝██║   ██║████╗  ██║
+███████║██║ █╗ ██║███████║███████║█████╗█████╗██████╔╝███████║██╔██╗ ██║ ╚████╔╝ ██║   ██║██╔██╗ ██║
+██╔══██║██║███╗██║██╔══██║██╔══██║██╔══╝╚════╝██╔══██╗██╔══██║██║╚██╗██║  ╚██╔╝  ██║   ██║██║╚██╗██║
+██║  ██║╚███╔███╔╝██║  ██║██║  ██║███████╗    ██████╔╝██║  ██║██║ ╚████║   ██║   ╚██████╔╝██║ ╚████║
+╚═╝  ╚═╝ ╚══╝╚══╝ ╚═╝  ╚═╝╚═╝  ╚═╝╚══════╝    ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═══╝   ╚═╝    ╚═════╝ ╚═╝  ╚═══╝
+                                                                                                    
+-->
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+
+  <script>
+    window.si = window.si || function () {
+      (window.siq = window.siq || []).push(arguments);
+    };
+  </script>
+
+  <!-- Title -->
+  
+  <title>
+    
+      彼方的她：一场跨越时空的对话，一段孤寂宇宙的回响 |
+    
+    呓语梦轩
+  </title>
+
+  <!-- Metadata -->
+  <meta name="description" content="feedId:66423920692680713+userId:75549670478944256" />
+
+  
+    <meta name="keywords" content="小说,游戏,hexo,教程" />
+  
+
+  
+    <meta name="description" content="一个小站点,很小，很破，很温馨-awaae" />
+  
+
+  <!-- Favicon -->
+  
+    <link rel="shortcut icon" href="/ico.jpg">
+  
+
+  <!-- Search -->
+  <script>
+    var searchEngine = "https://www.google.com/search?q=";
+    if (!searchEngine) {
+      searchEngine = "https://www.google.com/search?q=";
+    }
+
+    var homeHost = "blog.awaae001.top";
+    if (!homeHost) {
+      homeHost = window.location.host;
+    }
+  </script>
+
+  <!-- Clarity -->
+  <script type="text/javascript">
+    (function (c, l, a, r, i, t, y) {
+      c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+      t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+      y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+    })(window, document, "clarity", "script", "j67354s1x5");
+  </script>
+
+  <!-- CSS -->
+  
+<link rel="stylesheet" href="/css/main.css">
+
+  
+<link rel="stylesheet" href="/css/top-botton/site-info.css">
+
+  
+<link rel="stylesheet" href="/css/top-botton/postgo.css">
+
+  
+<link rel="stylesheet" href="/css/top-botton/siteinfo-page.css">
+
+  
+<link rel="stylesheet" href="/css/font-awesome.min.css">
+
+  
+<link rel="stylesheet" href="/css/darcula.min.css">
+
+  
+<link rel="stylesheet" href="/css/code.css">
+
+  
+<link rel="stylesheet" href="/css/artalk.css">
+
+  
+<link rel="stylesheet" href="/css/home.css">
+
+
+  <link rel="stylesheet" type="text/css" href="https://blog.awaae001.top/css/card.css">
+  <link rel="preconnect" href="https://fonts.font.im">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.font.im/css2?family=Noto+Serif+SC:wght@200..900&display=swap" rel="stylesheet">
+
+  <!-- JS -->
+  <script src="/js/vendor/jquery.min.js" defer></script>
+  <script src="/js/ui-interactions.js" defer></script>
+  <script src="/js/vendor/highlight.min.js" defer></script>
+  <script src="/js/vendor/jquery.pjax.min.js" defer></script>
+  <script src="/js/main.js" defer></script>
+  <script async src="https://pv.neosora.cc/js"></script>
+  <script src="/js/page-features.js" defer></script>
+  <script src="/js/page-utils.js" defer></script>
+    <script src="/js/lnterception.js" defer></script>
+  <script defer src="https://umami.awaae001.top/script.js" data-website-id="614c425b-3d03-443b-9bc0-36503a1edbdd"></script>
+  <script src="/file/artalk.js"></script>
+
+  
+    <script src="/js/vendor/jquery.fancybox.min.js" defer></script>
+    <script src="/js/fancybox.js" defer></script>
+    
+<link rel="stylesheet" href="/css/jquery.fancybox.min.css">
+
+  
+
+  
+
+  <!-- Background -->
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      position: relative;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      background-image: url('https://pic.awaae001.top/ai1_178504_e25aaeb4.webp');
+      background-size: cover;
+      filter: blur(10px);
+    }
+  </style>
+
+  <!-- Optional SW -->
+  <!-- <script src="/sw-start.js"></script> -->
+<meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="呓语梦轩" type="application/atom+xml">
+</head>
+
+
+    <body>
+        <header id="header">
+  <a id="title" href="/" class="logo">呓语梦轩</a>
+
+<ul id="menu">
+  
+
+  
+
+  
+
+  
+    
+    
+      <li class="menu-item">
+        <a href='/link/' class="menu-item-link" target="_blank">
+          友人帐
+        </a>
+      </li>
+    
+      <li class="menu-item">
+        <a href='/daily/' class="menu-item-link" target="_blank">
+          说说
+        </a>
+      </li>
+    
+      <li class="menu-item">
+        <a href='/link/commit/' class="menu-item-link" target="_blank">
+          留言板
+        </a>
+      </li>
+    
+  
+
+  <li class="menu-item">
+    <a class="travellings" href="https://www.travellings.cn/go.html" target="_blank" rel="noopener external nofollow noreferrer" title="开往-友链接力">
+        🚇 开往
+    </a>
+    
+<link rel="stylesheet" href="/css/other.css">
+
+</li>
+
+  
+    <li class="menu-item">
+      <a href='https://github.com/awaae001' rel="external nofollow noreferrer" class="menu-item-link" target="_blank">
+        <i class="fa fa-github fa-2x"></i>
+      </a>
+    </li>
+  
+</ul>
+</header>
+
+        
+<div id="sidebar">
+	<button id="sidebar-toggle" class="toggle" ><i class="fa fa-arrow-right " aria-hidden="true"></i></button>
+	
+	<div id="site-toc">
+		<input id="search-input" class="search-input" type="search" placeholder="Press Enter to search">
+		<div id="tree">
+			
+
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/12578.html">
+                     
+										    回声洞
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/5401.html">
+                     
+										    about-各大分区内容介绍
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/16107.html">
+                     
+										    Hello World
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										人言堂（感想）
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/posts/50701.html">
+                     
+										    06-《你想活出怎样的人生》-高塔、苍鹭、少年、人生
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										游戏
+									</a>
+									
+							<ul>
+								<li class="file active">
+									<a href="/posts/23435.html">
+                     
+										    彼方的她：一场跨越时空的对话，一段孤寂宇宙的回响
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/26598.html">
+                     
+										    逐光 · 启航：愿领航员畅行无阻
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/6884.html">
+                     
+										    飞跃13号房-对网瘾治疗披露与反抗
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/23024.html">
+                     
+										    饿殍：明末千里行-岁大饥，人相食
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										呓语亭（随笔）
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/posts/39440.html">
+                     
+										    【破事水】-对于未来的前瞻于回望
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										热点
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/posts/52376.html">
+                     
+										    AI时代-汹涌而来
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/13860.html">
+                     
+										    贵州消防栓事件的思考
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/25133.html">
+                     
+										    霸凌行为-地狱空荡荡，恶魔在人间！
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										言论
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/posts/1579.html">
+                     
+										    00-少年：江湖走马，陪剑长行
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/20519.html">
+                     
+										    01-我发现一件事
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/10312.html">
+                     
+										    02-成绩可以代表一切吗?
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/27079.html">
+                     
+										    03-早晚都得死，那我们为什么要活着？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/63283.html">
+                     
+										    04-写文章是为了什么?
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/22861.html">
+                     
+										    05-过程与结果
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/908575.html">
+                     
+										    06-时代造青年，还是青年造时代？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/11645.html">
+                     
+										    07-剧终：故事的开端与终末
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/63703.html">
+                     
+										    08-AGI：算力洪流与未坍缩的星光
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										布告板（公告）
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/posts/48274.html">
+                     
+										    更新发布和问题提出
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/46576.html">
+                     
+										    本站转移到云服务器了
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/786782.html">
+                     
+										    十年之约-我与十年后的自己有一个约定
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/57663.html">
+                     
+										    隐私政策
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										幽篁里（其他）
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/posts/57024.html">
+                     
+										    再见2024 · 共赴一场烟火绚烂
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/56520.html">
+                     
+										    一周年-忽而回望，不知光阴几何
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/52584.html">
+                     
+										    2023年度总结
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										忘忧台（记事）
+									</a>
+									
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										2024井冈山
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/posts/65197.html">
+                     
+										    【总结】井冈山研学-了解历史，明见未来
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/17937.html">
+                     
+										    【多图警告】井冈山研学D1
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/18257.html">
+                     
+										    【多图警告】井冈山研学D2
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/38016.html">
+                     
+										    【多图警告】井冈山研学D3
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/46222.html">
+                     
+										    挽歌：第一次相逢与离别
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/27646.html">
+                     
+										    砥砺奋进，勿忘国殇
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										文轩斋（小说）
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/posts/54465.html">
+                     
+										    about-(原创小说)解殃生
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										第一章
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/posts/12593.html">
+                     
+										    第01幕 引子
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/10177.html">
+                     
+										    第02幕 好盆油！
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/52320.html">
+                     
+										    第03幕 军训 天地异动
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/4242.html">
+                     
+										    第04幕 军训 突发情况
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/54466.html">
+                     
+										    第05幕 军训 全员撤离
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/47925.html">
+                     
+										    第06幕 但到远古去
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/5037.html">
+                     
+										    第07幕 有间客栈
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/9309.html">
+                     
+										    第08幕 有间客栈_那个夜晚
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/18297.html">
+                     
+										    第09幕 回景阳城！
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/57307.html">
+                     
+										    第10幕 鹿鼎公府
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										第零章
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/posts/15397.html">
+                     
+										    H1 P0 S1 质子自衰变
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/65294.html">
+                     
+										    H1 P0 S2 降熵实验与质能转换方程的逆应用 壹
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/18316.html">
+                     
+										    H1 P0 S3 降熵实验与质能转换方程的逆应用 贰
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/60691.html">
+                     
+										    H1 P0 S4 降熵实验与质能转换方程的逆应用 叁
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/7638.html">
+                     
+										    H1 P0 S5 降熵实验与质能转换方程的逆应用 肆
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/47362.html">
+                     
+										    H1 P0 S6 几份资料片
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/5047.html">
+                     
+										    H1 P0 S7 万事之由-那个午后
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										记叙文
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/posts/32398.html">
+                     
+										    迟到了!迟到了！
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/2042429.html">
+                     
+										    【短文】-彼时故城皆繁华
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										缘缘堂（转载）
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/posts/52608.html">
+                     
+										    原神-李猛干语录MD版-世界树
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/59025.html">
+                     
+										    原神-米忽悠玩家预防针（厂商离谱行为）-世界树
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/47513.html">
+                     
+										    幻兽帕鲁-学习版-资源分享
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/38498.html">
+                     
+										    一枝红信出墙来-steam假激活入库
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/51132.html">
+                     
+										    不要再带XXX回去了
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										藏经阁（教程）
+									</a>
+									
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										hexo
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/posts/45649.html">
+                     
+										    回声洞-开源html组件
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/26785.html">
+                     
+										    hexo + github-action持续集成
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/52004.html">
+                     
+										    友链区JavaScript组件-重做版
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/25937.html">
+                     
+										    ChatRoom.js-在文章流中分享你的聊天记录
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/63154.html">
+                     
+										    自建busuanzi统计API
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/30593.html">
+                     
+										    image+onedrive 公益图床
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										软件推荐
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/posts/44173.html">
+                     
+										    Windows工具-让你的Windows锦上添花，添了又添
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/posts/859850.html">
+                     
+										    EasyPub-轻量Kindle电子书格式转换工具
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+		</div>
+	</div>
+</div>
+
+                <!-- 引入正文 -->
+                <div id="content" class="content">
+                    <div id="top-obn-space">
+    <div style="flex-grow: 1;">
+        <div class="bulletin-space">
+            <span class="bulletin-span">
+                <i class="fa fa-bullhorn" style="margin: 3px;"></i>
+                公告
+            </span>
+            <p class="bulletin-info">
+                暂无数据-可能是正在加载中或者加载遇到问题
+            </p>
+        </div>
+    </div>
+    <div class="button-space">
+        <div>
+            <button class="top-button" onclick="opensiteinfo()" title="查看站点信息"><i class="fa fa-info-circle"
+                aria-hidden="true" style="margin-right: 4px;"></i>信息</button>
+            <div class="overlay" id="overlay"></div>
+            <div id="siteinfo-page">
+                <p class="text-websiteName">呓语梦轩-站点信息</p>
+                <div id="site-info-div">
+                    <div id="siteinfo-line1">
+                        <div class="meta-info">
+                            <span>
+                                <i class="fa fa-bar-chart" aria-hidden="true"></i> 
+                                总字数：
+                            </span>
+                            <hr>
+                            <span id="all-words" class="number-info">处理中</span>
+                        </div>
+                        <div class="meta-info">
+                            <span>
+                                <i class="fa fa-file-text-o"></i>
+                                总文章数：
+                            </span>
+                            <hr>
+                            <span id="all-posts" class="number-info">处理中</span>
+                        </div>
+                        <div class="meta-info">
+                            <span>
+                                <i class="fa fa-comments" aria-hidden="true"></i>
+                                总评论数：
+                            </span>
+                            <hr>
+                            <span id="all-commets" class="number-info">处理中</span>
+                        </div>
+                    </div>
+                    <button onclick="closesiteinfo()" id="siteinfo-close">关闭</button>
+                </div>
+            </div>
+        </div>
+        <div>
+            <button class="top-button" onclick="showConfirmation()" style="margin-left: 6px;" title="随机跳转一篇文章">
+                <i class="fa fa-random" aria-hidden="true" style="margin-right: 4px;"></i>随机文章
+            </button>
+
+            <div id="goto-post">
+                <div>
+                    <p class="text-websiteName">
+                        呓语梦轩-随机跳转
+                    </p>
+                </div>
+                <div class="post-info">
+                    <div style="display: flex;">
+                        <p id="text-info">你即将前往：</p>
+                    </div>
+                    <div id="post-info"></div>
+                    <div id="btn-space-postinfo">
+                        <div>
+                            <button id="goto-post-yes" class="onfirm-btn gopost-btn">确定</button>
+                            <button id="goto-post-no" class="cancel-btn gopost-btn">取消</button>
+                        </div>
+                        <div>
+                            <button id="refresh" class="refresh-btn gopost-btn"> <i class="fa fa-refresh"
+                                    aria-hidden="true" style="margin-right: 4px;"></i>换一换</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<h1 id="article-title">
+  彼方的她：一场跨越时空的对话，一段孤寂宇宙的回响
+</h1>
+
+<!-- meta -->
+<div class="article-meta">
+  
+
+  
+
+  
+
+  <span>阅读量 <span id="busuanzi_page_pv">ERROR</span> 次</span>
+  <span class="article_information">· 共计 <span id="word_count">ERROR</span> 字</span>
+  <span class="article_information">· 大致要花 <span id="read_time">ERROR</span> 分钟读完</span>
+  <br>
+  <span>awaae(player8635)</span>
+  <span>2024-12-07 15:25:46</span>
+
+  <div id="article-categories">
+    
+      <span>Categories：</span>
+      
+    
+
+    
+      <span>Tags：</span>
+      
+        <span>
+          <i class="fa fa-tag" aria-hidden="true">
+            <a href="/tags/game/">game</a>
+          </i>
+        </span>
+      
+    
+
+    
+      <span>本文已启用fancybox灯箱</span>
+    
+    <br>
+  </div>
+</div>
+
+
+
+<!-- content -->
+<div id="article-content">
+  <script src="/file/chatRoom/chatRoom.js"></script>
+<link rel="stylesheet" href="/file/chatRoom/chatRoom.css">
+<h2 id="引言"><a class="header-anchor" href="#引言">¶</a>引言</h2>
+<p>一款游戏，<strong>没有华丽的特效、没有充满创造的搭建、没有让人头大的养成和解密、没有精美的动态立绘、没有花里胡哨的UI</strong>，只有一个不支持全屏的窗口和上面不断闪现的文字。不知来自何方的消息从上面涌现</p>
+<p>这是《彼方的她-Aliya》的基本游戏界面，简单朴素</p>
+<p><img src="https://pic.awaae001.top/%E4%BA%BA%E8%A8%80%E5%A0%82/2024/05(aliya)/init/Aliya-%E7%95%8C%E9%9D%A2%2B%E5%BD%A9%E8%9B%8B_6a6063ee.webp" alt="Aliya-界面+彩蛋" /></p>
+<p>它确实没有上面所言的那些素质。但是，他有属于自己的亮点：<strong>游戏时间和现实时间的同步</strong>、<strong>优秀的剧情</strong>以及<strong>聊天框所带来的代入感</strong>：我不是和一堆数据在说话：对面是一个活生生的人的感觉。这是其他类型的游戏所无法达到的。单独的语言可能没什么说服力，让我们看一下获奖感言（玩家的）：</p>
+<div id="chat"></div>
+<script>
+    chatroom.init ({
+        jsonFilePath: "https://cdata.neosora.cc/chatRoom/Aliya/share.json",  // JSON 文件的路径，必须提供
+        chatroomName: "chat",
+        MyAvatar: "https://image.jiuci.top/i/2024/12/01/s8yjzk.jpg",
+        title: "聊天记录",
+    })
+</script>
+<blockquote>
+<p>由 ChatRoom.js 提供聊天记录解析支持</p>
+</blockquote>
+<p>仔细想来，应该确是如此，虽说素未谋面，但生活在现在的我们时长会将聊天框对面的人<strong>当做真人</strong>，特别是<strong>游戏时间和现实时间同步</strong>的时候</p>
+<p>Aliya 会在晚上睡不着的时候找我们搭话，而你我作出的决定很有可能就会影响到 Aliya 的生活。就像一个真实的人一样：会在晚上胡思乱想、会熬夜看视频、会在玩家没有回复后伤心的离开</p>
+<p>你还要注意 Aliya 的氧气，不要离开太久，否则 Aliya 可能会因为你的行为而缺氧而死（这才是真正的<strong>缺氧</strong> <a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.klei.com/">@科雷游戏</a>）</p>
+<p><img src="https://pic.awaae001.top/%E4%BA%BA%E8%A8%80%E5%A0%82/2024/05(aliya)/init/Aliya-%E7%BD%91%E5%9B%BE-%E4%B8%8D%E5%9C%A8%E5%95%8A_a5289449.webp" alt="Aliya-网图-不在啊" /></p>
+<!-- <center>
+    <iframe src="https://store.steampowered.com/widget/2704110/" frameborder="0" style="width: 646px; height: 190px;"></iframe>
+</center> -->
+<h2 id="电波"><a class="header-anchor" href="#电波">¶</a>电波</h2>
+<p>目前已全结局通关，后劲挺大的，写这文章主要的原因就是现在还没有缓过来，这个行为让我感觉很好笑：她终究是虚拟的，是一个<strong>在 Steam 和我电脑上600 MB 大小的数据包</strong>。但就是这个数据，给了我比<a href="https://blog.awaae001.top/posts/23024.html">《饿殍：千里行》</a>更大的触动。</p>
+<p><img src="https://pic.awaae001.top/%E4%BA%BA%E8%A8%80%E5%A0%82/2024/05(aliya)/Aliya-steam%E6%88%AA%E5%9B%BE_2a3049b6.webp" alt="Aliya-steam截图" /></p>
+<p>单说实话，现在的游戏已经<strong>拥有相当的完成度</strong>。她不是完美的，我们可能要全身心投入角色，投入那个：<strong>“在Steam上打开一个游戏就发现被链接到了上千光年外的一个<em>玩家</em>”</strong>。这是一个非标的<a target="_blank" rel="noopener external nofollow noreferrer" href="https://baike.baidu.com/item/GALgame/423361">GalGame</a>，非标在我们和 Aliya 的双向奔赴—— <strong>Aliya 需要我的帮助，我现在夺舍了她的舰载AI</strong>，我要为她的氧气负责！</p>
+<p><em>当你离开后，游戏的时间依旧会流逝</em>，这大大增加了游戏的<strong>代入感和难度（至少在知道还有通知守护进程以前）</strong>，游戏内部设置了氧气的存在，假如<strong>玩家（CosMos）没有准确的打开氧气机，那么 Aliya 就会在飞船中窒息</strong>（这不好笑）。你可以不开启游戏的情况下收到来自 Aliya 的消息，这些消息会通过 Windows 通知 API 送到你的桌面。</p>
+<p>如图所示：</p>
+<p><img src="https://pic.awaae001.top/%E4%BA%BA%E8%A8%80%E5%A0%82/2024/05(aliya)/ladio/aliya-%E9%80%9A%E7%9F%A5%E5%AE%88%E6%8A%A4%E8%BF%9B%E7%A8%8B_aa27785e.webp" alt="aliya-通知守护进程" /></p>
+<h3 id="游戏评分-xlsx"><a class="header-anchor" href="#游戏评分-xlsx">¶</a>游戏评分.xlsx</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">游戏评价</th>
+<th style="text-align:center"><strong>总分</strong></th>
+<th style="text-align:center"><strong>游戏性</strong></th>
+<th style="text-align:center"><strong>剧情</strong></th>
+<th style="text-align:center"><strong>UI</strong></th>
+<th style="text-align:center"><strong>总体评价</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">分数</td>
+<td style="text-align:center">83</td>
+<td style="text-align:center">64</td>
+<td style="text-align:center">5</td>
+<td style="text-align:center">7</td>
+<td style="text-align:center">👍 推荐</td>
+</tr>
+<tr>
+<td style="text-align:center">备注</td>
+<td style="text-align:center">满分100</td>
+<td style="text-align:center">满分100</td>
+<td style="text-align:center">满分10</td>
+<td style="text-align:center">满分10</td>
+<td style="text-align:center">值得一试</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>上方评价带有主观因素，仅供参考</p>
+</blockquote>
+<p>如果你是忠实的GalGame玩家，那么这游戏肯定适合您。但对于无法带入游戏角色、深入了解苦难并报以同情心的玩家，这<a target="_blank" rel="noopener external nofollow noreferrer" href="https://steamcommunity.com/profiles/76561198447298425/recommended/2704110/">游戏将是一个折磨</a></p>
+<h3 id="Mate-Game"><a class="header-anchor" href="#Mate-Game">¶</a>Mate-Game</h3>
+<p>《彼方的她》具有很强的<code>Mate-Game</code>元素，与现实生活的映射，试图从游戏的窗口中走出来而非简简单单的把玩家拉进去。</p>
+<p>大概有：</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>Aliya 知道我们是真人</p>
+</li>
+<li class="lvl-2">
+<p>游戏时间和现实时间的同步</p>
+<ul class="lvl-2">
+<li class="lvl-6">我们可以不回 Aliya 的消息</li>
+<li class="lvl-6">Aliya 也会聊天聊着聊着就有急事离开</li>
+</ul>
+</li>
+<li class="lvl-2">
+<p>多周目记忆继承</p>
+</li>
+</ul>
+<p><s>不喜欢现在就避雷！</s></p>
+<h3 id="操作"><a class="header-anchor" href="#操作">¶</a>操作</h3>
+<p>如前文所提：游戏没有精美的画面，只是一款伪装城游戏的聊天软件罢了，自然没有非常离谱费手的操作，只要在<strong>某些特定剧情节点掐着秒表</strong>而已。剩下的就是发挥你的<strong>情商</strong>给出回答 。<s>（但是我目前没有发现好感度系统）</s> 屏幕对面的 Aliay 会根据你发送的消息来做出回复。</p>
+<p>简单:<strong>只要点点点就可以了</strong></p>
+<p><img src="https://pic.awaae001.top/%E4%BA%BA%E8%A8%80%E5%A0%82/2024/05(aliya)/ladio/aliya-%E9%A1%B5%E9%9D%A2_b3a86868.webp" alt="aliya-页面" /></p>
+<p>看吧，界面就是这么简单。<strong>（注意：扎牢K的时候选第四肋间，图片那是错误示范）</strong></p>
+<p>在这里面:</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>心率监测</p>
+<ul class="lvl-2">
+<li class="lvl-7">HRM 开关</li>
+<li class="lvl-7">可以监测 Aliya 的心跳情况，如图所示：<strong>她现在非常紧张</strong></li>
+</ul>
+</li>
+<li class="lvl-3">
+<p>三元</p>
+<ul class="lvl-2">
+<li class="lvl-7">分别对应：氧气、水、燃料</li>
+<li class="lvl-7">其中氧气会随着时间的推移缓慢消耗，据 <em><a target="_blank" rel="noopener external nofollow noreferrer" href="https://qm.qq.com/q/Ti8YWrElSG">彼方的她官方2群</a></em> 玩家的测算，一管完整的氧气<strong>可以支持48小时的玩家离线</strong>，时间到了以后就要上线打开制氧机了（但也不要卡的太死，<strong>卡的太死凉的几率会成倍飙升</strong>）</li>
+</ul>
+</li>
+<li class="lvl-3">
+<p>制氧机</p>
+<ul class="lvl-2">
+<li class="lvl-7">给 Aliya 续命的制氧机，<strong>启用的时候会消耗水</strong>。目测可以开启3次，三次后就会因为水耗尽而无法继续制氧（KD + 1）</li>
+</ul>
+</li>
+<li class="lvl-3">
+<p>引擎</p>
+<ul class="lvl-2">
+<li class="lvl-6">海獭号的引擎，<strong>启用的时候会消耗燃料</strong>（涉及游戏核心剧情，不过多透露）</li>
+</ul>
+</li>
+<li class="lvl-3">
+<p>电台和调频</p>
+<ul class="lvl-2">
+<li class="lvl-6">游戏提供了电台供玩家监听（虽然绝大部分时候都是宇宙背景辐射罢了），<strong>并在合适的时候被制作组拿出来渲染气氛</strong>。Aliya 告诉你要监听电台，也没必要挂着。电台的逻辑和存档绑定并且只会和在<strong>正常聊天时触发</strong></li>
+</ul>
+</li>
+<li class="lvl-3">
+<p>回复选择</p>
+<ul class="lvl-2">
+<li class="lvl-6">在这里选择你的回复</li>
+</ul>
+</li>
+</ul>
+<p>下面就是一个<strong>没有及时开制氧机的实例：</strong></p>
+<div id="chat_AliyaO2"></div>
+<script>
+    chatroom.init ({
+        jsonFilePath: "https://cdata.neosora.cc/chatRoom/Aliya/O2.json",  // JSON 文件的路径，必须提供
+        chatroomName: "chat_AliyaO2",
+        MyAvatar: "https://image.jiuci.top/i/2024/12/01/s8yjzk.jpg",
+        title: "彼方的她",
+        hideAvatar: true
+    })
+</script>
+<p><strong>记得开制氧机啊！</strong></p>
+<div class="warning">
+<p><strong>敬告读者</strong></p>
+<p>如果您尚未体验<strong>完整剧情内容</strong>，请勿继续阅读。您的继续阅读行为会对您的游戏体验过程产生<strong>严重的负面影响</strong>。当然，你往下滑也无所谓，希望得到你的支持和厚爱，谢谢！</p>
+</div>
+<h2 id="Aliya"><a class="header-anchor" href="#Aliya">¶</a>Aliya</h2>
+<p>多周目设计，按剧情走必然的 bad_END。必然的煽情与必然的重逢。<em>我感觉我爱上了一个一千光年以外的人</em>。<strong>阻隔 Aliya和我的不只是方寸间的薄薄屏幕，更是时间上的、物理上的距离。</strong></p>
+<h3 id="我要给-Aliya-完整的一生。"><a class="header-anchor" href="#我要给-Aliya-完整的一生。">¶</a>我要给 Aliya 完整的一生。</h3>
+<p>从夺舍 Aliya 的 CosMos 玩家摇身一变，变成了掌管<em>海獭号（游戏中主角的飞船）</em> 的舰载 AI，命运的齿轮也在这一刻开始转动。我们成为了 Aliya 在孤寂的太空中<strong>唯一的依靠</strong>，成为了唯一可以和她聊天的<strong>人</strong>，成为了她的救命恩人和唯一的依靠对象。</p>
+<p>直到<strong>游戏结束</strong>，Aliya 的行为才被我完全理解。</p>
+<p><img src="https://pic.awaae001.top/%E4%BA%BA%E8%A8%80%E5%A0%82/2024/05(aliya)/aliya/Snipaste_2024-11-30_11-45-22_dafb00da.jpg" alt="Aliya-短暂的别离" /></p>
+<p>最后时刻的笑颜是安慰谁？安慰自己还是屏幕前素未谋面的 Cosmos(玩家？)</p>
+<p>她是缺爱的：缺父爱、母爱。<strong>复制人的身份、天生被定义为工具的属性</strong>。这是 Aliya 的故事，也是 Aliya-1 到 Aliya-17的故事。</p>
+<p>我更喜欢将《彼方的她》的故事定义为悲剧，我们始终无法将那个<strong>在晚上睡不着的少女</strong>救起。也终究无法<strong>开着歼星舰一炮轰了企业的大门！</strong></p>
+<p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://tieba.baidu.com/p/8821485418"><strong>先干你大爷的剑来!(破音)</strong></a></p>
+<p>有人在游戏的时候感到了无力感，或者是与生俱来的亏欠感。了解 Aliya 故事的人都想给她自己<strong>力所能及的爱</strong>。看着她的心率一点点减少最后归零，想越过这千百公里的距离紧紧的握住她的手，给她温暖。这是亏欠，是直到最后才说出那句：“<em>我喜欢 Aliya!</em>”</p>
+<p><strong>我和所有人一样，都在屏幕前期待着奇迹的发生。</strong></p>
+<p>她就像流星划过夜空，灿烂辉煌却又无比短暂。</p>
+<p>我可以在后面的结局中拯救 Aliya 无数次，但终究不是第一次。没有经历过那最后一秒的生离死别，只是在心里有一个模糊的念头：“<em>CosMos 对面是对我非常重要的人</em>”。随着二周目的逐步推进，我感到越来越悲伤。她不是那个会在夜晚不安地来找我的她。她们是同一人，却又不完全是。<strong>那个独特的17号还是离开了我们，即使是轮回、即使是记忆继承</strong></p>
+<p><mark>我们在二周目救助的只不过是一个躯壳：一个共享灵魂的躯壳</mark></p>
+<h3 id="Doll"><a class="header-anchor" href="#Doll">¶</a>Doll</h3>
+<p>Aliya：人偶（娃娃）</p>
+<p>太空的探索总是要牺牲的，在近1000年来。那些企业先是使用了<strong>悍不畏死的冒险家</strong>来探索宇宙的边界，他们被企业的人<strong>尊称为：<a target="_blank" rel="noopener external nofollow noreferrer" href="https://baike.baidu.com/item/%E8%8E%B1%E5%8D%A1/2736057">Laika</a></strong>（前苏联航空犬，是第一个上太空的地球犬科动物）。他们为企业的钱卖命探索宇宙中的星球，而企业则在他们出现问题的时候<strong>抛弃、隐瞒、赔偿、置之不理</strong></p>
+<p>而后那些企业又觉得：一条人命的赔偿金额也太贵了，而且那些 Laika 几乎没有太空经验，效率又低下。与之相比，克隆体的成本就低了很多（而且在记忆继承的加持下会变得更加聪明和有经验（<strong>都是用命换来的经验啊！</strong>））</p>
+<p>而那时候，<strong>Aliya的原型体基因疾病到达晚期</strong>，她的父亲为了凑钱治病，和企业签订了霸王条款（发现矿物后的巨额奖金）。从那以后，Aliya 的父亲没有回来，<strong>而 Aliya 也因为探索星空的向往和对自由的渴望，与企业签订协约。被企业圈养，成为了海獭号太空科研队的一员。</strong></p>
+<p><mark>（对于躺在病床上的 Aliya 而言，不被小小的病床束缚的探索星空带来的自由与永生的诱惑让她无法拒绝）</mark></p>
+<p>她常常<strong>在深夜感受到一股作为物品的悲哀</strong>。克隆体没有人权，他们是企业的<strong>所有物</strong>。</p>
+<p>作为一个物品。</p>
+<p>不是真正的人，它们永远年轻而且永生。</p>
+<p>这次的 Aliya-17 拥有了独一份的记忆：那份关于<strong>一同冒险的回忆</strong>，Aliya 和Cosmos 的记忆（独属于 Aliya-17）。<strong>这份记忆会因为没有企业的飞船回收而变得独一无二</strong>。而游戏一周目的 Aliya 也变得独一无二了起来</p>
+<h4 id="为什么企业的很少有人偶叛逃的事件？"><a class="header-anchor" href="#为什么企业的很少有人偶叛逃的事件？">¶</a>为什么企业的很少有人偶叛逃的事件？</h4>
+<p>企业为复制体提供复制技术，<strong>他们的永生掌握在企业的手里</strong>。一旦企业没有复制新的复制体，那么就意味着这个复制体代表的人真正的离开了这个世界。企业变相的掌控了每一位复制体的生存命脉。加之<strong>复制体三年的生命</strong>。让企业和复制体死死的绑定在一起</p>
+<p>这可能是企业技术的问题，也有可能是原型体<strong>本身的基因疾病</strong>。所有复制体的寿命不超过三年。但有一个问题，隔壁<strong>反抗军也有复制技术啊！</strong></p>
+<h3 id="企业与世界"><a class="header-anchor" href="#企业与世界">¶</a>企业与世界</h3>
+<div class="tips">
+<p><strong>注意</strong></p>
+<p>此部分<strong>只是探讨在《彼方的她-Aliya》游戏的世界观设定</strong>有关于跨星际企业和行星级政府的话题，无意探讨世界政治。<strong>请勿主动与现实映射或颅内自动高潮。</strong></p>
+</div>
+<p>《彼方》塑造了一个相当庞大的世界观。<s>（可能是于宇宙为题材的游戏世界观都会很大）</s><strong>企业、政府、反抗军</strong>的互相交织，相互利用。在一千光年之内的资源角逐、大型战争。再到世界观下的小人物（芸芸众生）。</p>
+<p>步入星际时代的<strong>黄金年代</strong>，再到泡沫爆发后的<strong>大萧条</strong>。</p>
+<p><mark>企业是利益的融合体，内部也会出现争端和矛盾。两大企业控制者多个星域的政府，为了星球上的资源而进行战争。</mark></p>
+<p>人类对于曲率引擎的发展停留在了 <em>1000光年</em> 从此又开始了新一轮的做吃山空和内部纷争。这绝对不符合文文明发展的最佳路径，却是<strong>利益最大化的完美选择</strong>（人为财死，鸟为食亡）。这是利益的选择。</p>
+<p>那个时代的企业是凌驾在政府的头上。本地的政府必须要企业满意，假如不满意，企业会直接换政府的领导人。而那时候：<strong>企业就是绝对的权利</strong>。有人想要反抗，但那时候看：人手中的权利不知何时已经飞灰湮灭了。黄金时代的增长可以掩盖很多的社会问题，<strong>教育让我们变成了有知识有教养的豺狼。</strong></p>
+<p>虽然一千年后的物质生活肯定要更加丰富，但<strong>他们的社会肯定是更加僵化的</strong>。</p>
+<p><strong>我们为什么要向远方探索？那是因为：世界太大了，而我们所知的内容太少，对外面的探索可以让我们去看到更到的世界，突破时代的局限看到更远的可能性</strong></p>
+<h3 id="CosMos-和风信子"><a class="header-anchor" href="#CosMos-和风信子">¶</a>CosMos 和风信子</h3>
+<p>Cosmos 是《彼方的她》中<strong>星际飞船使用的通用人工智能</strong>。目前提供了两种翻译</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>作为独立的单词存在</p>
+<ul class="lvl-2">
+<li class="lvl-4">翻译为：宇宙</li>
+<li class="lvl-4">来源：<a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.bing.com/search?q=cosmos%E7%BF%BB%E8%AF%91">bing翻译</a>  | <a target="_blank" rel="noopener external nofollow noreferrer" href="https://zh.wikipedia.org/zh-cn/%E5%AE%87%E5%AE%99_(%E7%B3%BB%E7%BB%9F)">维基百科</a></li>
+</ul>
+</li>
+<li class="lvl-2">
+<p>作为组合词存在</p>
+<ul class="lvl-2">
+<li class="lvl-4">Control Of Spaceship Main Operation System (COSMOS)</li>
+<li class="lvl-4">飞船主控操作系统</li>
+</ul>
+</li>
+</ul>
+<p>而风信子是 aliya 作为生物学家最喜欢的植物，<a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.bing.com/search?q=%E9%BB%84%E8%89%B2%E9%A3%8E%E4%BF%A1%E5%AD%90%E7%9A%84%E8%8A%B1%E8%AF%AD">黄色风信子的花语</a>是：<strong>“温暖”和“幸福美满”</strong>。所以，各位 Cosmos ，你知道吗？这绝对是一次足够浪漫的表白。啊，我的心要花掉了。（<strong>如果抛开黄色这个词条</strong>，单纯风信子的花语是：<em>喜悦、生命、幸福、浓情、沉静的爱、<strong>永远的怀念</strong></em>）<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup></p>
+<blockquote>
+<p>图片：Aliya 拿着风信子拍照</p>
+</blockquote>
+<p><img src="https://pic.awaae001.top/%E4%BA%BA%E8%A8%80%E5%A0%82/2024/05(aliya)/aliya/Aliya-%E5%8F%8D%E6%8A%97%E5%86%9B-%E9%A3%8E%E4%BF%A1%E5%AD%90_63f046de.webp" alt="Aliya-反抗军-风信子" /></p>
+<h2 id="千年"><a class="header-anchor" href="#千年">¶</a>千年</h2>
+<p>“一场跨越千年的对话，估计宇宙总温暖的回响。”</p>
+<p>我现在<strong>总是会时不时抬头望向天空</strong>，不仅仅是因为天上奇形怪状的云朵，更是<strong>因为一个在以前光年外的少女。当光线跨越万水千山后，她才可以在1000年后看到我</strong>。在那个空气中硫含量超标的星球上走完作为 Aliya-17 的最后几分钟</p>
+<p>这将会是她独有的回忆：</p>
+<blockquote>
+<p>MP3文件：星界余晖-7.78mb</p>
+</blockquote>
+<div>
+    <style>
+        .audio-player-01{
+            width: 100%
+        }
+    </style>
+    <audio controls="controls" class="audio-player-01">
+        <source
+            src="https://pic.awaae001.top/人言堂/2024/05(aliya)/5.Astral%20Sunset.mp3"
+            type="audio/mp3" />
+        你的浏览器不支持当前MP3播放器，请升级或切换你的浏览器
+    </audio>
+</div>
+<p>让我们点击上面的播放，看看 Aliya-17 在她生命最后发来的文字</p>
+<div id="chat_end"></div>
+<script>
+    chatroom.init ({
+        jsonFilePath: "https://cdata.neosora.cc/chatRoom/Aliya/aliya-end.json",  // JSON 文件的路径，必须提供
+        chatroomName: "chat_end",
+        MyAvatar: "https://image.jiuci.top/i/2024/12/01/s8yjzk.jpg",
+        title: "彼方的她",
+        hideAvatar: true
+    })
+</script>
+<h2 id="最后"><a class="header-anchor" href="#最后">¶</a>最后</h2>
+<p>感谢 <em><strong>彼方的她官方1群</strong></em> 和 <em><strong>彼方的她官方2群</strong></em> 的鼎力支持（虽然没给钱）。感谢： <em><strong>我和你是甲烷</strong></em> 以及 <em><strong>悟る</strong></em> 提供的破防记录授权。特别鸣谢： <strong>我和你是甲烷</strong> 对游戏的评价，这对我来说是一大启发。</p>
+<p>谢谢各位！</p>
+<hr class="footnotes-sep" />
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.huabaike.com/hyjk/17363.html">风信子的花语-花百科</a> <a href="#fnref1" class="footnote-backref">↩︎</a></p>
+</li>
+</ol>
+</section>
+
+
+  <div class="page-cover">
+    
+      <p style="font-size: 24px;">封面图片：</p>
+      <img src="https://pic.awaae001.top/%E4%BA%BA%E8%A8%80%E5%A0%82/2024/05(aliya)/%E5%BD%BC%E6%96%B9%E7%9A%84%E5%A5%B9_23a47a16.webp" alt="Aliya-封面图" class="page-cover-image">
+    
+  </div>
+</div>
+
+
+  <div id="share-give">
+    <div class="share-button-container">
+      <link rel="stylesheet" type="text/css" href="/css/pach-post.css">
+      <div>
+        <button class="support-button" onclick="openSupportDialog()">
+          <i class="fa fa-qrcode" aria-hidden="true" style="margin-right: 4px;"></i>
+          赞助
+        </button>
+
+        <div id="support-dialog">
+          <p class="info">
+            呓语梦轩 - 赞助
+          </p>
+          <div id="image-container">
+            <img class="give-img" src="/file/微信.webp" alt="Support Image">
+            <img class="give-img" src="/file/支付宝.webp" alt="Support Image">
+          </div>
+          <p class="like-p">啊，没钱了，谁来帮帮我啊</p>
+          <button class="close-button" onclick="closeSupportDialog()">好的</button>
+        </div>
+      </div>
+
+      <button class="share-button" onclick="generateAndCopyLink()">
+        <i class="fa fa-share-square" aria-hidden="true" style="margin-right: 4px;"></i>
+        分享
+      </button>
+    </div>
+  </div>
+
+
+<div id="article-categories">
+  <span class="span-info">
+    本站评论因服务器问题，请要发图片的各位自行至
+    <a target="_blank" rel="noopener" href="//image.neosora.cc">博主自建图床</a> 上传再分享
+  </span>
+  <br>
+  <span class="span-info">
+    欢迎阅读本站评论区 <a href="/">指南</a> 再进行评论
+  </span>
+</div>
+
+<div id="comment" style="margin-top: 16px;">
+  
+  
+            
+  
+  
+    <!-- Artalk -->
+    <div id="Comments"></div>
+    <script>
+        Artalk.init({
+            el: '#Comments',                // 绑定元素的 Selector
+            pageKey: '',                  // 固定链接 (留空自动获取)
+            pageTitle: '',  // 页面标题 (留空自动获取)
+            server: 'https://comment.neosora.cc',  // 后端地址
+            site: '呓语梦轩',             // 你的站点名
+        })
+    </script>
+    
+
+  
+    <div class="post-guide">
+      <div class="item left">
+        
+          <a href="/posts/57024.html">
+            <i class="fa fa-angle-left" aria-hidden="true"></i>
+            再见2024 · 共赴一场烟火绚烂
+          </a>
+        
+      </div>
+      <div class="item right">
+        
+          <a href="/posts/11645.html">
+            07-剧终：故事的开端与终末
+            <i class="fa fa-angle-right" aria-hidden="true"></i>
+          </a>
+        
+      </div>
+    </div>
+  
+</div>
+
+                </div>
+                <div id="footer">
+  <div class="footer-links">
+    <div>
+      <span>
+        友情链接 - 
+        <button id="regenerateButton" class="randomLinks">刷新</button>
+      </span>
+      <div id="randomLinks"></div>
+      <script src="/js/friend-links-combined.js"></script>
+    </div>
+    <div>
+      <span class="a-links">
+        <span>其他链接</span>
+        <a href="//blog.awaae001.top/about" target="_blank">关于我</a>
+        ---
+        <a href="//blog.awaae001.top/atom.xml" target="_blank">Rss订阅</a>
+        ---
+        <a href="https://blog.awaae001.top/posts/57663.html" target="_blank">隐私协议</a>
+      </span>
+    </div>
+  </div>
+
+  <p>
+    ©&nbsp;<span id="footerYear-start">2022</span>-
+    <span id="footerYear-end"></span>
+    
+      <a href="/">awaae(player8635)</a>
+    
+    <br>
+    Theme 
+    <a href="//github.com/awaae001/hexo-theme-banyan" target="_blank">banyan（榕）</a> by 
+    <a href="//awaae001.top" target="_blank">awaae001</a>
+    Powered by 
+    <a href="//hexo.io" target="_blank">Hexo</a>
+
+    <br>
+    <a href="https://icp.gov.moe/?keyword=20234005" rel="external nofollow noreferrer" target="_blank">萌ICP备20234005号</a>
+    &nbsp;|&nbsp;
+    <a target="_blank" rel="noopener external nofollow noreferrer" href="https://beian.miit.cn.com/gov/search.php?domain=blog.awaae001.top" title="MIIT备00008635号">MIIT-00008635号</a>
+
+    <br>
+    <span>
+      本站图片由 
+      <a target="_blank" rel="noopener external nofollow noreferrer" href="https://chuqiyun.com/">初七云</a> 提供全局加速服务
+    </span>
+
+    <br>
+    <span>
+      总访问量 : <span id="busuanzi_site_pv"></span>
+      总访客数 : <span id="busuanzi_site_uv"></span>
+    </span>
+
+    <br>
+    <a title="呓语梦轩" target="_blank" rel="noopener external nofollow noreferrer" href="https://boringbay.com">
+      <img height="18px" src="https://boringbay.com/api/badge/blog.awaae001.top" />
+    </a>
+
+    <br>
+    <img src="https://img.shields.io/badge/Frame-Hexo-blue?logo=Hexo&label=框架">
+    <img src="https://img.shields.io/badge/CDN%E5%8A%A0%E9%80%9F-%E5%88%9D%E4%B8%83%E4%BA%91-%252392daff?logo=icloud&logoColor=%252392daff">
+    <a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/awaae001">
+      <img src="https://img.shields.io/badge/Github-awaae001-%238db90b?style=flat&logo=github&logoColor=%23181717">
+    </a>
+    <img src="https://img.shields.io/badge/%E7%BC%96%E8%BE%91%E5%99%A8-VScode-%23007ACC?style=flat&logo=visualstudiocode&logoColor=%23007ACC&color=%23007ACC">
+    <img src="https://img.shields.io/badge/%E4%B8%BB%E9%A2%98-banyan-rgb(172%2C%2071%2C%2053)?logo=hexo&logoColor=rgb(172%2C%2071%2C%2053)">
+    <img src="https://img.shields.io/badge/%E5%89%8D%E7%AB%AF%E6%A1%86%E6%9E%B6-VanillaJS-%23f3d890?logo=javascript&logoColor=%23f3d890g">
+
+    <br>
+
+
+  <!-- 站点运行时间展示 -->
+  
+    <div id="runtime-card" style="background-color: #60281e; color: #fff; text-align: center; padding: 10px;">
+      本站已运行：
+      <br />
+      <span id="uptime">加载中...</span>
+    </div>
+  
+
+  <script type="text/javascript">
+    const TIME_CONST = 365 * 24 * 60 * 60 * 1000;
+    const TIME_START = new Date("5/28/2023 14:13:45");
+
+    function update_website_uptime_banner() {
+      const website_uptime_banner = document.getElementById("uptime");
+      const timestamp_now = new Date();
+      const time = timestamp_now.getTime() - TIME_START.getTime();
+      const years = time / TIME_CONST;
+      const int_years = parseInt(years);
+      const days = time / (24 * 60 * 60 * 1000);
+      const int_days = parseInt(days);
+      const hours = (days - int_days) * 24;
+      const int_hours = parseInt(hours);
+      const mins = (hours - int_hours) * 60;
+      const int_mins = parseInt(mins);
+      const sec = (mins - int_mins) * 60;
+      const int_sec = parseInt(sec);
+
+      website_uptime_banner.innerHTML = `${int_days} 日 ${int_hours} 小时 ${int_mins} 分 ${int_sec} 秒 (共：${int_years} 年)`;
+    }
+
+    update_website_uptime_banner();
+    setInterval(update_website_uptime_banner, 1000);
+  </script>
+
+  
+  <script type="text/javascript">
+    document.getElementById('footerYear-end').innerHTML = new Date().getFullYear() + '';
+  </script>
+
+  
+</div>
+
+                    <div id="toggle">
+    <div id="toggle-bord">
+        <button id="totop-toggle-totop" class="toggle" title="返回顶部">
+            <i class="fa fa-angle-double-up" aria-hidden="true"></i>
+        </button>
+        <button id="footer-toggle-tocommet" class="toggle-tocommet"
+            title="前往评论区">
+            <span class="button-text">前往评论区</span>
+            <i class="fa fa-commenting-o" aria-hidden="true"></i>
+        </button>
+    </div>
+</div>
+
+<div id="myModal" class="modal">
+    <div class="modal-content">
+        <p>未找到评论区！,我们会在3秒后为你跳转到留言板</p>
+    </div>
+</div>
+
+<div id="myModal" class="modal">
+    <div class="modal-content">
+        <p>未找到评论区！,我们会在3秒后为你跳转到留言板</p>
+    </div>
+</div>
+
+<div>
+    <link rel="stylesheet" type="text/css" href="/css/lnterception.css">
+    <script src="/js/lnterception.js"></script>
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <div id="website-name"></div>
+            <p style="color: black;">你即将前往：</p>
+            <div id="website-url" style="color:rgb(43, 105, 100);"></div>
+            <p style="color: black;">请注意你的账号财产安全！</p>
+            <button id="cancel-btn" class="popup-btn">取消</button>
+            <button id="confirm-btn" class="popup-btn">确定</button>
+        </div>
+    </div>
+</div>
+
+<div id="popup-box" class="mess-popup mess-hidden">
+    <div id="popup-info">
+        <span id="popup-title"></span>
+        <span id="popup-timer"></span>
+    </div>
+    <span id="popup-content"></span>
+</div>
+
+<script>
+const Popup = (() => {
+    let countdownInterval;
+    let popupQueue = [];
+    let isPopupVisible = false;
+
+    function processQueue() {
+        if (popupQueue.length > 0 && !isPopupVisible) {
+            const nextPopup = popupQueue.shift(); // 取出队列中的下一个弹窗
+            showPopup(nextPopup.title, nextPopup.message, nextPopup.type);
+        }
+    }
+
+    function showPopup(title, message, type) {
+        const popupBox = document.getElementById('popup-box');
+        const popupTitle = document.getElementById('popup-title');
+        const popupTimer = document.getElementById('popup-timer');
+        const popupContent = document.getElementById('popup-content');
+
+        popupTitle.textContent = title;
+        popupContent.textContent = message;
+
+        popupBox.classList.remove('mess-warning', 'mess-error', 'mess-prompt', 'mess-hidden');
+
+        if (type === 'warning') {
+            popupBox.classList.add('mess-warning');
+        } else if (type === 'error') {
+            popupBox.classList.add('mess-error');
+        } else if (type === 'prompt') {
+            popupBox.classList.add('mess-prompt');
+        }
+
+        // 防止倒计时冲突
+        if (countdownInterval) {
+            clearInterval(countdownInterval);
+        }
+
+        // 设置倒计时为 5 秒
+        let countdown = 5;
+        popupTimer.textContent = `(${countdown}s)`;
+
+        // 标记弹窗为显示状态
+        isPopupVisible = true;
+
+        countdownInterval = setInterval(() => {
+            countdown -= 1;
+            popupTimer.textContent = `(${countdown}s)`;
+            if (countdown <= 0) {
+                clearInterval(countdownInterval);
+            }
+        }, 1000);
+
+        // 显示弹窗动画
+        setTimeout(() => {
+            popupBox.style.right = '10px';
+        }, 100); // 确保动画生效的小延迟
+
+        // 5 秒后隐藏弹窗，并在隐藏后检查队列
+        setTimeout(() => {
+            popupBox.style.right = '-100%';
+            setTimeout(() => {
+                popupBox.classList.add('mess-hidden');
+                isPopupVisible = false; // 标记弹窗已隐藏
+                processQueue(); // 检查并显示队列中的下一个弹窗
+            }, 500); // 等待隐藏动画结束后再处理队列
+        }, 5000);
+    }
+
+    function queuePopup(title, message, type) {
+        // 将新的弹窗请求加入队列
+        popupQueue.push({ title, message, type });
+        processQueue(); // 处理队列中的弹窗
+    }
+
+    return {
+        show: queuePopup // 使用队列的方式调用弹窗
+    };
+})();
+
+// 示例用法：
+// Popup.show('Warning Title', 'This is a warning message', 'warning');
+// Popup.show('Error Title', 'This is an error message', 'error');
+// Popup.show('Prompt Title', 'This is a prompt message', 'prompt');
+</script>
+                    <script src="/js/instant.js" ></script>
+    </body>
+
+</html>
+<!-- 
+       　  　▃▆█▇▄▖
+　 　 　 ▟◤▖　　　◥█▎
+   　 ◢◤　 ▐　　　 　▐▉
+　 ▗◤　　　▂　▗▖　　▕█▎
+　◤　▗▅▖◥▄　▀◣　　█▊
+▐　▕▎◥▖◣◤　　　　◢██
+█◣　◥▅█▀　　　　▐██◤
+▐█▙▂　　     　◢██◤
+◥██◣　　　　◢▄◤
+ 　　▀██▅▇▀
+
+
+哲学♂ 114514 
+ -->
